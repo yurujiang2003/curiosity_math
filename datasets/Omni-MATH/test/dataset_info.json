@@ -1,0 +1,61 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "omni-math",
+  "dataset_size": 6984163,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/KbsdJames/Omni-MATH@40ba231d8f16e29ecd40e6407e2c8640145a8f62/test.jsonl": {
+      "num_bytes": 7504961,
+      "checksum": null
+    }
+  },
+  "download_size": 7504961,
+  "features": {
+    "domain": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "difficulty": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "problem": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "solution": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "answer": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "source": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 14489124,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 6984163,
+      "num_examples": 4428,
+      "dataset_name": "omni-math"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
