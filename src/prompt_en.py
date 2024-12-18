@@ -29,22 +29,45 @@ def batch_process_problems(
 ) -> List[str]:
 
     inferencer = Inference(model_name, gpu_id, model_path)
+    common_instructions = [
+        problem for problem in problems
+    ]
+    novel_instructions = [
+        f""" please solve the following problem out of the box, providing a novel solution.
+        {problem}
+        """ for problem in problems
+    ]
     
     try:
-        responses = inferencer.batch_generate_responses(
-            instructions=problems,
+        common_responses = inferencer.batch_generate_responses(
+            instructions=common_instructions,
             batch_size=batch_size,
             max_new_tokens=512,
             temperature=0.7,
             use_chat_template=True
         )
-        return responses
+        novel_responses = inferencer.batch_generate_responses(
+            instructions=novel_instructions,
+            batch_size=batch_size,
+            max_new_tokens=512,
+            temperature=0.7,
+            use_chat_template=True
+        )
+        
+        combined_responses = [
+            {
+                "problem": problem,
+                "common_response": common_response,
+                "novel_response": novel_response
+            } for problem, common_response, novel_response in zip(problems, common_responses, novel_responses)
+        ]
+        return combined_responses
     finally:
 
         del inferencer
 
 def main():
-    # 配置参数
+
     data_dir = "/home/shangbin/curiosity_math/datasets/MATH"
     model_name = "Qwen/Qwen2.5-Math-7B"
     model_path = model_name
@@ -66,13 +89,13 @@ def main():
         batch_size
     )
 
-    # 保存结果
     print("Saving results...")
     with open(output_file, 'w', encoding='utf-8') as f:
-        for problem, response in zip(problems, responses):
+        for response in responses:
             result = {
-                "problem": problem,
-                "response": response
+                "problem": response["problem"],
+                "common_response": response["common_response"],
+                "novel_response": response["novel_response"]
             }
             f.write(json.dumps(result, ensure_ascii=False) + '\n')
 
