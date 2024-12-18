@@ -178,20 +178,19 @@ def main():
     data_dir = "/home/shangbin/curiosity_math/datasets/MATH"
     model_name = "Qwen/Qwen2.5-Math-7B"
     model_path = model_name
-    gpu_id = 15
+    gpu_id = 14
     batch_size = 4
     num_problems = 100
 
     output_files = {
-        "easy": "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_easy.json",
-        "medium": "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_medium.json",
-        "hard": "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_hard.json"
+        "easy": "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_easy_ICL.json",
+        "medium": "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_medium_ICL.json",
+        "hard": "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_hard_ICL.json"
     }
 
     print("Collecting problems...")
 
     problems = {
-        "easy": collect_problems_from_json(data_dir, level="Level 2", limit=num_problems),
         "medium": collect_problems_from_json(data_dir, level="Level 3", limit=num_problems),
         "hard": collect_problems_from_json(data_dir, level="Level 5", limit=num_problems)
     }
@@ -200,36 +199,34 @@ def main():
         print(f"Found {len(problem_set)} {difficulty} problems")
         print(f"Processing {difficulty} problems...")
         
-        # 对每个难度级别运行3次
-        for iteration in range(3):
-            print(f"Running iteration {iteration + 1} for {difficulty} problems")
-            responses = batch_process_problems(
-                problem_set,
-                model_name,
-                model_path,
-                gpu_id,
-                batch_size
-            )
+        # 对每个难度级别只运行1次
+        print(f"Running iteration for {difficulty} problems")
+        responses = batch_process_problems(
+            problem_set,
+            model_name,
+            model_path,
+            gpu_id,
+            batch_size
+        )
 
-            output_file = output_files[difficulty].replace('.json', f'_iter{iteration+1}.json')
-            print(f"Saving {difficulty} results for iteration {iteration + 1}...")
-            
-            with open(output_file, 'w', encoding='utf-8') as f:
-                for response in responses:
-                    result = {
-                        "problem": response["problem"],
-                        "common_response": response["common_response"],
-                        "novel_response": response["novel_response"],
-                        "difficulty": difficulty,
-                        "iteration": iteration + 1
-                    }
-                    f.write(json.dumps(result, ensure_ascii=False) + '\n')
-            
-            print(f"Results saved to {output_file}")
-            
-            # 清理GPU内存
-            torch.cuda.empty_cache()
-            
+        output_file = output_files[difficulty]
+        print(f"Saving {difficulty} results...")
+        
+        with open(output_file, 'w', encoding='utf-8') as f:
+            for response in responses:
+                result = {
+                    "problem": response["problem"],
+                    "common_response": response["common_response"],
+                    "novel_response": response["novel_response"],
+                    "difficulty": difficulty
+                }
+                f.write(json.dumps(result, ensure_ascii=False) + '\n')
+        
+        print(f"Results saved to {output_file}")
+        
+        # 清理GPU内存
+        torch.cuda.empty_cache()
+        
         print(f"Completed processing {difficulty} problems")
 
 if __name__ == "__main__":

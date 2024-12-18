@@ -1,0 +1,5702 @@
+[
+  {
+    "problem": "Let $P$ be a point inside triangle $ABC$.  Let $G_1$, $G_2$, and $G_3$ be the centroids of triangles $PBC$, $PCA$, and $PAB$, respectively.  If the area of triangle $ABC$ is 18, then find the area of triangle $G_1 G_2 G_3$.\n\n[asy]\nimport geometry;\n\nunitsize(2 cm);\n\npair A, B, C, P;\npair[] G;\n\nA = (1,3);\nB = (0,0);\nC = (4,0);\nP = (2,1);\nG[1] = (P + B + C)/3;\nG[2] = (P + C + A)/3;\nG[3] = (P + A + B)/3;\n\ndraw(A--B--C--cycle);\ndraw(A--P);\ndraw(B--P);\ndraw(C--P);\ndraw(G[1]--G[2]--G[3]--cycle);\n\nlabel(\"$A$\", A, dir(90));\nlabel(\"$B$\", B, SW);\nlabel(\"$C$\", C, SE);\ndot(\"$G_1$\", G[1], S);\ndot(\"$G_2$\", G[2], SE);\ndot(\"$G_3$\", G[3], NW);\nlabel(\"$P$\", P, S);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2844168620726437,
+          "novel": 3.150818970550956
+        },
+        "word_entropy": {
+          "common": 3.930936066078513,
+          "novel": 3.9851684248960138
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 65.76,
+            "flesch_kincaid_grade": 9.6
+          },
+          "sentence_length": {
+            "mean": 20.5,
+            "std": 13.756816492197604
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 61.16,
+            "flesch_kincaid_grade": 9.3
+          },
+          "sentence_length": {
+            "mean": 19.88235294117647,
+            "std": 11.994520086719879
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.3357664233576642,
+          "unique_words": 92
+        },
+        "novel": {
+          "type_token_ratio": 0.24946236559139784,
+          "unique_words": 116
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.012524084778420038,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.013989927252378288,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "[asy] draw(circle((4,1),1),black+linewidth(.75)); draw((0,0)--(8,0)--(8,6)--cycle,black+linewidth(.75)); MP(\"A\",(0,0),SW);MP(\"B\",(8,0),SE);MP(\"C\",(8,6),NE);MP(\"P\",(4,1),NW); MP(\"8\",(4,0),S);MP(\"6\",(8,3),E);MP(\"10\",(4,3),NW); MP(\"->\",(5,1),E); dot((4,1)); [/asy]The sides of $\\triangle ABC$ have lengths $6,8,$ and $10$. A circle with center $P$ and radius $1$ rolls around the inside of $\\triangle ABC$, always remaining tangent to at least one side of the triangle. When $P$ first returns to its original position, through what distance has $P$ traveled?\n$\\text{(A) } 10\\quad \\text{(B) } 12\\quad \\text{(C) } 14\\quad \\text{(D) } 15\\quad \\text{(E) } 17$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 2.957550710437384,
+          "novel": 3.131453204647733
+        },
+        "word_entropy": {
+          "common": 3.909735438450178,
+          "novel": 4.055232762970986
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 68.44,
+            "flesch_kincaid_grade": 10.7
+          },
+          "sentence_length": {
+            "mean": 28.857142857142858,
+            "std": 9.598044018423328
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 56.56,
+            "flesch_kincaid_grade": 15.2
+          },
+          "sentence_length": {
+            "mean": 49.42857142857143,
+            "std": 44.76560268413092
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.19238476953907815,
+          "unique_words": 96
+        },
+        "novel": {
+          "type_token_ratio": 0.24476987447698745,
+          "unique_words": 117
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.004668534080298786,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.018083182640144666,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "The measures of the interior angles of a convex hexagon form an increasing arithmetic sequence. How many such sequences are possible if the hexagon is not equiangular and all of the angle degree measures are positive integers less than $150$ degrees?",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.293271283496437,
+          "novel": 3.2941919205295687
+        },
+        "word_entropy": {
+          "common": 4.255156688892617,
+          "novel": 4.273113625026584
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 79.7,
+            "flesch_kincaid_grade": 6.3
+          },
+          "sentence_length": {
+            "mean": 37.142857142857146,
+            "std": 17.819961290871632
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 76.45,
+            "flesch_kincaid_grade": 7.6
+          },
+          "sentence_length": {
+            "mean": 37.714285714285715,
+            "std": 36.593185492517534
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.30376344086021506,
+          "unique_words": 113
+        },
+        "novel": {
+          "type_token_ratio": 0.3203125,
+          "unique_words": 123
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.04110671936758893,
+          "formula_count": 18
+        },
+        "novel": {
+          "symbol_density": 0.034635224760501106,
+          "formula_count": 6
+        }
+      }
+    }
+  },
+  {
+    "problem": "What is the number of centimeters in the length of $EF$ if $AB\\parallel CD\\parallel EF$?\n\n[asy]\n\nsize(4cm,4cm);\npair A,B,C,D,E,F,X;\n\nA=(0,1);\nB=(1,1);\nC=(1,0);\nX=(0,0);\nD=(1/3)*C+(2/3)*X;\n\ndraw (A--B--C--D);\ndraw(D--B);\ndraw(A--C);\n\nE=(0.6,0.4);\nF=(1,0.4);\n\ndraw(E--F);\n\nlabel(\"$A$\",A,NW);\nlabel(\"$B$\",B,NE);\nlabel(\"$C$\",C,SE);\nlabel(\"$D$\",D,SW);\nlabel(\"$E$\",shift(-0.1,0)*E);\nlabel(\"$F$\",F,E);\n\nlabel(\"$100$ cm\",midpoint(C--D),S);\nlabel(\"$150$ cm\",midpoint(A--B),N);\n\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.0183517020995136,
+          "novel": 3.220571672076964
+        },
+        "word_entropy": {
+          "common": 3.7155985803799423,
+          "novel": 3.8519294337299548
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 70.02,
+            "flesch_kincaid_grade": 8.0
+          },
+          "sentence_length": {
+            "mean": 18.764705882352942,
+            "std": 10.646896326351781
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 78.85,
+            "flesch_kincaid_grade": 4.6
+          },
+          "sentence_length": {
+            "mean": 30.0,
+            "std": 27.60434748368452
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.16701902748414377,
+          "unique_words": 79
+        },
+        "novel": {
+          "type_token_ratio": 0.24528301886792453,
+          "unique_words": 91
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.004329004329004329,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.02019446522064323,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A circle with center $O$ has radius 25. Chord $\\overline{AB}$ of length 30 and chord $\\overline{CD}$ of length 14 intersect at point $P$. The distance between the midpoints of the two chords is 12. The quantity $OP^2$ can be represented as $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find the remainder when $m + n$ is divided by 1000.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.178006434592184,
+          "novel": 3.259951383043619
+        },
+        "word_entropy": {
+          "common": 3.905935328354943,
+          "novel": 3.8149305614973965
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 80.72,
+            "flesch_kincaid_grade": 6.0
+          },
+          "sentence_length": {
+            "mean": 13.666666666666666,
+            "std": 10.347915977594962
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 90.19,
+            "flesch_kincaid_grade": 4.4
+          },
+          "sentence_length": {
+            "mean": 13.647058823529411,
+            "std": 9.035493257609376
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.25101214574898784,
+          "unique_words": 124
+        },
+        "novel": {
+          "type_token_ratio": 0.2468354430379747,
+          "unique_words": 117
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.010638297872340425,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.035048471290082026,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Let $\\overline{AB}$ be a diameter of circle $\\omega$. Extend $\\overline{AB}$ through $A$ to $C$. Point $T$ lies on $\\omega$ so that line $CT$ is tangent to $\\omega$. Point $P$ is the foot of the perpendicular from $A$ to line $CT$. Suppose $\\overline{AB} = 18$, and let $m$ denote the maximum possible length of segment $BP$. Find $m^{2}$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.091045853257616,
+          "novel": 3.1710730975091215
+        },
+        "word_entropy": {
+          "common": 3.847482833912485,
+          "novel": 3.823590077885298
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 73.58,
+            "flesch_kincaid_grade": 6.6
+          },
+          "sentence_length": {
+            "mean": 13.590909090909092,
+            "std": 6.665099678099966
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 75.81,
+            "flesch_kincaid_grade": 5.8
+          },
+          "sentence_length": {
+            "mean": 11.565217391304348,
+            "std": 6.60583462097694
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.23255813953488372,
+          "unique_words": 110
+        },
+        "novel": {
+          "type_token_ratio": 0.22875816993464052,
+          "unique_words": 105
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.021660649819494584,
+          "formula_count": 47
+        },
+        "novel": {
+          "symbol_density": 0.038487060384870604,
+          "formula_count": 42
+        }
+      }
+    }
+  },
+  {
+    "problem": "Triangle $ABC$ has side-lengths $AB = 12, BC = 24,$ and $AC = 18.$ The line through the incenter of $\\triangle ABC$ parallel to $\\overline{BC}$ intersects $\\overline{AB}$ at $M$ and $\\overline{AC}$ at $N.$ What is the perimeter of $\\triangle AMN?$\n$\\textbf{(A)}\\ 27 \\qquad \\textbf{(B)}\\ 30 \\qquad \\textbf{(C)}\\  33 \\qquad \\textbf{(D)}\\ 36 \\qquad \\textbf{(E)}\\ 42$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 2.9208424896768124,
+          "novel": 3.057685781239797
+        },
+        "word_entropy": {
+          "common": 3.4174690304856723,
+          "novel": 3.621511981347066
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 57.13,
+            "flesch_kincaid_grade": 12.9
+          },
+          "sentence_length": {
+            "mean": 30.818181818181817,
+            "std": 12.208925064872394
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 50.7,
+            "flesch_kincaid_grade": 13.3
+          },
+          "sentence_length": {
+            "mean": 28.454545454545453,
+            "std": 20.200646417936216
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.13358070500927643,
+          "unique_words": 72
+        },
+        "novel": {
+          "type_token_ratio": 0.1958762886597938,
+          "unique_words": 95
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.0,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.012269938650306749,
+          "formula_count": 1
+        }
+      }
+    }
+  },
+  {
+    "problem": "A plane intersects a right circular cylinder of radius $1$ forming an ellipse. If the major axis of the ellipse of $50\\%$ longer than the minor axis, the length of the major axis is\n$\\textbf{(A)}\\ 1\\qquad \\textbf{(B)}\\ \\frac{3}{2}\\qquad \\textbf{(C)}\\ 2\\qquad \\textbf{(D)}\\ \\frac{9}{4}\\qquad \\textbf{(E)}\\ 3$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1542885603710125,
+          "novel": 3.142401646603055
+        },
+        "word_entropy": {
+          "common": 3.9434489374036312,
+          "novel": 3.979942720958641
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 60.75,
+            "flesch_kincaid_grade": 9.5
+          },
+          "sentence_length": {
+            "mean": 26.142857142857142,
+            "std": 16.728321335205084
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 62.98,
+            "flesch_kincaid_grade": 8.6
+          },
+          "sentence_length": {
+            "mean": 27.833333333333332,
+            "std": 14.633485192833897
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.36681222707423583,
+          "unique_words": 84
+        },
+        "novel": {
+          "type_token_ratio": 0.3961352657004831,
+          "unique_words": 82
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.00708502024291498,
+          "formula_count": 7
+        },
+        "novel": {
+          "symbol_density": 0.010356731875719217,
+          "formula_count": 1
+        }
+      }
+    }
+  },
+  {
+    "problem": "Through a point on the hypotenuse of a right triangle, lines are drawn parallel to the legs of the triangle so that the triangle is divided into a square and two smaller right triangles. The area of one of the two small right triangles is $m$ times the area of the square. What is the ratio of the area of the other small right triangle to the area of the square?  Express your answer as a common fraction in terms of $m$.",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1253246412040587,
+          "novel": 2.959132812560486
+        },
+        "word_entropy": {
+          "common": 3.8089065135231,
+          "novel": 2.8133554045006157
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 90.19,
+            "flesch_kincaid_grade": 4.4
+          },
+          "sentence_length": {
+            "mean": 12.583333333333334,
+            "std": 8.445495183166521
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 82.65,
+            "flesch_kincaid_grade": 5.2
+          },
+          "sentence_length": {
+            "mean": 14.0,
+            "std": 0.0
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.172147001934236,
+          "unique_words": 89
+        },
+        "novel": {
+          "type_token_ratio": 0.9444444444444444,
+          "unique_words": 17
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.022727272727272728,
+          "formula_count": 15
+        },
+        "novel": {
+          "symbol_density": 0.0,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A circle with center $O$ has radius $8$ units and circle $P$ has radius $2$ units.  The circles are externally tangent to each other at point $Q$.  Segment $TS$ is the common external tangent to circle $O$ and circle $P$ at points $T$ and $S$, respectively.  What is the length of segment $OS$?  Express your answer in simplest radical form.",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.0463545752592487,
+          "novel": 3.096754338900548
+        },
+        "word_entropy": {
+          "common": 3.9914828991418503,
+          "novel": 4.219126582680552
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 56.83,
+            "flesch_kincaid_grade": 13.1
+          },
+          "sentence_length": {
+            "mean": 28.0,
+            "std": 22.827109389428244
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 72.29,
+            "flesch_kincaid_grade": 9.2
+          },
+          "sentence_length": {
+            "mean": 22.666666666666668,
+            "std": 16.763717434454154
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.22782258064516128,
+          "unique_words": 113
+        },
+        "novel": {
+          "type_token_ratio": 0.28252032520325204,
+          "unique_words": 139
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.015980629539951573,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.019432773109243698,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In triangle $ABC$, altitudes $AD$, $BE$, and $CF$ intersect at the orthocenter $H$.  If $\\angle ABC = 49^\\circ$ and $\\angle ACB = 12^\\circ$, then find the measure of $\\angle BHC$, in degrees.",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2196062176810147,
+          "novel": 3.2773853819144048
+        },
+        "word_entropy": {
+          "common": 3.948179185430206,
+          "novel": 3.947114935220354
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 61.06,
+            "flesch_kincaid_grade": 9.4
+          },
+          "sentence_length": {
+            "mean": 19.272727272727273,
+            "std": 12.563228515942933
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 57.3,
+            "flesch_kincaid_grade": 10.8
+          },
+          "sentence_length": {
+            "mean": 27.285714285714285,
+            "std": 13.057174116874117
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.3412969283276451,
+          "unique_words": 100
+        },
+        "novel": {
+          "type_token_ratio": 0.33984375,
+          "unique_words": 87
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.01775147928994083,
+          "formula_count": 25
+        },
+        "novel": {
+          "symbol_density": 0.024029574861367836,
+          "formula_count": 15
+        }
+      }
+    }
+  },
+  {
+    "problem": "Point $F$ is taken on the extension of side $AD$ of parallelogram $ABCD$. $BF$ intersects diagonal $AC$ at $E$ and side $DC$ at $G$. If $EF = 32$ and $GF = 24$, then $BE$ equals:\n[asy] size(7cm); pair A = (0, 0), B = (7, 0), C = (10, 5), D = (3, 5), F = (5.7, 9.5); pair G = intersectionpoints(B--F, D--C)[0]; pair E = intersectionpoints(A--C, B--F)[0]; draw(A--D--C--B--cycle); draw(A--C); draw(D--F--B); label(\"$A$\", A, SW); label(\"$B$\", B, SE); label(\"$C$\", C, NE); label(\"$D$\", D, NW); label(\"$F$\", F, N); label(\"$G$\", G, NE); label(\"$E$\", E, SE); //Credit to MSTang for the asymptote[/asy]\n$\\textbf{(A)}\\ 4 \\qquad \\textbf{(B)}\\ 8\\qquad \\textbf{(C)}\\ 10 \\qquad \\textbf{(D)}\\ 12 \\qquad \\textbf{(E)}\\ 16$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1868868148711162,
+          "novel": 3.2843072091153687
+        },
+        "word_entropy": {
+          "common": 3.953557471983927,
+          "novel": 4.296185811074598
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 63.8,
+            "flesch_kincaid_grade": 8.3
+          },
+          "sentence_length": {
+            "mean": 14.68421052631579,
+            "std": 11.234592403910098
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 66.84,
+            "flesch_kincaid_grade": 7.1
+          },
+          "sentence_length": {
+            "mean": 14.1,
+            "std": 14.811819604626569
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.20080321285140562,
+          "unique_words": 100
+        },
+        "novel": {
+          "type_token_ratio": 0.30217391304347824,
+          "unique_words": 139
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.02551640340218712,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.030978934324659233,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In $\\triangle XYZ$, we have $\\angle X = 90^\\circ$ and $\\tan Z = 7$.  If $YZ = 100$, then what is $XY$?",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.4185076881323164,
+          "novel": 3.4873852174014557
+        },
+        "word_entropy": {
+          "common": 4.273030527254081,
+          "novel": 4.081661327122957
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 75.2,
+            "flesch_kincaid_grade": 6.0
+          },
+          "sentence_length": {
+            "mean": 19.0,
+            "std": 15.989579940281942
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 80.11,
+            "flesch_kincaid_grade": 6.2
+          },
+          "sentence_length": {
+            "mean": 29.5,
+            "std": 32.264531609803356
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.35260115606936415,
+          "unique_words": 122
+        },
+        "novel": {
+          "type_token_ratio": 0.29213483146067415,
+          "unique_words": 104
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.02251552795031056,
+          "formula_count": 15
+        },
+        "novel": {
+          "symbol_density": 0.022988505747126436,
+          "formula_count": 15
+        }
+      }
+    }
+  },
+  {
+    "problem": "A unicorn is tethered by a $20$-foot silver rope to the base of a magician's cylindrical tower whose radius is $8$ feet. The rope is attached to the tower at ground level and to the unicorn at a height of $4$ feet. The unicorn has pulled the rope taut, the end of the rope is $4$ feet from the nearest point on the tower, and the length of the rope that is touching the tower is $\\frac{a-\\sqrt{b}}c$ feet, where $a, b,$ and $c$ are positive integers, and $c$ is prime. Find $a+b+c.$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.012946273347295,
+          "novel": 3.050766961747672
+        },
+        "word_entropy": {
+          "common": 4.026661953958367,
+          "novel": 3.9455519638343577
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 77.47,
+            "flesch_kincaid_grade": 7.2
+          },
+          "sentence_length": {
+            "mean": 19.444444444444443,
+            "std": 11.358903616019667
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 88.77,
+            "flesch_kincaid_grade": 4.9
+          },
+          "sentence_length": {
+            "mean": 15.434782608695652,
+            "std": 9.6856060256019
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.23956043956043957,
+          "unique_words": 109
+        },
+        "novel": {
+          "type_token_ratio": 0.208067940552017,
+          "unique_words": 98
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.018848167539267015,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.03208556149732621,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Centered at each lattice point in the coordinate plane are a circle radius $\\frac{1}{10}$ and a square with sides of length $\\frac{1}{5}$ whose sides are parallel to the coordinate axes. The line segment from $(0,0)$ to $(1001, 429)$ intersects $m$ of the squares and $n$ of the circles. Find $m + n$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.213927007999973,
+          "novel": 3.261244442987702
+        },
+        "word_entropy": {
+          "common": 4.293918612689057,
+          "novel": 4.113785140891169
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 67.18,
+            "flesch_kincaid_grade": 9.1
+          },
+          "sentence_length": {
+            "mean": 20.6,
+            "std": 18.546518091904296
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 74.83,
+            "flesch_kincaid_grade": 8.2
+          },
+          "sentence_length": {
+            "mean": 21.636363636363637,
+            "std": 14.45540306203706
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2891832229580574,
+          "unique_words": 131
+        },
+        "novel": {
+          "type_token_ratio": 0.25609756097560976,
+          "unique_words": 105
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.011029411764705883,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.02021563342318059,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In triangle $ABC$, $AB = 10$, $BC = 14$, and $CA = 16$. Let $D$ be a point in the interior of $\\overline{BC}$. Let points $I_B$ and $I_C$ denote the incenters of triangles $ABD$ and $ACD$, respectively. The circumcircles of triangles $BI_BD$ and $CI_CD$ meet at distinct points $P$ and $D$. The maximum possible area of $\\triangle BPC$ can be expressed in the form $a - b\\sqrt {c}$, where $a$, $b$, and $c$ are positive integers and $c$ is not divisible by the square of any prime. Find $a + b + c$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1388797721641724,
+          "novel": 3.1756006976835005
+        },
+        "word_entropy": {
+          "common": 3.821142267258452,
+          "novel": 4.13875006064355
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 65.12,
+            "flesch_kincaid_grade": 7.8
+          },
+          "sentence_length": {
+            "mean": 17.3,
+            "std": 11.580587204455567
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 60.04,
+            "flesch_kincaid_grade": 9.8
+          },
+          "sentence_length": {
+            "mean": 18.470588235294116,
+            "std": 13.655930179440137
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2429718875502008,
+          "unique_words": 121
+        },
+        "novel": {
+          "type_token_ratio": 0.28870292887029286,
+          "unique_words": 138
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.023823358512492735,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.019032082653616094,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Altitudes $\\overline{AX}$ and $\\overline{BY}$ of acute triangle $ABC$ intersect at $H$.  If $\\angle BAC = 61^\\circ$ and $\\angle ABC = 73^\\circ$, then what is $\\angle CHX$?",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2402434389972385,
+          "novel": 3.224953600824346
+        },
+        "word_entropy": {
+          "common": 4.233797584720376,
+          "novel": 4.0675973950071675
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 48.43,
+            "flesch_kincaid_grade": 12.1
+          },
+          "sentence_length": {
+            "mean": 23.727272727272727,
+            "std": 16.125028028677033
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 58.01,
+            "flesch_kincaid_grade": 10.5
+          },
+          "sentence_length": {
+            "mean": 24.545454545454547,
+            "std": 13.026990417546296
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.33152173913043476,
+          "unique_words": 122
+        },
+        "novel": {
+          "type_token_ratio": 0.29916897506925205,
+          "unique_words": 108
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.022335673261008295,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.014925373134328358,
+          "formula_count": 23
+        }
+      }
+    }
+  },
+  {
+    "problem": "Let triangle $ABC$ be a right triangle in the xy-plane with a right angle at $C$. Given that the length of the hypotenuse $AB$ is $60$, and that the medians through $A$ and $B$ lie along the lines $y=x+3$ and $y=2x+4$ respectively, find the area of triangle $ABC$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.298483236429181,
+          "novel": 3.300161567867855
+        },
+        "word_entropy": {
+          "common": 4.13178751549489,
+          "novel": 3.817793072019522
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 71.75,
+            "flesch_kincaid_grade": 7.3
+          },
+          "sentence_length": {
+            "mean": 22.692307692307693,
+            "std": 27.63327040247127
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 81.93,
+            "flesch_kincaid_grade": 5.5
+          },
+          "sentence_length": {
+            "mean": 12.947368421052632,
+            "std": 9.24789412279202
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.25684210526315787,
+          "unique_words": 122
+        },
+        "novel": {
+          "type_token_ratio": 0.19834710743801653,
+          "unique_words": 96
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.02623360399750156,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.04190751445086705,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Which of the following could NOT be the lengths of the external diagonals of a right regular prism [a \"box\"]? (An $\\textit{external diagonal}$ is a diagonal of one of the rectangular faces of the box.)\n$\\text{(A) }\\{4,5,6\\} \\quad \\text{(B) } \\{4,5,7\\}  \\quad \\text{(C) } \\{4,6,7\\} \\quad \\text{(D) } \\{5,6,7\\} \\quad \\text{(E) } \\{5,7,8\\}$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2261503099568323,
+          "novel": 3.416874318880872
+        },
+        "word_entropy": {
+          "common": 4.227465003488396,
+          "novel": 4.090212418055778
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 65.96,
+            "flesch_kincaid_grade": 9.5
+          },
+          "sentence_length": {
+            "mean": 45.333333333333336,
+            "std": 35.19785346990479
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 71.75,
+            "flesch_kincaid_grade": 7.3
+          },
+          "sentence_length": {
+            "mean": 32.57142857142857,
+            "std": 33.06641430669556
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.27842227378190254,
+          "unique_words": 120
+        },
+        "novel": {
+          "type_token_ratio": 0.2694063926940639,
+          "unique_words": 118
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.02719797596457938,
+          "formula_count": 12
+        },
+        "novel": {
+          "symbol_density": 0.03211009174311927,
+          "formula_count": 13
+        }
+      }
+    }
+  },
+  {
+    "problem": "Let $\\triangle PQR$ be a triangle in the plane, and let $S$ be a point outside the plane of $\\triangle PQR$, so that $SPQR$ is a pyramid whose faces are all triangles.\n\nSuppose that every edge of $SPQR$ has length $18$ or $41$, but no face of $SPQR$ is equilateral. Then what is the surface area of $SPQR$?",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2748949235141653,
+          "novel": 3.2245868242712725
+        },
+        "word_entropy": {
+          "common": 4.136551581993905,
+          "novel": 4.079247471659274
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 67.18,
+            "flesch_kincaid_grade": 9.1
+          },
+          "sentence_length": {
+            "mean": 23.0,
+            "std": 30.058276730378275
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 81.43,
+            "flesch_kincaid_grade": 5.7
+          },
+          "sentence_length": {
+            "mean": 15.105263157894736,
+            "std": 10.412010963265885
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.27014218009478674,
+          "unique_words": 114
+        },
+        "novel": {
+          "type_token_ratio": 0.26573426573426573,
+          "unique_words": 114
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.015131578947368421,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.019337016574585635,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A square flag has a red cross of uniform width with a blue square in the center on a white background as shown. (The cross is symmetric with respect to each of the diagonals of the square.) If the entire cross (both the red arms and the blue center) takes up 36% of the area of the flag, what percent of the area of the flag is blue?\n[asy] unitsize(2.5 cm);  pair[] A, B, C; real t = 0.2;  A[1] = (0,0); A[2] = (1,0); A[3] = (1,1); A[4] = (0,1); B[1] = (t,0); B[2] = (1 - t,0); B[3] = (1,t); B[4] = (1,1 - t); B[5] = (1 - t,1); B[6] = (t,1); B[7] = (0,1 - t); B[8] = (0,t); C[1] = extension(B[1],B[4],B[7],B[2]); C[2] = extension(B[3],B[6],B[1],B[4]); C[3] = extension(B[5],B[8],B[3],B[6]); C[4] = extension(B[7],B[2],B[5],B[8]);  fill(C[1]--C[2]--C[3]--C[4]--cycle,blue); fill(A[1]--B[1]--C[1]--C[4]--B[8]--cycle,red); fill(A[2]--B[3]--C[2]--C[1]--B[2]--cycle,red); fill(A[3]--B[5]--C[3]--C[2]--B[4]--cycle,red); fill(A[4]--B[7]--C[4]--C[3]--B[6]--cycle,red);  draw(A[1]--A[2]--A[3]--A[4]--cycle); draw(B[1]--B[4]); draw(B[2]--B[7]); draw(B[3]--B[6]); draw(B[5]--B[8]); [/asy]\n$\\text{(A)}\\ 0.5\\qquad\\text{(B)}\\ 1\\qquad\\text{(C)}\\ 2\\qquad\\text{(D)}\\ 3\\qquad\\text{(E)}\\ 6$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2819618785182425,
+          "novel": 3.2530901417182068
+        },
+        "word_entropy": {
+          "common": 4.057976634234459,
+          "novel": 3.987376671844725
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 97.54,
+            "flesch_kincaid_grade": 3.6
+          },
+          "sentence_length": {
+            "mean": 17.533333333333335,
+            "std": 16.708746877675246
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 93.03,
+            "flesch_kincaid_grade": 3.3
+          },
+          "sentence_length": {
+            "mean": 13.45,
+            "std": 8.963676700997198
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.24772727272727274,
+          "unique_words": 109
+        },
+        "novel": {
+          "type_token_ratio": 0.23356009070294784,
+          "unique_words": 103
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.035788024776324846,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.05740181268882175,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "An $\\textit{annulus}$ is the region between two concentric circles. The concentric circles in the figure have radii $b$ and $c$, with $b>c$. Let $\\overline{OX}$ be a radius of the larger circle, let $\\overline{XZ}$ be tangent to the smaller circle at $Z$, and let $\\overline{OY}$ be the radius of the larger circle that contains $Z$.  Let $a=XZ$, $d=YZ$, and $e=XY$. What is the area of the annulus? Express your answer in terms of $\\pi$ and at most one of the variables $a,b,c,d,e$.\n\n[asy]\npair O,X,Y,Z;\nO=(0,0);\nX=(16,12);\nY=(0,20);\nZ=(0,12);\nfill(Circle(0,20),gray(0.7));\nfill(Circle(0,12),white);\ndraw(Circle(O,20),linewidth(0.7));\ndraw(Circle(O,12),linewidth(0.7));\ndot(O);\ndot(X);\ndot(Y);\ndot(Z);\ndraw(O--X--Y--cycle,linewidth(0.7));\ndraw(Z--X,linewidth(0.7));\nlabel(\"$b$\",(8,6),SE);\nlabel(\"$a$\",(8,12),S);\nlabel(\"$e$\",(8,16),SW);\nlabel(\"$c$\",(0,6),W);\nlabel(\"$d$\",(0,16),W);\nlabel(\"$O$\",O,S);\nlabel(\"$X$\",X,NE);\nlabel(\"$Y$\",Y,N);\nlabel(\"$Z$\",Z,SW);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.15260861235912,
+          "novel": 3.206753577329199
+        },
+        "word_entropy": {
+          "common": 3.8886722632683384,
+          "novel": 3.2768396359017298
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 76.05,
+            "flesch_kincaid_grade": 7.7
+          },
+          "sentence_length": {
+            "mean": 22.8,
+            "std": 11.513470371699404
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 77.2,
+            "flesch_kincaid_grade": 9.4
+          },
+          "sentence_length": {
+            "mean": 34.0,
+            "std": 16.30950643030009
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2647887323943662,
+          "unique_words": 94
+        },
+        "novel": {
+          "type_token_ratio": 0.24766355140186916,
+          "unique_words": 53
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.014358108108108109,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.035398230088495575,
+          "formula_count": 26
+        }
+      }
+    }
+  },
+  {
+    "problem": "Point $P$ lies on the diagonal $AC$ of square $ABCD$ with $AP > CP$. Let $O_{1}$ and $O_{2}$ be the circumcenters of triangles $ABP$ and $CDP$ respectively. Given that $AB = 12$ and $\\angle O_{1}PO_{2} = 120^{\\circ}$, then $AP = \\sqrt{a} + \\sqrt{b}$, where $a$ and $b$ are positive integers. Find $a + b$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1966937127833517,
+          "novel": 3.166102107603841
+        },
+        "word_entropy": {
+          "common": 3.9013653274903186,
+          "novel": 3.738411508920558
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 54.93,
+            "flesch_kincaid_grade": 9.6
+          },
+          "sentence_length": {
+            "mean": 13.947368421052632,
+            "std": 9.433834316803402
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 54.52,
+            "flesch_kincaid_grade": 9.8
+          },
+          "sentence_length": {
+            "mean": 13.65,
+            "std": 10.335738967292084
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.25333333333333335,
+          "unique_words": 114
+        },
+        "novel": {
+          "type_token_ratio": 0.21940928270042195,
+          "unique_words": 104
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.025043680838672103,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.023781212841854936,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Circle $\\omega$ has radius 5 and is centered at $O$. Point $A$ lies outside $\\omega$ such that $OA=13$. The two tangents to $\\omega$ passing through $A$ are drawn, and points $B$ and $C$ are chosen on them (one on each tangent), such that line $BC$ is tangent to $\\omega$ and $\\omega$ lies outside triangle $ABC$. Compute $AB+AC$ given that $BC=7$.\n\n[asy]\n\nunitsize(0.1 inch);\n\ndraw(circle((0,0),5));\ndot((-13,0));\nlabel(\"$A$\",(-13,0),S);\n\ndraw((-14,-0.4)--(0,5.5));\ndraw((-14,0.4)--(0,-5.5));\n\ndraw((-3.3,5.5)--(-7.3,-5.5));\n\ndot((0,0));\nlabel(\"$O$\",(0,0),SE);\n\ndot((-4.8,1.5));\nlabel(\"$T_3$\",(-4.8,1.5),E);\n\ndot((-1.7,4.7));\nlabel(\"$T_1$\",(-1.7,4.7),SE);\n\ndot((-1.7,-4.7));\nlabel(\"$T_2$\",(-1.7,-4.7),SW);\n\ndot((-3.9,3.9));\nlabel(\"$B$\",(-3.9,3.9),NW);\n\ndot((-6.3,-2.8));\nlabel(\"$C$\",(-6.3,-2.8),SW);\n\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.0943527133523987,
+          "novel": 3.1311795372684976
+        },
+        "word_entropy": {
+          "common": 4.039880722788225,
+          "novel": 4.05741800234555
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 79.5,
+            "flesch_kincaid_grade": 6.4
+          },
+          "sentence_length": {
+            "mean": 15.789473684210526,
+            "std": 11.537485575601046
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 84.91,
+            "flesch_kincaid_grade": 6.4
+          },
+          "sentence_length": {
+            "mean": 22.142857142857142,
+            "std": 19.23113971385673
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2847058823529412,
+          "unique_words": 121
+        },
+        "novel": {
+          "type_token_ratio": 0.2657952069716776,
+          "unique_words": 122
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.02882205513784461,
+          "formula_count": 31
+        },
+        "novel": {
+          "symbol_density": 0.014743589743589743,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "The solid shown has a square base of side length $s$. The upper edge is parallel to the base and has length $2s$. All other edges have length $s$. Given that $s=6\\sqrt{2}$, what is the volume of the solid?\n[asy] size(180); import three; pathpen = black+linewidth(0.65); pointpen = black; currentprojection = perspective(30,-20,10); real s = 6 * 2^.5; triple A=(0,0,0),B=(s,0,0),C=(s,s,0),D=(0,s,0),E=(-s/2,s/2,6),F=(3*s/2,s/2,6); draw(A--B--C--D--A--E--D); draw(B--F--C); draw(E--F); label(\"A\",A,W); label(\"B\",B,S); label(\"C\",C,SE); label(\"D\",D,NE); label(\"E\",E,N); label(\"F\",F,N); [/asy]\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.3179467231600346,
+          "novel": 3.0969454575663677
+        },
+        "word_entropy": {
+          "common": 4.056152060684477,
+          "novel": 3.969624286921611
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 69.96,
+            "flesch_kincaid_grade": 10.1
+          },
+          "sentence_length": {
+            "mean": 31.625,
+            "std": 26.55154185730087
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 60.89,
+            "flesch_kincaid_grade": 11.5
+          },
+          "sentence_length": {
+            "mean": 27.384615384615383,
+            "std": 18.189339487895573
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2538293216630197,
+          "unique_words": 116
+        },
+        "novel": {
+          "type_token_ratio": 0.22465208747514911,
+          "unique_words": 113
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.02094972067039106,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.004491017964071856,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A machine-shop cutting tool has the shape of a notched circle, as shown. The radius of the circle is $\\sqrt{50}$ cm, the length of $AB$ is $6$ cm and that of $BC$ is $2$ cm. The angle $ABC$ is a right angle. Find the square of the distance (in centimeters) from $B$ to the center of the circle.\n[asy] size(150);  defaultpen(linewidth(0.6)+fontsize(11)); real r=10; pair O=(0,0), A=r*dir(45),B=(A.x,A.y-r),C; path P=circle(O,r); C=intersectionpoint(B--(B.x+r,B.y),P); draw(P); draw(C--B--A--B); dot(A); dot(B); dot(C); label(\"$A$\",A,NE); label(\"$B$\",B,S); label(\"$C$\",C,SE); [/asy]\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2669174609768166,
+          "novel": 3.274894125483155
+        },
+        "word_entropy": {
+          "common": 3.928423489885931,
+          "novel": 4.034376999934731
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 80.31,
+            "flesch_kincaid_grade": 6.1
+          },
+          "sentence_length": {
+            "mean": 17.705882352941178,
+            "std": 14.024200536645273
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 76.76,
+            "flesch_kincaid_grade": 7.5
+          },
+          "sentence_length": {
+            "mean": 23.75,
+            "std": 12.590505682192966
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.22245322245322247,
+          "unique_words": 107
+        },
+        "novel": {
+          "type_token_ratio": 0.2331288343558282,
+          "unique_words": 114
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.030160857908847184,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.019543973941368076,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In the figure below, if the area of $\\triangle ABC$ is 27, what is the value of $p$? [asy]\nsize(5cm);defaultpen(fontsize(9));\npair o = (0, 0); pair q = (0, 12); pair b = (12, 0);\npair a = (2, 12); pair t = (2, 0); pair c = (0, 9);\n\ndraw((-2, 0)--(15, 0), Arrow);\ndraw((0, -2)--(0, 15), Arrow);\ndraw(q--a--b);\n//draw(a--t);\ndraw(a--c--b);\n\nlabel(\"$Q(0, 12)$\", q, W);\nlabel(\"$A(2, 12)$\", a, NE);\nlabel(\"$B(12, 0)$\", b, S);\nlabel(\"$O(0, 0)$\", o, SW);\nlabel(\"$x$\", (15, 0), E);\nlabel(\"$y$\", (0, 15), N);\n//label(\"$T(2, 0)$\", t, S + 0.6 * E);\nlabel(\"$C(0, p)$\", c, W);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.394793636639192,
+          "novel": 3.281291460075111
+        },
+        "word_entropy": {
+          "common": 3.787397352892584,
+          "novel": 3.8717083283449867
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 73.51,
+            "flesch_kincaid_grade": 8.7
+          },
+          "sentence_length": {
+            "mean": 34.0,
+            "std": 35.6330504688314
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 63.16,
+            "flesch_kincaid_grade": 12.7
+          },
+          "sentence_length": {
+            "mean": 46.6,
+            "std": 42.04093243494963
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.23469387755102042,
+          "unique_words": 92
+        },
+        "novel": {
+          "type_token_ratio": 0.23255813953488372,
+          "unique_words": 90
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.031876138433515486,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.03913405495420483,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A cone has a volume of $12288\\pi$ cubic inches and the vertex angle of the vertical cross section is 60 degrees. What is the height of the cone? Express your answer as a decimal to the nearest tenth. [asy]\n\nimport markers;\nsize(150);\nimport geometry;\ndraw(scale(1,.2)*arc((0,0),1,0,180),dashed);\ndraw(scale(1,.2)*arc((0,0),1,180,360));\ndraw((-1,0)--(0,sqrt(3))--(1,0));\n\n//draw(arc(ellipse((2.5,0),1,0.2),0,180),dashed);\ndraw(shift((2.5,0))*scale(1,.2)*arc((0,0),1,0,180),dashed);\ndraw((1.5,0)--(2.5,sqrt(3))--(3.5,0)--cycle);\n\n//line a = line((2.5,sqrt(3)),(1.5,0));\n//line b = line((2.5,sqrt(3)),(3.5,0));\n//markangle(\"$60^{\\circ}$\",radius=15,a,b);\n//markangle(\"$60^{\\circ}$\",radius=15,(1.5,0),(2.5,sqrt(3)),(1.5,0));\nmarkangle(Label(\"$60^{\\circ}$\"),(1.5,0),(2.5,sqrt(3)),(3.5,0),radius=15);\n//markangle(Label(\"$60^{\\circ}$\"),(1.5,0),origin,(0,1),radius=20);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2239892492565225,
+          "novel": 3.3330148199440637
+        },
+        "word_entropy": {
+          "common": 4.028921197277765,
+          "novel": 3.841165755930787
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 60.72,
+            "flesch_kincaid_grade": 13.6
+          },
+          "sentence_length": {
+            "mean": 42.714285714285715,
+            "std": 26.41273656895901
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 48.64,
+            "flesch_kincaid_grade": 18.3
+          },
+          "sentence_length": {
+            "mean": 60.0,
+            "std": 47.84871994108097
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.24541284403669725,
+          "unique_words": 107
+        },
+        "novel": {
+          "type_token_ratio": 0.22541966426858512,
+          "unique_words": 94
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.0092899800928998,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.013793103448275862,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In square $ABCD$, points $E$ and $H$ lie on $\\overline{AB}$ and $\\overline{DA}$, respectively, so that $AE=AH.$ Points $F$ and $G$ lie on $\\overline{BC}$ and $\\overline{CD}$, respectively, and points $I$ and $J$ lie on $\\overline{EH}$ so that $\\overline{FI} \\perp \\overline{EH}$ and $\\overline{GJ} \\perp \\overline{EH}$. See the figure below. Triangle $AEH$, quadrilateral $BFIE$, quadrilateral $DHJG$, and pentagon $FCGJI$ each has area $1.$ What is $FI^2$?\n[asy] real x=2sqrt(2); real y=2sqrt(16-8sqrt(2))-4+2sqrt(2); real z=2sqrt(8-4sqrt(2)); pair A, B, C, D, E, F, G, H, I, J; A = (0,0); B = (4,0); C = (4,4); D = (0,4); E = (x,0); F = (4,y); G = (y,4); H = (0,x); I = F + z * dir(225); J = G + z * dir(225);  draw(A--B--C--D--A); draw(H--E); draw(J--G^^F--I); draw(rightanglemark(G, J, I), linewidth(.5)); draw(rightanglemark(F, I, E), linewidth(.5));  dot(\"$A$\", A, S); dot(\"$B$\", B, S); dot(\"$C$\", C, dir(90)); dot(\"$D$\", D, dir(90)); dot(\"$E$\", E, S); dot(\"$F$\", F, dir(0)); dot(\"$G$\", G, N); dot(\"$H$\", H, W); dot(\"$I$\", I, SW); dot(\"$J$\", J, SW);  [/asy]\n$\\textbf{(A) } \\frac{7}{3} \\qquad \\textbf{(B) } 8-4\\sqrt2 \\qquad \\textbf{(C) } 1+\\sqrt2 \\qquad \\textbf{(D) } \\frac{7}{4}\\sqrt2 \\qquad \\textbf{(E) } 2\\sqrt2$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2375782551985597,
+          "novel": 3.20218431505973
+        },
+        "word_entropy": {
+          "common": 3.9046557886353117,
+          "novel": 3.88527941322871
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 84.98,
+            "flesch_kincaid_grade": 4.3
+          },
+          "sentence_length": {
+            "mean": 12.157894736842104,
+            "std": 7.117533265000829
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 81.33,
+            "flesch_kincaid_grade": 5.7
+          },
+          "sentence_length": {
+            "mean": 15.647058823529411,
+            "std": 10.046604205171185
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.25206611570247933,
+          "unique_words": 122
+        },
+        "novel": {
+          "type_token_ratio": 0.23492723492723494,
+          "unique_words": 113
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.031451036454610434,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.028913963328631876,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "The sides of rectangle $ABCD$ have lengths $10$ and $11$. An equilateral triangle is drawn so that no point of the triangle lies outside $ABCD$. The maximum possible area of such a triangle can be written in the form $p\\sqrt{q}-r$, where $p$, $q$, and $r$ are positive integers, and $q$ is not divisible by the square of any prime number. Find $p+q+r$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1679627244703323,
+          "novel": 3.240835475787455
+        },
+        "word_entropy": {
+          "common": 3.878723517287268,
+          "novel": 3.6886770438127483
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 67.25,
+            "flesch_kincaid_grade": 7.0
+          },
+          "sentence_length": {
+            "mean": 14.7,
+            "std": 8.062877898120497
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 63.73,
+            "flesch_kincaid_grade": 10.4
+          },
+          "sentence_length": {
+            "mean": 40.8,
+            "std": 28.992412800593193
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.23569794050343248,
+          "unique_words": 103
+        },
+        "novel": {
+          "type_token_ratio": 0.23205741626794257,
+          "unique_words": 97
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.015318627450980392,
+          "formula_count": 27
+        },
+        "novel": {
+          "symbol_density": 0.020833333333333332,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Let $\\triangle ABC$ have side lengths $AB=30$, $BC=32$, and $AC=34$. Point $X$ lies in the interior of $\\overline{BC}$, and points $I_1$ and $I_2$ are the incenters of $\\triangle ABX$ and $\\triangle ACX$, respectively. Find the minimum possible area of $\\triangle AI_1I_2$ as $X$ varies along $\\overline{BC}$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.190047553756121,
+          "novel": 3.213392197048174
+        },
+        "word_entropy": {
+          "common": 3.89488366456245,
+          "novel": 3.9357247698103226
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 65.01,
+            "flesch_kincaid_grade": 7.8
+          },
+          "sentence_length": {
+            "mean": 19.9375,
+            "std": 12.66130300364066
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 58.52,
+            "flesch_kincaid_grade": 10.3
+          },
+          "sentence_length": {
+            "mean": 18.0,
+            "std": 13.443001365553963
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2415966386554622,
+          "unique_words": 115
+        },
+        "novel": {
+          "type_token_ratio": 0.25225225225225223,
+          "unique_words": 112
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.022289156626506025,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.02142407057340895,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In $\\triangle ABC$ lines $CE$ and $AD$ are drawn so that $\\dfrac{CD}{DB}=\\dfrac{3}{1}$ and $\\dfrac{AE}{EB}=\\dfrac{3}{2}$. Let $r=\\dfrac{CP}{PE}$ where $P$ is the intersection point of $CE$ and $AD$. Then $r$ equals:\n[asy] size(8cm); pair A = (0, 0), B = (9, 0), C = (3, 6); pair D = (7.5, 1.5), E = (6.5, 0); pair P = intersectionpoints(A--D, C--E)[0]; draw(A--B--C--cycle); draw(A--D); draw(C--E); label(\"$A$\", A, SW); label(\"$B$\", B, SE); label(\"$C$\", C, N); label(\"$D$\", D, NE); label(\"$E$\", E, S); label(\"$P$\", P, S); //Credit to MSTang for the asymptote[/asy]\n$\\textbf{(A)}\\ 3 \\qquad \\textbf{(B)}\\ \\dfrac{3}{2}\\qquad \\textbf{(C)}\\ 4 \\qquad \\textbf{(D)}\\ 5 \\qquad \\textbf{(E)}\\ \\dfrac{5}{2}$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.060498461506848,
+          "novel": 3.184408726450264
+        },
+        "word_entropy": {
+          "common": 3.904865178567536,
+          "novel": 3.6843206682092293
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 84.51,
+            "flesch_kincaid_grade": 6.6
+          },
+          "sentence_length": {
+            "mean": 19.8125,
+            "std": 13.058611861526478
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 71.44,
+            "flesch_kincaid_grade": 7.4
+          },
+          "sentence_length": {
+            "mean": 21.916666666666668,
+            "std": 10.896928721229463
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.20876826722338204,
+          "unique_words": 100
+        },
+        "novel": {
+          "type_token_ratio": 0.1724137931034483,
+          "unique_words": 90
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.021203830369357045,
+          "formula_count": 34
+        },
+        "novel": {
+          "symbol_density": 0.02539912917271408,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "[asy] draw((0,0)--(0,3)--(4,0)--cycle,dot); draw((4,0)--(7,0)--(7,10)--cycle,dot); draw((0,3)--(7,10),dot); MP(\"C\",(0,0),SW);MP(\"A\",(0,3),NW);MP(\"B\",(4,0),S);MP(\"E\",(7,0),SE);MP(\"D\",(7,10),NE); [/asy]\nTriangle $ABC$ has a right angle at $C, AC=3$ and $BC=4$. Triangle $ABD$ has a right angle at $A$ and $AD=12$. Points $C$ and $D$ are on opposite sides of $\\overline{AB}$. The line through $D$ parallel to $\\overline{AC}$ meets $\\overline{CB}$ extended at $E$. If\\[\\frac{DE}{DB}=\\frac{m}{n},\\]where $m$ and $n$ are relatively prime positive integers, then $m+n=$\n$\\text{(A) } 25\\quad \\text{(B) } 128\\quad \\text{(C) } 153\\quad \\text{(D) } 243\\quad \\text{(E) } 256$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2057018521389145,
+          "novel": 3.2657447684287404
+        },
+        "word_entropy": {
+          "common": 3.6948050345719725,
+          "novel": 3.8527700830223917
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 80.72,
+            "flesch_kincaid_grade": 6.0
+          },
+          "sentence_length": {
+            "mean": 14.117647058823529,
+            "std": 10.818732952567132
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 81.73,
+            "flesch_kincaid_grade": 5.6
+          },
+          "sentence_length": {
+            "mean": 13.736842105263158,
+            "std": 9.210075176921356
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.22857142857142856,
+          "unique_words": 120
+        },
+        "novel": {
+          "type_token_ratio": 0.2198443579766537,
+          "unique_words": 113
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.029944289693593314,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.048242591316333565,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Twelve congruent disks are placed on a circle $C$ of radius 1 in such a way that the twelve disks cover $C$, no two of the disks overlap, and so that each of the twelve disks is tangent to its two neighbors. The resulting arrangement of disks is shown in the figure below. The sum of the areas of the twelve disks can be written in the from $\\pi(a-b\\sqrt{c})$, where $a,b,c$ are positive integers and $c$ is not divisible by the square of any prime. Find $a+b+c$.\n[asy] unitsize(100); draw(Circle((0,0),1)); dot((0,0)); draw((0,0)--(1,0)); label(\"$1$\", (0.5,0), S);  for (int i=0; i<12; ++i) { dot((cos(i*pi/6), sin(i*pi/6))); }  for (int a=1; a<24; a+=2) { dot(((1/cos(pi/12))*cos(a*pi/12), (1/cos(pi/12))*sin(a*pi/12))); draw(((1/cos(pi/12))*cos(a*pi/12), (1/cos(pi/12))*sin(a*pi/12))--((1/cos(pi/12))*cos((a+2)*pi/12), (1/cos(pi/12))*sin((a+2)*pi/12))); draw(Circle(((1/cos(pi/12))*cos(a*pi/12), (1/cos(pi/12))*sin(a*pi/12)), tan(pi/12))); }[/asy]\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2950681518039517,
+          "novel": 3.2252454653219926
+        },
+        "word_entropy": {
+          "common": 3.9000321851322703,
+          "novel": 4.09338757463209
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 56.63,
+            "flesch_kincaid_grade": 13.1
+          },
+          "sentence_length": {
+            "mean": 36.833333333333336,
+            "std": 38.372805764267774
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 65.09,
+            "flesch_kincaid_grade": 12.0
+          },
+          "sentence_length": {
+            "mean": 34.75,
+            "std": 15.31135199778256
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.22448979591836735,
+          "unique_words": 99
+        },
+        "novel": {
+          "type_token_ratio": 0.2540415704387991,
+          "unique_words": 110
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.018361581920903956,
+          "formula_count": 9
+        },
+        "novel": {
+          "symbol_density": 0.017045454545454544,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "What is the area of the portion of the circle defined by $x^2-12x+y^2=28$ that lies above the $x$-axis and to the right of the line $y=6-x$?",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2527601826809986,
+          "novel": 3.343457060166431
+        },
+        "word_entropy": {
+          "common": 4.010615290942478,
+          "novel": 4.0292558797688605
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 76.66,
+            "flesch_kincaid_grade": 7.5
+          },
+          "sentence_length": {
+            "mean": 21.642857142857142,
+            "std": 18.964655632657983
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 88.67,
+            "flesch_kincaid_grade": 5.0
+          },
+          "sentence_length": {
+            "mean": 53.0,
+            "std": 45.09101906144948
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2292134831460674,
+          "unique_words": 102
+        },
+        "novel": {
+          "type_token_ratio": 0.2517321016166282,
+          "unique_words": 109
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.029132791327913278,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.04296875,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Triangle $ABC$ has side lengths $AB=7, BC=8,$ and $CA=9.$ Circle $\\omega_1$ passes through $B$ and is tangent to line $AC$ at $A.$ Circle $\\omega_2$ passes through $C$ and is tangent to line $AB$ at $A.$ Let $K$ be the intersection of circles $\\omega_1$ and $\\omega_2$ not equal to $A.$ Then $AK=\\tfrac mn,$ where $m$ and $n$ are relatively prime positive integers. Find $m+n.$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.171792351726578,
+          "novel": 3.1149817909746704
+        },
+        "word_entropy": {
+          "common": 3.9704488522872046,
+          "novel": 3.7656237242238246
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 79.7,
+            "flesch_kincaid_grade": 6.3
+          },
+          "sentence_length": {
+            "mean": 15.631578947368421,
+            "std": 10.168115937451319
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 69.11,
+            "flesch_kincaid_grade": 8.3
+          },
+          "sentence_length": {
+            "mean": 15.15,
+            "std": 11.001249928985342
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.26973684210526316,
+          "unique_words": 123
+        },
+        "novel": {
+          "type_token_ratio": 0.19560878243512975,
+          "unique_words": 98
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.025184275184275184,
+          "formula_count": 44
+        },
+        "novel": {
+          "symbol_density": 0.022779043280182234,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "The diagram shows 28 lattice points, each one unit from its nearest neighbors. Segment $AB$ meets segment $CD$ at $E$. Find the length of segment $AE$.\n\n[asy]\nunitsize(0.8cm);\nfor (int i=0; i<7; ++i) {\nfor (int j=0; j<4; ++j) {\ndot((i,j));\n};}\nlabel(\"$A$\",(0,3),W);\nlabel(\"$B$\",(6,0),E);\nlabel(\"$D$\",(2,0),S);\nlabel(\"$E$\",(3.4,1.3),S);\ndot((3.4,1.3));\nlabel(\"$C$\",(4,2),N);\ndraw((0,3)--(6,0),linewidth(0.7));\ndraw((2,0)--(4,2),linewidth(0.7));\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.3421208245314395,
+          "novel": 3.2987346041630934
+        },
+        "word_entropy": {
+          "common": 3.7707323069223593,
+          "novel": 3.7963137756617797
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 63.5,
+            "flesch_kincaid_grade": 14.6
+          },
+          "sentence_length": {
+            "mean": 52.6,
+            "std": 39.4289233938742
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 59.44,
+            "flesch_kincaid_grade": 16.2
+          },
+          "sentence_length": {
+            "mean": 55.6,
+            "std": 55.76235289153427
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.18072289156626506,
+          "unique_words": 90
+        },
+        "novel": {
+          "type_token_ratio": 0.18217821782178217,
+          "unique_words": 92
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.04128440366972477,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.0336996336996337,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A semicircle of diameter 1 sits at the top of a semicircle of diameter 2, as shown. The shaded area inside the smaller semicircle and outside the larger semicircle is called a $\\textit{lune}$. Determine the area of this lune. Express your answer in terms of $\\pi$ and in simplest radical form.\n\n[asy]\nfill((0,2.73)..(1,1.73)--(-1,1.73)..cycle,gray(0.7));\ndraw((0,2.73)..(1,1.73)--(-1,1.73)..cycle,linewidth(0.7));\nfill((0,2)..(2,0)--(-2,0)..cycle,white);\ndraw((0,2)..(2,0)--(-2,0)..cycle,linewidth(0.7));\ndraw((-1,1.73)--(1,1.73),dashed);\nlabel(\"2\",(0,0),S);\nlabel(\"1\",(0,1.73),S);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.0668127279941437,
+          "novel": 3.070067238679401
+        },
+        "word_entropy": {
+          "common": 3.6352430532553384,
+          "novel": 3.560946787672446
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 68.5,
+            "flesch_kincaid_grade": 8.6
+          },
+          "sentence_length": {
+            "mean": 17.823529411764707,
+            "std": 10.62868092152022
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 68.1,
+            "flesch_kincaid_grade": 8.7
+          },
+          "sentence_length": {
+            "mean": 20.071428571428573,
+            "std": 10.436640713742861
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.14947368421052631,
+          "unique_words": 71
+        },
+        "novel": {
+          "type_token_ratio": 0.16258351893095768,
+          "unique_words": 73
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.011150234741784037,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.017412935323383085,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "The vertices of a square are the centers of four circles as shown below. Given each side of the square is 6cm and the radius of each circle is $2\\sqrt{3}$cm, find the area in square centimeters of the shaded region. [asy]\nfill( (-1,-1)-- (1,-1) -- (1,1) -- (-1,1)--cycle, gray);\nfill( Circle((1,1), 1.2), white);\nfill( Circle((-1,-1), 1.2), white);\nfill( Circle((1,-1),1.2), white);\nfill( Circle((-1,1), 1.2), white);\ndraw( Arc((1,1),1.2 ,180,270));\ndraw( Arc((1,-1),1.2,90,180));\ndraw( Arc((-1,-1),1.2,0,90));\ndraw( Arc((-1,1),1.2,0,-90));\ndraw( (-1,-1)-- (1,-1) -- (1,1) -- (-1,1)--cycle,linewidth(.8));\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.172513020041927,
+          "novel": 3.1551208218741875
+        },
+        "word_entropy": {
+          "common": 4.110312830934576,
+          "novel": 4.061237106986831
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 74.79,
+            "flesch_kincaid_grade": 6.2
+          },
+          "sentence_length": {
+            "mean": 12.916666666666666,
+            "std": 16.6681249362035
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 71.24,
+            "flesch_kincaid_grade": 7.5
+          },
+          "sentence_length": {
+            "mean": 20.53846153846154,
+            "std": 25.930722451638427
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.288265306122449,
+          "unique_words": 113
+        },
+        "novel": {
+          "type_token_ratio": 0.27977839335180055,
+          "unique_words": 101
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.01753393665158371,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.023316062176165803,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In $\\triangle{ABC}$ with $AB = 12$, $BC = 13$, and $AC = 15$, let $M$ be a point on $\\overline{AC}$ such that the incircles of $\\triangle{ABM}$ and $\\triangle{BCM}$ have equal radii. Then $\\frac{AM}{CM} = \\frac{p}{q}$, where $p$ and $q$ are relatively prime positive integers. Find $p + q$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.338434567444542,
+          "novel": 3.124060099458372
+        },
+        "word_entropy": {
+          "common": 4.136238331618982,
+          "novel": 3.8943503760020612
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 77.43,
+            "flesch_kincaid_grade": 5.1
+          },
+          "sentence_length": {
+            "mean": 12.380952380952381,
+            "std": 13.072968076571815
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 65.66,
+            "flesch_kincaid_grade": 9.7
+          },
+          "sentence_length": {
+            "mean": 27.25,
+            "std": 23.977854366060363
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2555066079295154,
+          "unique_words": 116
+        },
+        "novel": {
+          "type_token_ratio": 0.2402088772845953,
+          "unique_words": 92
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.01547779273216689,
+          "formula_count": 15
+        },
+        "novel": {
+          "symbol_density": 0.055970149253731345,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Regular hexagon $ABCDEF$ is the base of right pyramid $\\allowbreak PABCDEF$.  If $PAD$ is an equilateral triangle with side length 8, then what is the volume of the pyramid?",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1919804464298664,
+          "novel": 3.2057602123777595
+        },
+        "word_entropy": {
+          "common": 4.019177293771307,
+          "novel": 3.668359703971685
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 68.33,
+            "flesch_kincaid_grade": 10.7
+          },
+          "sentence_length": {
+            "mean": 25.181818181818183,
+            "std": 21.001377365298435
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 76.15,
+            "flesch_kincaid_grade": 7.7
+          },
+          "sentence_length": {
+            "mean": 21.625,
+            "std": 8.123076695439973
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2471395881006865,
+          "unique_words": 108
+        },
+        "novel": {
+          "type_token_ratio": 0.2214765100671141,
+          "unique_words": 66
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.019314641744548288,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.010121457489878543,
+          "formula_count": 13
+        }
+      }
+    }
+  },
+  {
+    "problem": "The points $A$, $B$ and $C$ lie on the surface of a sphere with center $O$ and radius $20$. It is given that $AB=13$, $BC=14$, $CA=15$, and that the distance from $O$ to $\\triangle ABC$ is $\\frac{m\\sqrt{n}}k$, where $m$, $n$, and $k$ are positive integers, $m$ and $k$ are relatively prime, and $n$ is not divisible by the square of any prime. Find $m+n+k$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.3201163701750707,
+          "novel": 3.366668721841097
+        },
+        "word_entropy": {
+          "common": 3.970397706793886,
+          "novel": 3.964504263904079
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 70.57,
+            "flesch_kincaid_grade": 9.9
+          },
+          "sentence_length": {
+            "mean": 24.272727272727273,
+            "std": 38.55124313310062
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 78.79,
+            "flesch_kincaid_grade": 6.7
+          },
+          "sentence_length": {
+            "mean": 17.666666666666668,
+            "std": 12.91209596549771
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2329059829059829,
+          "unique_words": 109
+        },
+        "novel": {
+          "type_token_ratio": 0.2613065326633166,
+          "unique_words": 104
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.02664890073284477,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.0439297124600639,
+          "formula_count": 15
+        }
+      }
+    }
+  },
+  {
+    "problem": "Triangle $ABC$ has positive integer side lengths with $AB=AC$. Let $I$ be the intersection of the bisectors of $\\angle B$ and $\\angle C$. Suppose $BI=8$. Find the smallest possible perimeter of $\\triangle ABC$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1595973165858466,
+          "novel": 3.168857101398881
+        },
+        "word_entropy": {
+          "common": 4.08050446293092,
+          "novel": 4.241092352591091
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 58.82,
+            "flesch_kincaid_grade": 10.2
+          },
+          "sentence_length": {
+            "mean": 20.133333333333333,
+            "std": 17.005358632567038
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 59.43,
+            "flesch_kincaid_grade": 10.0
+          },
+          "sentence_length": {
+            "mean": 20.0,
+            "std": 19.578900207451216
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2396039603960396,
+          "unique_words": 121
+        },
+        "novel": {
+          "type_token_ratio": 0.2690677966101695,
+          "unique_words": 127
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.01885680612846199,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.026538678712591756,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "The perimeter of triangle $APM$ is $152$, and the angle $PAM$ is a right angle. A circle of radius $19$ with center $O$ on $\\overline{AP}$ is drawn so that it is tangent to $\\overline{AM}$ and $\\overline{PM}$. Given that $OP=m/n$ where $m$ and $n$ are relatively prime positive integers, find $m+n$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.451582651874723,
+          "novel": 3.5257453100066867
+        },
+        "word_entropy": {
+          "common": 3.7158288115155127,
+          "novel": 4.02474426690861
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 81.73,
+            "flesch_kincaid_grade": 5.6
+          },
+          "sentence_length": {
+            "mean": 19.11111111111111,
+            "std": 8.006170459845254
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 77.64,
+            "flesch_kincaid_grade": 5.1
+          },
+          "sentence_length": {
+            "mean": 12.23076923076923,
+            "std": 7.586971080577202
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.18181818181818182,
+          "unique_words": 78
+        },
+        "novel": {
+          "type_token_ratio": 0.29156626506024097,
+          "unique_words": 121
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.05141129032258065,
+          "formula_count": 27
+        },
+        "novel": {
+          "symbol_density": 0.039619651347068144,
+          "formula_count": 30
+        }
+      }
+    }
+  },
+  {
+    "problem": "Equilateral $\\triangle ABC$ has side length $600$. Points $P$ and $Q$ lie outside the plane of $\\triangle ABC$ and are on opposite sides of the plane. Furthermore, $PA=PB=PC$, and $QA=QB=QC$, and the planes of $\\triangle PAB$ and $\\triangle QAB$ form a $120^{\\circ}$ dihedral angle (the angle between the two planes). There is a point $O$ whose distance from each of $A,B,C,P,$ and $Q$ is $d$. Find $d$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1072473615771266,
+          "novel": 3.1320829475545398
+        },
+        "word_entropy": {
+          "common": 3.736279434350324,
+          "novel": 3.868756732165945
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 74.53,
+            "flesch_kincaid_grade": 8.3
+          },
+          "sentence_length": {
+            "mean": 19.928571428571427,
+            "std": 10.298850738340285
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 70.53,
+            "flesch_kincaid_grade": 7.8
+          },
+          "sentence_length": {
+            "mean": 15.88888888888889,
+            "std": 9.84823102496015
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.24628450106157113,
+          "unique_words": 116
+        },
+        "novel": {
+          "type_token_ratio": 0.2505307855626327,
+          "unique_words": 118
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.01786896095301125,
+          "formula_count": 55
+        },
+        "novel": {
+          "symbol_density": 0.024752475247524754,
+          "formula_count": 47
+        }
+      }
+    }
+  },
+  {
+    "problem": "The water tank in the diagram below is in the shape of an inverted right circular cone. The radius of its base is 16 feet, and its height is 96 feet. The water in the tank is $25\\%$ of the tank's capacity.  The height of the water in the tank can be written in the form $a\\sqrt[3]{b}$, where $a$ and $b$ are positive integers and $b$ is not divisible by a perfect cube greater than 1.  What is $a+b$?\n\n[asy]\nsize(150);\ndefaultpen(linewidth(.8pt)+fontsize(8pt));\n\ndraw(shift(0,96)*yscale(0.5)*Circle((0,0),16));\ndraw((-16,96)--(0,0)--(16,96)--(0,96));\n\ndraw(scale(0.75)*shift(0,96)*yscale(0.5)*Circle((0,0),16));\n\ndraw((-18,72)--(-20,72)--(-20,0)--(-18,0));\nlabel(\"water's height\",(-20,36),W);\n\ndraw((20,96)--(22,96)--(22,0)--(20,0));\nlabel(\"96'\",(22,48),E);\n\nlabel(\"16'\",(8,96),S);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.259051144825082,
+          "novel": 3.172107692741151
+        },
+        "word_entropy": {
+          "common": 3.707222447798036,
+          "novel": 3.8040368058408536
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 67.59,
+            "flesch_kincaid_grade": 8.9
+          },
+          "sentence_length": {
+            "mean": 30.25,
+            "std": 17.61923664634765
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 79.19,
+            "flesch_kincaid_grade": 6.5
+          },
+          "sentence_length": {
+            "mean": 17.357142857142858,
+            "std": 13.472761636815555
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.18711018711018712,
+          "unique_words": 90
+        },
+        "novel": {
+          "type_token_ratio": 0.1934782608695652,
+          "unique_words": 89
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.007874015748031496,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.030045721750489876,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Given a point $P$ on a triangular piece of paper $ABC,\\,$ consider the creases that are formed in the paper when $A, B,\\,$ and $C\\,$ are folded onto $P.\\,$ Let us call $P$ a fold point of $\\triangle ABC\\,$ if these creases, which number three unless $P$ is one of the vertices, do not intersect. Suppose that $AB=36, AC=72,\\,$ and $\\angle B=90^\\circ.\\,$ Then the area of the set of all fold points of $\\triangle ABC\\,$ can be written in the form $q\\pi-r\\sqrt{s},\\,$ where $q, r,\\,$ and $s\\,$ are positive integers and $s\\,$ is not divisible by the square of any prime. What is $q+r+s\\,$?\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2236233176709908,
+          "novel": 3.097011694120276
+        },
+        "word_entropy": {
+          "common": 4.1278913078018,
+          "novel": 4.0177118179995714
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 78.08,
+            "flesch_kincaid_grade": 7.0
+          },
+          "sentence_length": {
+            "mean": 25.181818181818183,
+            "std": 26.086632528830062
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 68.3,
+            "flesch_kincaid_grade": 8.7
+          },
+          "sentence_length": {
+            "mean": 16.952380952380953,
+            "std": 15.824863470339178
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2911694510739857,
+          "unique_words": 122
+        },
+        "novel": {
+          "type_token_ratio": 0.27388535031847133,
+          "unique_words": 129
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.023826714801444042,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.018819938962360123,
+          "formula_count": 23
+        }
+      }
+    }
+  },
+  {
+    "problem": "In pentagon $ABCDE$, $BC=CD=DE=2$ units, $\\angle E$ is a right angle and $m \\angle B = m \\angle C = m \\angle D = 135^\\circ$.  The length of segment $AE$ can be expressed in simplest radical form as $a+2\\sqrt{b}$ units.  What is the value of $a+b$?",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2658062217359642,
+          "novel": 3.3080807975088984
+        },
+        "word_entropy": {
+          "common": 3.831842344240081,
+          "novel": 3.672038954222431
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 74.79,
+            "flesch_kincaid_grade": 6.2
+          },
+          "sentence_length": {
+            "mean": 12.842105263157896,
+            "std": 6.384711656471895
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 67.35,
+            "flesch_kincaid_grade": 6.9
+          },
+          "sentence_length": {
+            "mean": 12.176470588235293,
+            "std": 7.172129834768889
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.22107438016528927,
+          "unique_words": 107
+        },
+        "novel": {
+          "type_token_ratio": 0.19661733615221988,
+          "unique_words": 93
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.032586558044806514,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.0413589364844904,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "For some positive integers $p$, there is a quadrilateral $ABCD$ with positive integer side lengths, perimeter $p$, right angles at $B$ and $C$, $AB=2$, and $CD=AD$. How many different values of $p<2015$ are possible?\n$\\textbf{(A) }30\\qquad\\textbf{(B) }31\\qquad\\textbf{(C) }61\\qquad\\textbf{(D) }62\\qquad\\textbf{(E) }63$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2622099974495113,
+          "novel": 3.186384980236042
+        },
+        "word_entropy": {
+          "common": 4.327372910591119,
+          "novel": 4.059244184259119
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 83.05,
+            "flesch_kincaid_grade": 5.1
+          },
+          "sentence_length": {
+            "mean": 12.44,
+            "std": 12.361488583499966
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 59.06,
+            "flesch_kincaid_grade": 12.2
+          },
+          "sentence_length": {
+            "mean": 42.75,
+            "std": 45.98029469240057
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.32701421800947866,
+          "unique_words": 138
+        },
+        "novel": {
+          "type_token_ratio": 0.26695842450765866,
+          "unique_words": 122
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.03678474114441417,
+          "formula_count": 22
+        },
+        "novel": {
+          "symbol_density": 0.03127079174983367,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In quadrilateral $ABCD$, $\\angle{BAD}\\cong\\angle{ADC}$ and $\\angle{ABD}\\cong\\angle{BCD}$, $AB = 8$, $BD = 10$, and $BC = 6$. The length $CD$ may be written in the form $\\frac {m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2916926821991126,
+          "novel": 3.2424607033306447
+        },
+        "word_entropy": {
+          "common": 4.091981351995123,
+          "novel": 4.090330090448303
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 65.8,
+            "flesch_kincaid_grade": 11.7
+          },
+          "sentence_length": {
+            "mean": 36.57142857142857,
+            "std": 36.00736886034438
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 70.43,
+            "flesch_kincaid_grade": 7.8
+          },
+          "sentence_length": {
+            "mean": 17.5,
+            "std": 15.88238017426859
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.25,
+          "unique_words": 103
+        },
+        "novel": {
+          "type_token_ratio": 0.2636363636363636,
+          "unique_words": 116
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.01924500370096225,
+          "formula_count": 18
+        },
+        "novel": {
+          "symbol_density": 0.030779753761969904,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A cube has edges of length 1 cm and has a dot marked in the centre of the top face.  The cube is sitting on a flat table.  The cube is rolled, without lifting or slipping, in one direction so that at least two of its vertices are always touching the table.  The cube is rolled until the dot is again on the top face.  The length, in centimeters, of the path followed by the dot is $c\\pi$, where $c$ is a constant.  What is $c$?",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.111302968155614,
+          "novel": 3.182284770259353
+        },
+        "word_entropy": {
+          "common": 4.021330312047574,
+          "novel": 4.248051945045621
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 82.27,
+            "flesch_kincaid_grade": 7.4
+          },
+          "sentence_length": {
+            "mean": 25.53846153846154,
+            "std": 17.077269573754307
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 78.59,
+            "flesch_kincaid_grade": 6.8
+          },
+          "sentence_length": {
+            "mean": 25.307692307692307,
+            "std": 17.682606035678614
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.23516949152542374,
+          "unique_words": 111
+        },
+        "novel": {
+          "type_token_ratio": 0.279826464208243,
+          "unique_words": 129
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.003925967470555244,
+          "formula_count": 9
+        },
+        "novel": {
+          "symbol_density": 0.01155115511551155,
+          "formula_count": 6
+        }
+      }
+    }
+  },
+  {
+    "problem": "A frustum of a right circular cone is formed by cutting a small cone off of the top of a larger cone. If a particular frustum has an altitude of $24$ centimeters, the area of its lower base is $225\\pi$ sq cm and the area of its upper base is $25\\pi$ sq cm, what is the altitude of the small cone that was cut off? [asy]size(200);\nimport three; defaultpen(linewidth(1)); currentprojection = orthographic(0,-3,0.5); pen dots = linetype(\"0 3\") + linewidth(1);\nreal h = 2.3, ratio = (91-24)/(171-24);\npicture p1, p2; /* p1 is left-hand picture */\ntriple A = (0,0,0), B = (0,0,h); draw(p1,(-1,0,0)..(0,-1,0)..(1,0,0)); draw(p1,(-1,0,0)..(0,1,0)..(1,0,0),dots); draw(p1,(-1,0,0)--B--(1,0,0));\nadd(p1);\n\ntriple vlift = (0,0,0.5);\n\npath3 toparc1 = shift((0,0,h*(1-ratio)))*scale3(ratio)*((-1,0,0)..(0,1,0)..(1,0,0)), toparc2 = shift((0,0,h*(1-ratio)))*scale3(ratio)*((1,0,0)..(0,-1,0)..(-1,0,0));\ndraw(p2,(-1,0,0)..(0,-1,0)..(1,0,0)); draw(p2,(-1,0,0)..(0,1,0)..(1,0,0),dots);\n\ndraw(p2,(-1,0,0)--ratio*(-1,0,0)+(1-ratio)*B^^ratio*(1,0,0)+(1-ratio)*B--(1,0,0));\n\ndraw(p2,shift(vlift)*(ratio*(-1,0,0)+(1-ratio)*B--B--ratio*(1,0,0)+(1-ratio)*B));\n\ndraw(p2,toparc1--toparc2); draw(p2,shift(vlift)*toparc1,dots); draw(p2,shift(vlift)*toparc2);\n\ndraw(p2,shift(vlift)*((1-ratio)*B--B),linewidth(0.7)); dot(p2,shift(vlift)*((1-ratio)*B),linewidth(1.5));\nlabel(p2,\"frustum\",(0,0,h/4)); label(p2,\"$x$\",(1-ratio/2)*B+vlift,SW);\nadd(shift((3.4,0,0))*p2);\n\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.349051597566328,
+          "novel": 3.3200043421832377
+        },
+        "word_entropy": {
+          "common": 4.134576742934902,
+          "novel": 4.095731918043092
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 71.34,
+            "flesch_kincaid_grade": 7.5
+          },
+          "sentence_length": {
+            "mean": 19.416666666666668,
+            "std": 13.907182396956696
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 71.55,
+            "flesch_kincaid_grade": 7.4
+          },
+          "sentence_length": {
+            "mean": 20.454545454545453,
+            "std": 13.282686176602823
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2567287784679089,
+          "unique_words": 124
+        },
+        "novel": {
+          "type_token_ratio": 0.2673913043478261,
+          "unique_words": 123
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.038620689655172416,
+          "formula_count": 1
+        },
+        "novel": {
+          "symbol_density": 0.041666666666666664,
+          "formula_count": 1
+        }
+      }
+    }
+  },
+  {
+    "problem": "In the diagram, $\\triangle PQR$ is right-angled at $P$ and has $PQ=2$ and $PR=2\\sqrt{3}$.  Altitude $PL$ intersects median $RM$ at $F$.  What is the length of $PF$? [asy]\ndraw((0,0)--(10,0)--(0,10*sqrt(3))--cycle);\ndraw((0,0)--(7.5,4.33)); draw((0,10*sqrt(3))--(5,0));\ndraw((6.68,3.86)--(7.17,3.01)--(7.99,3.49));\nlabel(\"$P$\",(0,0),SW); label(\"$M$\",(5,0),S); label(\"$Q$\",(10,0),SE);\n\nlabel(\"$L$\",(7.5,4.33),NE); label(\"$R$\",(0,10*sqrt(3)),N); label(\"$F$\",(4.29,2.47),NW);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2269769975184426,
+          "novel": 3.276117007355379
+        },
+        "word_entropy": {
+          "common": 3.9015138632265156,
+          "novel": 3.676298624871657
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 66.07,
+            "flesch_kincaid_grade": 9.5
+          },
+          "sentence_length": {
+            "mean": 25.7,
+            "std": 12.223338332877807
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 81.53,
+            "flesch_kincaid_grade": 5.6
+          },
+          "sentence_length": {
+            "mean": 12.333333333333334,
+            "std": 8.856886837057614
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2261640798226164,
+          "unique_words": 102
+        },
+        "novel": {
+          "type_token_ratio": 0.19011406844106463,
+          "unique_words": 100
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.01818181818181818,
+          "formula_count": 23
+        },
+        "novel": {
+          "symbol_density": 0.03788420300214439,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "$ABCDEFGH$ shown below is a cube. Find $\\sin \\angle HAC$.\n\n[asy]\n\nimport three;\n\ntriple A,B,C,D,EE,F,G,H;\n\nA = (0,0,0);\n\nB = (1,0,0);\n\nC = (1,1,0);\n\nD= (0,1,0);\n\nEE = (0,0,1);\n\nF = B+EE;\n\nG = C + EE;\n\nH = D + EE;\n\ndraw(B--C--D);\n\ndraw(B--A--D,dashed);\n\ndraw(EE--F--G--H--EE);\n\ndraw(A--EE,dashed);\n\ndraw(B--F);\n\ndraw(C--G);\n\ndraw(D--H);\n\nlabel(\"$A$\",A,S);\n\nlabel(\"$B$\",B,W);\n\nlabel(\"$C$\",C,S);\n\nlabel(\"$D$\",D,E);\n\nlabel(\"$E$\",EE,N);\n\nlabel(\"$F$\",F,W);\n\nlabel(\"$G$\",G,SW);\n\nlabel(\"$H$\",H,E);\n\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.29016976963688,
+          "novel": 3.462856079297423
+        },
+        "word_entropy": {
+          "common": 3.5179432559812307,
+          "novel": 4.055560109806133
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 55.58,
+            "flesch_kincaid_grade": 11.5
+          },
+          "sentence_length": {
+            "mean": 30.833333333333332,
+            "std": 7.624886155798583
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 52.39,
+            "flesch_kincaid_grade": 10.6
+          },
+          "sentence_length": {
+            "mean": 25.88888888888889,
+            "std": 25.933438065103193
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.15964523281596452,
+          "unique_words": 72
+        },
+        "novel": {
+          "type_token_ratio": 0.25526315789473686,
+          "unique_words": 97
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.05634920634920635,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.0262582056892779,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Let $ABCDE$ be a pentagon inscribed in a circle such that $AB = CD = 3$, $BC = DE = 10$, and $AE= 14$. The sum of the lengths of all diagonals of $ABCDE$ is equal to $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. What is $m+n$ ?\n$\\textbf{(A) }129\\qquad \\textbf{(B) }247\\qquad \\textbf{(C) }353\\qquad \\textbf{(D) }391\\qquad \\textbf{(E) }421\\qquad$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1085449502757285,
+          "novel": 3.1484175909626337
+        },
+        "word_entropy": {
+          "common": 3.9504905050910843,
+          "novel": 4.186443138254864
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 57.57,
+            "flesch_kincaid_grade": 14.8
+          },
+          "sentence_length": {
+            "mean": 44.142857142857146,
+            "std": 56.9546901904828
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 59.06,
+            "flesch_kincaid_grade": 12.2
+          },
+          "sentence_length": {
+            "mean": 34.7,
+            "std": 45.93919894817497
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.22946859903381642,
+          "unique_words": 95
+        },
+        "novel": {
+          "type_token_ratio": 0.28809523809523807,
+          "unique_words": 121
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.02465931213497729,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.02026221692491061,
+          "formula_count": 10
+        }
+      }
+    }
+  },
+  {
+    "problem": "$ABCD$ is a rectangular sheet of paper that has been folded so that corner $B$ is matched with point $B'$ on edge $AD.$ The crease is $EF,$ where $E$ is on $AB$ and $F$ is on $CD.$ The dimensions $AE=8, BE=17,$ and $CF=3$ are given. The perimeter of rectangle $ABCD$ is $m/n,$ where $m$ and $n$ are relatively prime positive integers. Find $m+n.$\n[asy] size(200); defaultpen(linewidth(0.7)+fontsize(10)); pair A=origin, B=(25,0), C=(25,70/3), D=(0,70/3), E=(8,0), F=(22,70/3), Bp=reflect(E,F)*B, Cp=reflect(E,F)*C; draw(F--D--A--E); draw(E--B--C--F, linetype(\"4 4\")); filldraw(E--F--Cp--Bp--cycle, white, black); pair point=( 12.5, 35/3 ); label(\"$A$\", A, dir(point--A)); label(\"$B$\", B, dir(point--B)); label(\"$C$\", C, dir(point--C)); label(\"$D$\", D, dir(point--D)); label(\"$E$\", E, dir(point--E)); label(\"$F$\", F, dir(point--F)); label(\"$B^\\prime$\", Bp, dir(point--Bp)); label(\"$C^\\prime$\", Cp, dir(point--Cp));[/asy]\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2151428449471644,
+          "novel": 3.1675979041630407
+        },
+        "word_entropy": {
+          "common": 3.7650494024569943,
+          "novel": 3.9213548508288025
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 88.77,
+            "flesch_kincaid_grade": 4.9
+          },
+          "sentence_length": {
+            "mean": 17.928571428571427,
+            "std": 16.390172515932857
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 88.97,
+            "flesch_kincaid_grade": 4.8
+          },
+          "sentence_length": {
+            "mean": 15.11111111111111,
+            "std": 13.891999651633585
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2113289760348584,
+          "unique_words": 97
+        },
+        "novel": {
+          "type_token_ratio": 0.2800875273522976,
+          "unique_words": 128
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.05004101722723544,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.02746844840386043,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Triangle $ABC$ is a right triangle with legs $AB$ and $AC$. Points $X$ and $Y$ lie on legs $AB$ and $AC$, respectively, so that $AX:XB = AY:YC = 1:2$. If $BY = 16$ units, and $CX = 28$ units, what is the length of hypotenuse $BC$? Express your answer in simplest radical form.",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.428746452091267,
+          "novel": 3.2127088804698984
+        },
+        "word_entropy": {
+          "common": 4.031278528745168,
+          "novel": 4.063217367352667
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 79.3,
+            "flesch_kincaid_grade": 6.5
+          },
+          "sentence_length": {
+            "mean": 15.0,
+            "std": 13.45362404707371
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 82.24,
+            "flesch_kincaid_grade": 5.4
+          },
+          "sentence_length": {
+            "mean": 15.266666666666667,
+            "std": 15.446538627004937
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2533039647577093,
+          "unique_words": 115
+        },
+        "novel": {
+          "type_token_ratio": 0.32019704433497537,
+          "unique_words": 130
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.024334600760456272,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.04583020285499624,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Inside a square with side length 10, two congruent equilateral triangles are drawn such that they share one side and each has one vertex on a vertex of the square.  What is the side length of the largest square that can be inscribed in the space inside the square and outside of the triangles?\n\n[asy]\nsize(100);\npair A, B, C, D, E, F;\nB=(0,0); A=(0,10); D=(10,10); C=(10,0);\nreal x = 5 -5/sqrt(3);\npair E = (x,x); pair F = (10-x, 10-x);\ndraw(A--B--C--D--cycle);\ndraw(A--E--C--F--cycle); draw(E--F);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.0649103929803854,
+          "novel": 3.045947487316429
+        },
+        "word_entropy": {
+          "common": 4.073237331601771,
+          "novel": 4.086200501395824
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 65.25,
+            "flesch_kincaid_grade": 9.8
+          },
+          "sentence_length": {
+            "mean": 19.833333333333332,
+            "std": 14.904324502938364
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 64.14,
+            "flesch_kincaid_grade": 10.3
+          },
+          "sentence_length": {
+            "mean": 24.4,
+            "std": 19.798316426740264
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.24197002141327623,
+          "unique_words": 113
+        },
+        "novel": {
+          "type_token_ratio": 0.24175824175824176,
+          "unique_words": 110
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.012646370023419205,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.014988290398126464,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A convex polyhedron $P$ has $26$ vertices, $60$ edges, and $36$ faces, $24$ of which are triangular and $12$ of which are quadrilaterals. A space diagonal is a line segment connecting two non-adjacent vertices that do not belong to the same face. How many space diagonals does $P$ have?\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2778101040686964,
+          "novel": 3.21565675903715
+        },
+        "word_entropy": {
+          "common": 3.973562356537304,
+          "novel": 4.21120652642348
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 50.09,
+            "flesch_kincaid_grade": 13.6
+          },
+          "sentence_length": {
+            "mean": 37.6,
+            "std": 11.271202242884296
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 51.58,
+            "flesch_kincaid_grade": 10.9
+          },
+          "sentence_length": {
+            "mean": 17.41176470588235,
+            "std": 12.961748354879635
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.3296296296296296,
+          "unique_words": 89
+        },
+        "novel": {
+          "type_token_ratio": 0.26715686274509803,
+          "unique_words": 109
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.018556701030927835,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.01977401129943503,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Quadrilateral $ABCD$ has right angles at $B$ and $D$, and $AC=3$. If $ABCD$ has two sides with distinct integer lengths, then what is the area of $ABCD$? Express your answer in simplest radical form.",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1162003135673904,
+          "novel": 2.846759589046378
+        },
+        "word_entropy": {
+          "common": 3.287020011240794,
+          "novel": 4.972653514134372
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 86.2,
+            "flesch_kincaid_grade": 3.8
+          },
+          "sentence_length": {
+            "mean": 7.9393939393939394,
+            "std": 4.525613261235023
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 76.42,
+            "flesch_kincaid_grade": 11.7
+          },
+          "sentence_length": {
+            "mean": 36.75,
+            "std": 45.245856163852174
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.1261061946902655,
+          "unique_words": 57
+        },
+        "novel": {
+          "type_token_ratio": 0.9607843137254902,
+          "unique_words": 147
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.016883116883116882,
+          "formula_count": 66
+        },
+        "novel": {
+          "symbol_density": 0.0,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Two circles of radius 2 are centered at $(2,0)$ and at $(0,2)$. What is the area of the intersection of the interiors of the two circles? Express your answer in fully expanded form in terms of $\\pi$.",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.3686258067080668,
+          "novel": 3.2243399550217284
+        },
+        "word_entropy": {
+          "common": 3.9568429004074477,
+          "novel": 3.696421001887129
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 45.86,
+            "flesch_kincaid_grade": 11.1
+          },
+          "sentence_length": {
+            "mean": 110.5,
+            "std": 100.5
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 64.54,
+            "flesch_kincaid_grade": 10.1
+          },
+          "sentence_length": {
+            "mean": 20.333333333333332,
+            "std": 23.423634787681152
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.24932249322493225,
+          "unique_words": 92
+        },
+        "novel": {
+          "type_token_ratio": 0.19683257918552036,
+          "unique_words": 87
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.045454545454545456,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.040632054176072234,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In $\\triangle{ABC}, AB=10, \\angle{A}=30^\\circ$ , and $\\angle{C=45^\\circ}$. Let $H, D,$ and $M$ be points on the line $BC$ such that $AH\\perp{BC}$, $\\angle{BAD}=\\angle{CAD}$, and $BM=CM$. Point $N$ is the midpoint of the segment $HM$, and point $P$ is on ray $AD$ such that $PN\\perp{BC}$. Then $AP^2=\\dfrac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1414006806406602,
+          "novel": 3.138580097312098
+        },
+        "word_entropy": {
+          "common": 3.87768102832739,
+          "novel": 3.833988398345566
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 73.98,
+            "flesch_kincaid_grade": 6.5
+          },
+          "sentence_length": {
+            "mean": 19.5,
+            "std": 18.166666666666668
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 62.31,
+            "flesch_kincaid_grade": 11.0
+          },
+          "sentence_length": {
+            "mean": 18.625,
+            "std": 14.234091997735577
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.22648752399232247,
+          "unique_words": 118
+        },
+        "novel": {
+          "type_token_ratio": 0.2399232245681382,
+          "unique_words": 125
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.028799019607843136,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.024518388791593695,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A solid right prism $ABCDEF$ has a height of $16,$ as shown. Also, its bases are equilateral triangles with side length $12.$ Points $X,$ $Y,$ and $Z$ are the midpoints of edges $AC,$ $BC,$ and $DC,$ respectively. A part of the prism above is sliced off with a straight cut through points $X,$ $Y,$ and $Z.$ Determine the surface area of solid $CXYZ,$ the part that was sliced off.  [asy]\npair A, B, C, D, E, F, X, Y, Z;\nA=(0,0);\nB=(12,0);\nC=(6,-6);\nD=(6,-22);\nE=(0,-16);\nF=(12,-16);\nX=(A+C)/2;\nY=(B+C)/2;\nZ=(C+D)/2;\ndraw(A--B--C--A--E--D--F--B--C--D);\ndraw(X--Y--Z--X, dashed);\nlabel(\"$A$\", A, NW);\nlabel(\"$B$\", B, NE);\nlabel(\"$C$\", C, N);\nlabel(\"$D$\", D, S);\nlabel(\"$E$\", E, SW);\nlabel(\"$F$\", F, SE);\nlabel(\"$X$\", X, SW);\nlabel(\"$Y$\", Y, SE);\nlabel(\"$Z$\", Z, SE);\nlabel(\"12\", (A+B)/2, dir(90));\nlabel(\"16\", (B+F)/2, dir(0));\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.3094505784791908,
+          "novel": 3.236491800858274
+        },
+        "word_entropy": {
+          "common": 3.781736812765278,
+          "novel": 3.632976621874636
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 71.58,
+            "flesch_kincaid_grade": 9.5
+          },
+          "sentence_length": {
+            "mean": 24.333333333333332,
+            "std": 12.427567921538165
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 74.63,
+            "flesch_kincaid_grade": 8.3
+          },
+          "sentence_length": {
+            "mean": 20.76923076923077,
+            "std": 25.88481540670231
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2309278350515464,
+          "unique_words": 112
+        },
+        "novel": {
+          "type_token_ratio": 0.2235294117647059,
+          "unique_words": 114
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.03162650602409638,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.016504126031507877,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In the adjoining figure, $CD$ is the diameter of a semicircle with center $O$.  Point $A$ lies on the extension of $DC$ past $C$; point $E$ lies on the semicircle, and $B$ is the point of intersection (distinct from $E$) of line segment $AE$ with the semicircle.  If length $AB$ equals length $OD$, and the measure of $\\angle EOD$ is $45^\\circ$, then find the measure of $\\angle BAO$, in degrees.\n\n[asy]\nimport graph;\n\nunitsize(2 cm);\n\npair O, A, B, C, D, E;\n\nO = (0,0);\nC = (-1,0);\nD = (1,0);\nE = dir(45);\nB = dir(165);\nA = extension(B,E,C,D);\n\ndraw(arc(O,1,0,180));\ndraw(D--A--E--O);\n\nlabel(\"$A$\", A, W);\nlabel(\"$B$\", B, NW);\nlabel(\"$C$\", C, S);\nlabel(\"$D$\", D, S);\nlabel(\"$E$\", E, NE);\nlabel(\"$O$\", O, S);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1999751891563766,
+          "novel": 3.130654953161169
+        },
+        "word_entropy": {
+          "common": 4.1413612847025165,
+          "novel": 3.933213489405945
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 60.14,
+            "flesch_kincaid_grade": 9.7
+          },
+          "sentence_length": {
+            "mean": 18.8,
+            "std": 20.53030280666443
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 70.23,
+            "flesch_kincaid_grade": 7.9
+          },
+          "sentence_length": {
+            "mean": 16.235294117647058,
+            "std": 11.714894550326074
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2800925925925926,
+          "unique_words": 121
+        },
+        "novel": {
+          "type_token_ratio": 0.23809523809523808,
+          "unique_words": 115
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.02487864077669903,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.02654320987654321,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A square pyramid has a base edge of 32 inches and an altitude of 1 foot. A square pyramid whose altitude is one-fourth of the original altitude is cut away at the apex of the original pyramid. The volume of the remaining frustum is what fractional part of the volume of the original pyramid?",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2018539967471273,
+          "novel": 3.208959176780607
+        },
+        "word_entropy": {
+          "common": 3.86110722682195,
+          "novel": 3.9246868393001644
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 58.42,
+            "flesch_kincaid_grade": 10.4
+          },
+          "sentence_length": {
+            "mean": 19.294117647058822,
+            "std": 17.871320125972304
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 54.36,
+            "flesch_kincaid_grade": 11.9
+          },
+          "sentence_length": {
+            "mean": 25.0,
+            "std": 11.037813793198966
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.20770877944325483,
+          "unique_words": 97
+        },
+        "novel": {
+          "type_token_ratio": 0.22758620689655173,
+          "unique_words": 99
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.0061823802163833074,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.018425460636515914,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In rectangle $ABCD$, $AB=100$. Let $E$ be the midpoint of $\\overline{AD}$. Given that line $AC$ and line $BE$ are perpendicular, find the greatest integer less than $AD$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.3054368916357286,
+          "novel": 3.2782176081522025
+        },
+        "word_entropy": {
+          "common": 3.908626868311581,
+          "novel": 3.804239227658053
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 75.4,
+            "flesch_kincaid_grade": 5.9
+          },
+          "sentence_length": {
+            "mean": 12.368421052631579,
+            "std": 7.624134299887083
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 76.62,
+            "flesch_kincaid_grade": 5.5
+          },
+          "sentence_length": {
+            "mean": 10.789473684210526,
+            "std": 7.193410342429426
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2292134831460674,
+          "unique_words": 102
+        },
+        "novel": {
+          "type_token_ratio": 0.21336206896551724,
+          "unique_words": 99
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.03698534542916958,
+          "formula_count": 28
+        },
+        "novel": {
+          "symbol_density": 0.038202247191011236,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Triangle $ABC$ is isosceles with $AC = BC$ and $\\angle ACB = 106^\\circ.$ Point $M$ is in the interior of the triangle so that $\\angle MAC = 7^\\circ$ and $\\angle MCA = 23^\\circ.$ Find the number of degrees in $\\angle CMB.$\n[asy] pointpen = black; pathpen = black+linewidth(0.7); size(220);  /* We will WLOG AB = 2 to draw following */  pair A=(0,0), B=(2,0), C=(1,Tan(37)), M=IP(A--(2Cos(30),2Sin(30)),B--B+(-2,2Tan(23)));  D(MP(\"A\",A)--MP(\"B\",B)--MP(\"C\",C,N)--cycle); D(A--D(MP(\"M\",M))--B); D(C--M); [/asy]\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1780380463810034,
+          "novel": 3.2402086571363227
+        },
+        "word_entropy": {
+          "common": 3.589238762879858,
+          "novel": 4.00905603670118
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 66.47,
+            "flesch_kincaid_grade": 9.4
+          },
+          "sentence_length": {
+            "mean": 27.666666666666668,
+            "std": 24.00462918318511
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 55.84,
+            "flesch_kincaid_grade": 9.3
+          },
+          "sentence_length": {
+            "mean": 16.133333333333333,
+            "std": 13.53940750385908
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.20353982300884957,
+          "unique_words": 69
+        },
+        "novel": {
+          "type_token_ratio": 0.3074626865671642,
+          "unique_words": 103
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.03136954858454476,
+          "formula_count": 24
+        },
+        "novel": {
+          "symbol_density": 0.047416843595187545,
+          "formula_count": 18
+        }
+      }
+    }
+  },
+  {
+    "problem": "Two skaters, Allie and Billie, are at points $A$ and $B$, respectively, on a flat, frozen lake. The distance between $A$ and $B$ is $100$ meters. Allie leaves $A$ and skates at a speed of $8$ meters per second on a straight line that makes a $60^\\circ$ angle with $AB$. At the same time Allie leaves $A$, Billie leaves $B$ at a speed of $7$ meters per second and follows the straight path that produces the earliest possible meeting of the two skaters, given their speeds. How many meters does Allie skate before meeting Billie?\n[asy] pointpen=black; pathpen=black+linewidth(0.7);  pair A=(0,0),B=(10,0),C=6*expi(pi/3); D(B--A); D(A--C,EndArrow); MP(\"A\",A,SW);MP(\"B\",B,SE);MP(\"60^{\\circ}\",A+(0.3,0),NE);MP(\"100\",(A+B)/2); [/asy]\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.171841894289719,
+          "novel": 3.1757031304209025
+        },
+        "word_entropy": {
+          "common": 4.0773769056240985,
+          "novel": 4.128658011697698
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 79.4,
+            "flesch_kincaid_grade": 6.5
+          },
+          "sentence_length": {
+            "mean": 13.095238095238095,
+            "std": 9.175042555524831
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 77.16,
+            "flesch_kincaid_grade": 7.3
+          },
+          "sentence_length": {
+            "mean": 17.357142857142858,
+            "std": 15.33253842955815
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.24101479915433405,
+          "unique_words": 114
+        },
+        "novel": {
+          "type_token_ratio": 0.271689497716895,
+          "unique_words": 119
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.03256105197244834,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.026160889470241987,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Let $A_0=(0,0)$. Distinct points $A_1,A_2,\\dots$ lie on the $x$-axis, and distinct points $B_1,B_2,\\dots$ lie on the graph of $y=\\sqrt{x}$. For every positive integer $n,\\ A_{n-1}B_nA_n$ is an equilateral triangle. What is the least $n$ for which the length $A_0A_n\\geq100$?\n$\\textbf{(A)}\\ 13\\qquad \\textbf{(B)}\\ 15\\qquad \\textbf{(C)}\\ 17\\qquad \\textbf{(D)}\\ 19\\qquad \\textbf{(E)}\\ 21$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2464459238960597,
+          "novel": 3.214700142614555
+        },
+        "word_entropy": {
+          "common": 3.741457112610193,
+          "novel": 3.6888389140289206
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 66.57,
+            "flesch_kincaid_grade": 9.3
+          },
+          "sentence_length": {
+            "mean": 24.0,
+            "std": 23.711225658371653
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 79.5,
+            "flesch_kincaid_grade": 6.4
+          },
+          "sentence_length": {
+            "mean": 17.90909090909091,
+            "std": 17.85524901409588
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.1870824053452116,
+          "unique_words": 84
+        },
+        "novel": {
+          "type_token_ratio": 0.20422535211267606,
+          "unique_words": 87
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.047058823529411764,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.04453125,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Right triangle $ABC$ has one leg of length 6 cm, one leg of length 8 cm and a right angle at $A$. A square has one side on the hypotenuse of triangle $ABC$ and a vertex on each of the two legs of triangle $ABC$. What is the length of one side of the square, in cm? Express your answer as a common fraction.\n\n[asy]\ndefaultpen(linewidth(0.8));\nsize(4cm,4cm);\n\npair A,B,C;\n\nA=(0,0);\nB=(2,3);\nC=(7,0);\n\ndraw(A--B--C--A);\n\npair a,b,c,d;\n\na=(2/3)*B+(1/3)*A;\nb=(2/3)*B+(1/3)*C;\nc=(1.339,0);\nd=(3.65,0);\n\ndraw(c--a--b--d);\n\npair x,y,z;\n\nx=(9/10)*B+(1/10)*A;\nz=(14/15)*B+(1/15)*C;\ny=(2.12,2.5);\n\ndraw(x--y--z);\n\nlabel(\"$A$\",B,N);\nlabel(\"$B$\",A,SW);\nlabel(\"$C$\",C,SE);\n\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2257221771582527,
+          "novel": 3.2199245018713865
+        },
+        "word_entropy": {
+          "common": 3.9874269094974903,
+          "novel": 3.8226525596558325
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 85.73,
+            "flesch_kincaid_grade": 6.1
+          },
+          "sentence_length": {
+            "mean": 21.53846153846154,
+            "std": 10.225273249050682
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 78.59,
+            "flesch_kincaid_grade": 6.8
+          },
+          "sentence_length": {
+            "mean": 19.142857142857142,
+            "std": 8.433412653225966
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.22708333333333333,
+          "unique_words": 109
+        },
+        "novel": {
+          "type_token_ratio": 0.23904382470119523,
+          "unique_words": 120
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.032764505119453925,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.0106312292358804,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Consider the set of points that are inside or within one unit of a rectangular parallelepiped (box) that measures 3 by 4 by 5 units. Given that the volume of this set is $\\displaystyle {{m+n\\pi}\\over\np}$, where $m$, $n$, and $p$ are positive integers, and $n$ and $p$ are relatively prime, find $m+n+p$.",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.158135987026008,
+          "novel": 3.106720644533605
+        },
+        "word_entropy": {
+          "common": 4.0856124823495295,
+          "novel": 4.030892522647939
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 87.86,
+            "flesch_kincaid_grade": 5.3
+          },
+          "sentence_length": {
+            "mean": 14.636363636363637,
+            "std": 10.956714232691272
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 71.01,
+            "flesch_kincaid_grade": 11.8
+          },
+          "sentence_length": {
+            "mean": 29.916666666666668,
+            "std": 16.650617272508416
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2621359223300971,
+          "unique_words": 108
+        },
+        "novel": {
+          "type_token_ratio": 0.24018475750577367,
+          "unique_words": 104
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.019169329073482427,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.017142857142857144,
+          "formula_count": 6
+        }
+      }
+    }
+  },
+  {
+    "problem": "The truncated right circular cone has a large base radius 8 cm and a small base radius of 4 cm. The height of the truncated cone is 6 cm. How many $\\text{cm}^3$ are in the volume of this solid?  [asy]\n\nimport olympiad; size(150); defaultpen(linewidth(0.8)); dotfactor=4;\n\ndraw(ellipse((0,0),4,1)); draw(ellipse((0,3),2,1/2));\n\ndraw((-3.97,.1)--(-1.97,3.1)^^(3.97,.1)--(1.97,3.1));\n\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.391662956272248,
+          "novel": 3.3428637613271492
+        },
+        "word_entropy": {
+          "common": 4.109074450939692,
+          "novel": 4.225435359154587
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 77.27,
+            "flesch_kincaid_grade": 7.3
+          },
+          "sentence_length": {
+            "mean": 39.166666666666664,
+            "std": 26.009079611209277
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 71.48,
+            "flesch_kincaid_grade": 9.5
+          },
+          "sentence_length": {
+            "mean": 51.6,
+            "std": 22.579636843846714
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.29239766081871343,
+          "unique_words": 100
+        },
+        "novel": {
+          "type_token_ratio": 0.29971988795518206,
+          "unique_words": 107
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.031132075471698113,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.029535864978902954,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "The field shown has been planted uniformly with wheat. [asy]\ndraw((0,0)--(1/2,sqrt(3)/2)--(3/2,sqrt(3)/2)--(2,0)--(0,0),linewidth(0.8));\nlabel(\"$60^\\circ$\",(0.06,0.1),E);\nlabel(\"$120^\\circ$\",(1/2-0.05,sqrt(3)/2-0.1),E);\nlabel(\"$120^\\circ$\",(3/2+0.05,sqrt(3)/2-0.1),W);\nlabel(\"$60^\\circ$\",(2-0.05,0.1),W);\nlabel(\"100 m\",(1,sqrt(3)/2),N);\nlabel(\"100 m\",(1.75,sqrt(3)/4+0.1),E);\n[/asy] At harvest, the wheat at any point in the field is brought to the nearest point on the field's perimeter. What is the fraction of the crop that is brought to the longest side?",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.201204609656925,
+          "novel": 3.098138429449468
+        },
+        "word_entropy": {
+          "common": 4.108667572355079,
+          "novel": 4.210367575433905
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 71.24,
+            "flesch_kincaid_grade": 7.5
+          },
+          "sentence_length": {
+            "mean": 15.411764705882353,
+            "std": 6.9031861657320475
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 70.94,
+            "flesch_kincaid_grade": 7.6
+          },
+          "sentence_length": {
+            "mean": 18.88235294117647,
+            "std": 9.132246376189844
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2782152230971129,
+          "unique_words": 106
+        },
+        "novel": {
+          "type_token_ratio": 0.29523809523809524,
+          "unique_words": 124
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.019789734075448363,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.0059235325794291865,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Two points $A(x_1, y_1)$ and $B(x_2, y_2)$ are chosen on the graph of $f(x) = \\ln x$, with $0 < x_1 < x_2$. The points $C$ and $D$ trisect $\\overline{AB}$, with $AC < CB$. Through $C$ a horizontal line is drawn to cut the curve at $E(x_3, y_3)$. Find $x_3$ if $x_1 = 1$ and $x_2 = 1000$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.279197493123504,
+          "novel": 3.2437276133313997
+        },
+        "word_entropy": {
+          "common": 4.001467971303597,
+          "novel": 3.8106539020886174
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 80.11,
+            "flesch_kincaid_grade": 6.2
+          },
+          "sentence_length": {
+            "mean": 16.0,
+            "std": 12.548572295949315
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 77.77,
+            "flesch_kincaid_grade": 7.1
+          },
+          "sentence_length": {
+            "mean": 17.833333333333332,
+            "std": 15.710046325697311
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.24528301886792453,
+          "unique_words": 104
+        },
+        "novel": {
+          "type_token_ratio": 0.2199546485260771,
+          "unique_words": 97
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.0268857356235997,
+          "formula_count": 29
+        },
+        "novel": {
+          "symbol_density": 0.02920284135753749,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Let $ABCD$ be an isosceles trapezoid with bases $AB=92$ and $CD=19$. Suppose $AD=BC=x$ and a circle with center on $\\overline{AB}$ is tangent to segments $\\overline{AD}$ and $\\overline{BC}$. If $m$ is the smallest possible value of $x$, then $m^2$=\n$\\text{(A) } 1369\\quad \\text{(B) } 1679\\quad \\text{(C) } 1748\\quad \\text{(D) } 2109\\quad \\text{(E) } 8825$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1838849485461127,
+          "novel": 3.1986857788130396
+        },
+        "word_entropy": {
+          "common": 3.7664377954150607,
+          "novel": 3.9271630318472317
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 62.17,
+            "flesch_kincaid_grade": 8.9
+          },
+          "sentence_length": {
+            "mean": 17.642857142857142,
+            "std": 12.367048053234873
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 76.15,
+            "flesch_kincaid_grade": 7.7
+          },
+          "sentence_length": {
+            "mean": 19.142857142857142,
+            "std": 11.59345346587056
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2245762711864407,
+          "unique_words": 106
+        },
+        "novel": {
+          "type_token_ratio": 0.2429718875502008,
+          "unique_words": 121
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.020447284345047924,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.020754716981132074,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A right circular cone has a base with radius $600$ and height $200\\sqrt{7}.$ A fly starts at a point on the surface of the cone whose distance from the vertex of the cone is $125$, and crawls along the surface of the cone to a point on the exact opposite side of the cone whose distance from the vertex is $375\\sqrt{2}.$ Find the least distance that the fly could have crawled.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1508788384882447,
+          "novel": 3.1725360237829987
+        },
+        "word_entropy": {
+          "common": 4.28711393700507,
+          "novel": 4.361998782871557
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 76.76,
+            "flesch_kincaid_grade": 7.5
+          },
+          "sentence_length": {
+            "mean": 20.866666666666667,
+            "std": 10.423477773223718
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 77.67,
+            "flesch_kincaid_grade": 7.1
+          },
+          "sentence_length": {
+            "mean": 20.4,
+            "std": 13.400497503202386
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.3089622641509434,
+          "unique_words": 131
+        },
+        "novel": {
+          "type_token_ratio": 0.34515366430260047,
+          "unique_words": 146
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.018235294117647058,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.021650087770626096,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "From a circular piece of paper with radius $BC$, Jeff removes the unshaded sector shown.  Using the larger shaded sector, he joins edge $BC$ to edge $BA$ (without overlap) to form a cone of radius 12 centimeters and of volume $432\\pi$ cubic centimeters.  What is the number of degrees in the measure of angle $ABC$ of the sector that is not used? [asy]\nimport graph;\ndefaultpen(linewidth(0.7));\nfill((0,0)--dir(20)..dir(60)..dir(100)..dir(140)..dir(180)..dir(220)..dir(260)..dir(300)--cycle,gray);\ndraw((0,0)--dir(20)..dir(60)..dir(100)..dir(140)..dir(180)..dir(220)..dir(260)..dir(300)--(0,0));\ndraw(dir(300)..dir(320)..dir(340)..dir(360)..dir(20),dotted);\nlabel(\"$C$\",dir(20),E);\nlabel(\"$A$\",dir(300),SE);\nlabel(\"$B$\",(0,0),W);[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1779723122646204,
+          "novel": 3.139658424823148
+        },
+        "word_entropy": {
+          "common": 4.125952489991883,
+          "novel": 4.125235834348611
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 74.02,
+            "flesch_kincaid_grade": 8.5
+          },
+          "sentence_length": {
+            "mean": 23.25,
+            "std": 19.933744421625022
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 77.87,
+            "flesch_kincaid_grade": 7.0
+          },
+          "sentence_length": {
+            "mean": 18.352941176470587,
+            "std": 13.834913960363375
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2810945273631841,
+          "unique_words": 113
+        },
+        "novel": {
+          "type_token_ratio": 0.2652582159624413,
+          "unique_words": 113
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.028945554789800137,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.027439024390243903,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A block of wood has the shape of a right circular cylinder with radius $6$ and height $8$, and its entire surface has been painted blue. Points $A$ and $B$ are chosen on the edge of one of the circular faces of the cylinder so that $\\overarc{AB}$ on that face measures $120^\\text{o}$. The block is then sliced in half along the plane that passes through point $A$, point $B$, and the center of the cylinder, revealing a flat, unpainted face on each half. The area of one of these unpainted faces is $a\\cdot\\pi + b\\sqrt{c}$, where $a$, $b$, and $c$ are integers and $c$ is not divisible by the square of any prime. Find $a+b+c$.\n[asy] import three; import solids; size(8cm); currentprojection=orthographic(-1,-5,3);  picture lpic, rpic;  size(lpic,5cm); draw(lpic,surface(revolution((0,0,0),(-3,3*sqrt(3),0)..(0,6,4)..(3,3*sqrt(3),8),Z,0,120)),gray(0.7),nolight); draw(lpic,surface(revolution((0,0,0),(-3*sqrt(3),-3,8)..(-6,0,4)..(-3*sqrt(3),3,0),Z,0,90)),gray(0.7),nolight); draw(lpic,surface((3,3*sqrt(3),8)..(-6,0,8)..(3,-3*sqrt(3),8)--cycle),gray(0.7),nolight); draw(lpic,(3,-3*sqrt(3),8)..(-6,0,8)..(3,3*sqrt(3),8)); draw(lpic,(-3,3*sqrt(3),0)--(-3,-3*sqrt(3),0),dashed); draw(lpic,(3,3*sqrt(3),8)..(0,6,4)..(-3,3*sqrt(3),0)--(-3,3*sqrt(3),0)..(-3*sqrt(3),3,0)..(-6,0,0),dashed); draw(lpic,(3,3*sqrt(3),8)--(3,-3*sqrt(3),8)..(0,-6,4)..(-3,-3*sqrt(3),0)--(-3,-3*sqrt(3),0)..(-3*sqrt(3),-3,0)..(-6,0,0)); draw(lpic,(6*cos(atan(-1/5)+3.14159),6*sin(atan(-1/5)+3.14159),0)--(6*cos(atan(-1/5)+3.14159),6*sin(atan(-1/5)+3.14159),8));  size(rpic,5cm); draw(rpic,surface(revolution((0,0,0),(3,3*sqrt(3),8)..(0,6,4)..(-3,3*sqrt(3),0),Z,230,360)),gray(0.7),nolight); draw(rpic,surface((-3,3*sqrt(3),0)..(6,0,0)..(-3,-3*sqrt(3),0)--cycle),gray(0.7),nolight); draw(rpic,surface((-3,3*sqrt(3),0)..(0,6,4)..(3,3*sqrt(3),8)--(3,3*sqrt(3),8)--(3,-3*sqrt(3),8)--(3,-3*sqrt(3),8)..(0,-6,4)..(-3,-3*sqrt(3),0)--cycle),white,nolight); draw(rpic,(-3,-3*sqrt(3),0)..(-6*cos(atan(-1/5)+3.14159),-6*sin(atan(-1/5)+3.14159),0)..(6,0,0)); draw(rpic,(-6*cos(atan(-1/5)+3.14159),-6*sin(atan(-1/5)+3.14159),0)..(6,0,0)..(-3,3*sqrt(3),0),dashed); draw(rpic,(3,3*sqrt(3),8)--(3,-3*sqrt(3),8)); draw(rpic,(-3,3*sqrt(3),0)..(0,6,4)..(3,3*sqrt(3),8)--(3,3*sqrt(3),8)..(3*sqrt(3),3,8)..(6,0,8)); draw(rpic,(-3,3*sqrt(3),0)--(-3,-3*sqrt(3),0)..(0,-6,4)..(3,-3*sqrt(3),8)--(3,-3*sqrt(3),8)..(3*sqrt(3),-3,8)..(6,0,8)); draw(rpic,(-6*cos(atan(-1/5)+3.14159),-6*sin(atan(-1/5)+3.14159),0)--(-6*cos(atan(-1/5)+3.14159),-6*sin(atan(-1/5)+3.14159),8)); label(rpic,\"$A$\",(-3,3*sqrt(3),0),W); label(rpic,\"$B$\",(-3,-3*sqrt(3),0),W);  add(lpic.fit(),(0,0)); add(rpic.fit(),(1,0)); [/asy]\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2668647959491364,
+          "novel": 3.2498428527070287
+        },
+        "word_entropy": {
+          "common": 2.9330382445595964,
+          "novel": 2.9252120320330977
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": -226.32,
+            "flesch_kincaid_grade": 47.3
+          },
+          "sentence_length": {
+            "mean": 10.0,
+            "std": 0.0
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": -242.23,
+            "flesch_kincaid_grade": 49.3
+          },
+          "sentence_length": {
+            "mean": 9.0,
+            "std": 0.0
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.10232558139534884,
+          "unique_words": 44
+        },
+        "novel": {
+          "type_token_ratio": 0.10232558139534884,
+          "unique_words": 44
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.10650224215246637,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.11060948081264109,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Two boards, one four inches wide and the other six inches wide, are nailed together to form an X. The angle at which they cross is 60 degrees. If this structure is painted and the boards are separated what is the area of the unpainted region on the four-inch board? (The holes caused by the nails are negligible.) Express your answer in simplest radical form.\n\n[asy]\ndraw(6dir(150)--15dir(-30),linewidth(1));\ndraw((6dir(150)+12/sqrt(3)*dir(30))--(15dir(-30)+12/sqrt(3)*dir(30)),linewidth(1));\n\ndraw(6dir(210)--(0,0),linewidth(1));\ndraw((9dir(210)+8/sqrt(3)*dir(-30))--8/sqrt(3)*dir(-30),linewidth(1));\n\ndraw(12/sqrt(3)*dir(30)--(12/sqrt(3)+6)*dir(30),linewidth(1));\ndraw(12/sqrt(3)*dir(30)+8/sqrt(3)*dir(-30)--(12/sqrt(3)+9)*dir(30)+8/sqrt(3)*dir(-30),linewidth(1));\n\ndraw(2dir(150)--2dir(150)+6dir(60),dashed);\ndraw(2dir(210)--2dir(210)+4dir(-60),dashed);\n\ndot((2,0));\ndot((4,-1));\ndot((8,1));\ndot((6,2));\n\nlabel(\"$60^{\\circ}$\", (11,1), E);\nlabel(rotate(30)*\"$4^{\\prime\\prime}$\", .5*(2dir(210)+2dir(210)+4dir(-60))+(0,-.5),W);\nlabel(rotate(-30)*\"$6^{\\prime\\prime}$\", .5*(2dir(150)+2dir(150)+6dir(60))+(1,1),W);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.0992308595335727,
+          "novel": 3.148746666359556
+        },
+        "word_entropy": {
+          "common": 4.148813838571652,
+          "novel": 4.357633934306168
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 70.73,
+            "flesch_kincaid_grade": 7.7
+          },
+          "sentence_length": {
+            "mean": 17.58823529411765,
+            "std": 13.877865675576432
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 58.11,
+            "flesch_kincaid_grade": 10.5
+          },
+          "sentence_length": {
+            "mean": 21.466666666666665,
+            "std": 18.11764026822723
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.3064935064935065,
+          "unique_words": 118
+        },
+        "novel": {
+          "type_token_ratio": 0.32935560859188545,
+          "unique_words": 138
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.02235294117647059,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.019367991845056064,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "$ABCD$ is a regular tetrahedron (right triangular pyramid).  If $M$ is the midpoint of $\\overline{CD}$, then what is $\\cos \\angle AMB$?",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.3016838582693073,
+          "novel": 3.336822391375528
+        },
+        "word_entropy": {
+          "common": 3.807148848067066,
+          "novel": 3.6195650622724624
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 65.25,
+            "flesch_kincaid_grade": 9.8
+          },
+          "sentence_length": {
+            "mean": 24.88888888888889,
+            "std": 14.363877876615389
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 63.8,
+            "flesch_kincaid_grade": 8.3
+          },
+          "sentence_length": {
+            "mean": 12.615384615384615,
+            "std": 11.208090906802457
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.19683257918552036,
+          "unique_words": 87
+        },
+        "novel": {
+          "type_token_ratio": 0.16161616161616163,
+          "unique_words": 80
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.05934718100890208,
+          "formula_count": 20
+        },
+        "novel": {
+          "symbol_density": 0.03005259203606311,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "The diameter $AB$ of a circle of radius $2$ is extended to a point $D$ outside the circle so that $BD=3$. Point $E$ is chosen so that $ED=5$ and line $ED$ is perpendicular to line $AD$. Segment $AE$ intersects the circle at a point $C$ between $A$ and $E$. What is the area of $\\triangle  ABC$?\n$\\textbf{(A)}\\ \\frac{120}{37}\\qquad\\textbf{(B)}\\ \\frac{140}{39}\\qquad\\textbf{(C)}\\ \\frac{145}{39}\\qquad\\textbf{(D)}\\ \\frac{140}{37}\\qquad\\textbf{(E)}\\ \\frac{120}{31}$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.376749309614714,
+          "novel": 3.1900431804766343
+        },
+        "word_entropy": {
+          "common": 4.035019197737363,
+          "novel": 3.892210185186093
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 74.83,
+            "flesch_kincaid_grade": 8.2
+          },
+          "sentence_length": {
+            "mean": 27.333333333333332,
+            "std": 23.786083699881697
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 79.3,
+            "flesch_kincaid_grade": 6.5
+          },
+          "sentence_length": {
+            "mean": 20.2,
+            "std": 14.788283650692303
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2562929061784897,
+          "unique_words": 112
+        },
+        "novel": {
+          "type_token_ratio": 0.24,
+          "unique_words": 114
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.03284072249589491,
+          "formula_count": 25
+        },
+        "novel": {
+          "symbol_density": 0.039575971731448764,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Circles of radius $3$ and $6$ are externally tangent to each other and are internally tangent to a circle of radius $9$. The circle of radius $9$ has a chord that is a common external tangent of the other two circles. Find the square of the length of this chord.\n[asy] pointpen = black; pathpen = black + linewidth(0.7); size(150); pair A=(0,0), B=(6,0), C=(-3,0), D=C+6*expi(acos(1/3)), F=B+3*expi(acos(1/3)), P=IP(F--F+3*(D-F),CR(A,9)), Q=IP(F--F+3*(F-D),CR(A,9)); D(CR(A,9)); D(CR(B,3)); D(CR(C,6)); D(P--Q); [/asy]\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.0413483387674543,
+          "novel": 3.066519404701433
+        },
+        "word_entropy": {
+          "common": 4.054338278475098,
+          "novel": 3.9874127208803203
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 68.1,
+            "flesch_kincaid_grade": 8.7
+          },
+          "sentence_length": {
+            "mean": 18.2,
+            "std": 11.53082824431966
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 74.63,
+            "flesch_kincaid_grade": 8.3
+          },
+          "sentence_length": {
+            "mean": 20.88235294117647,
+            "std": 11.534512677133868
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.22708333333333333,
+          "unique_words": 109
+        },
+        "novel": {
+          "type_token_ratio": 0.23110151187904968,
+          "unique_words": 107
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.0181360201511335,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.020708446866485014,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "$ABCD$, a rectangle with $AB = 12$ and $BC = 16$, is the base of pyramid $P$, which has a height of $24$. A plane parallel to $ABCD$ is passed through $P$, dividing $P$ into a frustum $F$ and a smaller pyramid $P'$. Let $X$ denote the center of the circumsphere of $F$, and let $T$ denote the apex of $P$. If the volume of $P$ is eight times that of $P'$, then the value of $XT$ can be expressed as $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Compute the value of $m + n$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.192027552377509,
+          "novel": 3.1353344124951357
+        },
+        "word_entropy": {
+          "common": 3.804583011949969,
+          "novel": 3.5541027908797336
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 80.72,
+            "flesch_kincaid_grade": 6.0
+          },
+          "sentence_length": {
+            "mean": 14.789473684210526,
+            "std": 8.230744337820889
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 90.7,
+            "flesch_kincaid_grade": 4.2
+          },
+          "sentence_length": {
+            "mean": 15.2,
+            "std": 5.2051256789181695
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.21199143468950749,
+          "unique_words": 99
+        },
+        "novel": {
+          "type_token_ratio": 0.21390374331550802,
+          "unique_words": 80
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.02648578811369509,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.01011804384485666,
+          "formula_count": 39
+        }
+      }
+    }
+  },
+  {
+    "problem": "Find the number of cubic centimeters in the volume of the cylinder formed by rotating a square with side length 14 centimeters about its vertical line of symmetry. Express your answer in terms of $\\pi$.",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.277098635813414,
+          "novel": 3.242601667920399
+        },
+        "word_entropy": {
+          "common": 3.998107103594127,
+          "novel": 4.051140888152889
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 79.19,
+            "flesch_kincaid_grade": 6.5
+          },
+          "sentence_length": {
+            "mean": 24.333333333333332,
+            "std": 22.181073012818832
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 75.95,
+            "flesch_kincaid_grade": 7.8
+          },
+          "sentence_length": {
+            "mean": 22.09090909090909,
+            "std": 17.768483566823107
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.30742049469964666,
+          "unique_words": 87
+        },
+        "novel": {
+          "type_token_ratio": 0.27607361963190186,
+          "unique_words": 90
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.015806988352745424,
+          "formula_count": 6
+        },
+        "novel": {
+          "symbol_density": 0.022275258552108195,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A right circular cone is sliced into four pieces by planes parallel to its base, as shown in the figure. All of these pieces have the same height. What is the ratio of the volume of the second-largest piece to the volume of the largest piece? Express your answer as a common fraction.\n[asy]\nsize(150);\npair A, B, C, D, E, F, G, H, I, w, x, y, z;\nA=(0,0);\nB=(.25,.75);\nC=(.5,1.5);\nD=(.75,2.25);\nE=(1,3);\nF=(1.25,2.25);\nG=(1.5,1.5);\nH=(1.75,.75);\nI=(2,0);\nw=(A+I)/2;\nx=(B+H)/2;\ny=(C+G)/2;\nz=(D+F)/2;\ndraw(ellipse(w, 1, .25));\ndraw(ellipse(x, .75, .1875));\ndraw(ellipse(y, .5, .125));\ndraw(ellipse(z, .25, .0625));\ndraw(A--E--I);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.131034942533942,
+          "novel": 3.165286411862397
+        },
+        "word_entropy": {
+          "common": 3.82099818814178,
+          "novel": 3.878853749162231
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 76.45,
+            "flesch_kincaid_grade": 7.6
+          },
+          "sentence_length": {
+            "mean": 19.41176470588235,
+            "std": 12.419428913314492
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 79.7,
+            "flesch_kincaid_grade": 6.3
+          },
+          "sentence_length": {
+            "mean": 14.761904761904763,
+            "std": 12.983156714630075
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.1974169741697417,
+          "unique_words": 107
+        },
+        "novel": {
+          "type_token_ratio": 0.2056451612903226,
+          "unique_words": 102
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.011972633979475485,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.022418879056047197,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A can is in the shape of a right circular cylinder. The circumference of the base of the can is 12 inches, and the height of the can is 5 inches. A spiral strip is painted on the can in such a way that it winds around the can exactly once as it reaches from the bottom of the can to the top. It reaches the top of the can directly above the spot where it left the bottom. What is the length in inches of the stripe? [asy]\n\nsize(120);\ndraw(shift(1.38,0)*yscale(0.3)*Circle((0,0), .38));\n\ndraw((1,0)--(1,-2));\ndraw((1.76,0)--(1.76,-2));\n\ndraw((1,-2)..(1.38,-2.114)..(1.76,-2));\npath p =(1.38,-2.114)..(1.74,-1.5)..(1,-0.5)..(1.38,-.114);\npair a=(1.38,-2.114), b=(1.76,-1.5);\npath q =subpath(p, 1, 2);\npath r=subpath(p,0,1);\npath s=subpath(p,2,3);\ndraw(r);\ndraw(s);\ndraw(q, dashed);\n\nlabel(\"$5$\",midpoint((1.76,0)--(1.76,-2)),E);\n\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.273499453073101,
+          "novel": 3.16854092016228
+        },
+        "word_entropy": {
+          "common": 4.359102794201383,
+          "novel": 4.234097887601518
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 55.88,
+            "flesch_kincaid_grade": 11.4
+          },
+          "sentence_length": {
+            "mean": 24.25,
+            "std": 23.955253425223173
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 70.43,
+            "flesch_kincaid_grade": 7.8
+          },
+          "sentence_length": {
+            "mean": 23.09090909090909,
+            "std": 11.727625082796798
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.30995475113122173,
+          "unique_words": 137
+        },
+        "novel": {
+          "type_token_ratio": 0.35014836795252224,
+          "unique_words": 118
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.024898668210770122,
+          "formula_count": 3
+        },
+        "novel": {
+          "symbol_density": 0.012569832402234637,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Joe has exactly enough paint to paint the surface of a cube whose side length is 2.  It turns out that this is also exactly enough paint to paint the surface of a sphere.  If the volume of this sphere is $\\frac{K \\sqrt{6}}{\\sqrt{\\pi}}$, then what is $K$?",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.2601155448604624,
+          "novel": 3.1903203890442784
+        },
+        "word_entropy": {
+          "common": 3.894375029505634,
+          "novel": 3.6792670363623086
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 66.91,
+            "flesch_kincaid_grade": 11.3
+          },
+          "sentence_length": {
+            "mean": 24.818181818181817,
+            "std": 54.35040884987674
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 60.52,
+            "flesch_kincaid_grade": 13.7
+          },
+          "sentence_length": {
+            "mean": 38.0,
+            "std": 24.426761280748348
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.19750519750519752,
+          "unique_words": 95
+        },
+        "novel": {
+          "type_token_ratio": 0.16777041942604856,
+          "unique_words": 76
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.00981675392670157,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.019382627422828428,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Let $R$ be a unit square region and $n \\geq 4$ an integer. A point $X$ in the interior of $R$ is called n-ray partitional if there are $n$ rays emanating from $X$ that divide $R$ into $n$ triangles of equal area. How many points are $100$-ray partitional but not $60$-ray partitional?\n$\\textbf{(A)}\\ 1500 \\qquad \\textbf{(B)}\\ 1560 \\qquad \\textbf{(C)}\\ 2320 \\qquad \\textbf{(D)}\\ 2480 \\qquad \\textbf{(E)}\\ 2500$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 2.7877881193860077,
+          "novel": 3.1037614300929146
+        },
+        "word_entropy": {
+          "common": 2.163955656882057,
+          "novel": 4.276805774624319
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 120.21,
+            "flesch_kincaid_grade": -3.1
+          },
+          "sentence_length": {
+            "mean": 2.0,
+            "std": 0.0
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 66.67,
+            "flesch_kincaid_grade": 9.3
+          },
+          "sentence_length": {
+            "mean": 18.210526315789473,
+            "std": 11.311749584850263
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.9,
+          "unique_words": 9
+        },
+        "novel": {
+          "type_token_ratio": 0.29646017699115046,
+          "unique_words": 134
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.0,
+          "formula_count": 1
+        },
+        "novel": {
+          "symbol_density": 0.009336609336609337,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "A sphere is inscribed in a right cone with base radius $12$ cm and height $24$ cm, as shown. The radius of the sphere can be expressed as $a\\sqrt{c} - a$ cm. What is the value of $a + c$? [asy]\nimport three; size(120); defaultpen(linewidth(1)); pen dashes = linetype(\"2 2\") + linewidth(1);\ncurrentprojection = orthographic(0,-1,0.16);\nvoid drawticks(triple p1, triple p2, triple tickmarks) {\n\ndraw(p1--p2); draw(p1 + tickmarks-- p1 - tickmarks); draw(p2 + tickmarks -- p2 - tickmarks);\n}\nreal r = 6*5^.5-6;\ntriple O = (0,0,0), A = (0,0,-24);\ndraw(scale3(12)*unitcircle3); draw((-12,0,0)--A--(12,0,0)); draw(O--(12,0,0),dashes);\ndraw(O..(-r,0,-r)..(0,0,-2r)..(r,0,-r)..cycle);\ndraw((-r,0,-r)..(0,-r,-r)..(r,0,-r)); draw((-r,0,-r)..(0,r,-r)..(r,0,-r),dashes);\n\ndrawticks((0,0,2.8),(12,0,2.8),(0,0,0.5));\ndrawticks((-13,0,0),(-13,0,-24),(0.5,0,0));\nlabel(\"$12$\", (6,0,3.5), N); label(\"$24$\",(-14,0,-12), W);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.358336182936652,
+          "novel": 3.2482200522119578
+        },
+        "word_entropy": {
+          "common": 3.9410563965278036,
+          "novel": 3.922392278996598
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 59.3,
+            "flesch_kincaid_grade": 14.2
+          },
+          "sentence_length": {
+            "mean": 51.2,
+            "std": 62.85984409780221
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 70.77,
+            "flesch_kincaid_grade": 9.8
+          },
+          "sentence_length": {
+            "mean": 28.75,
+            "std": 29.81505492196853
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.2337962962962963,
+          "unique_words": 101
+        },
+        "novel": {
+          "type_token_ratio": 0.23294117647058823,
+          "unique_words": 99
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.03456402199528672,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.041315990818668706,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Two identical rectangular crates are packed with cylindrical pipes, using different methods. Each pipe has diameter $10\\text{ cm}.$ A side view of the first four rows of each of the two different methods of packing is shown below.\n\n[asy]\ndraw(circle((1,1),1),black+linewidth(1));\ndraw(circle((3,1),1),black+linewidth(1));\ndraw(circle((5,1),1),black+linewidth(1));\ndraw(circle((7,1),1),black+linewidth(1));\ndraw(circle((9,1),1),black+linewidth(1));\ndraw(circle((11,1),1),black+linewidth(1));\ndraw(circle((13,1),1),black+linewidth(1));\ndraw(circle((15,1),1),black+linewidth(1));\ndraw(circle((17,1),1),black+linewidth(1));\ndraw(circle((19,1),1),black+linewidth(1));\ndraw(circle((1,3),1),black+linewidth(1));\ndraw(circle((3,3),1),black+linewidth(1));\ndraw(circle((5,3),1),black+linewidth(1));\ndraw(circle((7,3),1),black+linewidth(1));\ndraw(circle((9,3),1),black+linewidth(1));\ndraw(circle((11,3),1),black+linewidth(1));\ndraw(circle((13,3),1),black+linewidth(1));\ndraw(circle((15,3),1),black+linewidth(1));\ndraw(circle((17,3),1),black+linewidth(1));\ndraw(circle((19,3),1),black+linewidth(1));\ndraw(circle((1,5),1),black+linewidth(1));\ndraw(circle((3,5),1),black+linewidth(1));\ndraw(circle((5,5),1),black+linewidth(1));\ndraw(circle((7,5),1),black+linewidth(1));\ndraw(circle((9,5),1),black+linewidth(1));\ndraw(circle((11,5),1),black+linewidth(1));\ndraw(circle((13,5),1),black+linewidth(1));\ndraw(circle((15,5),1),black+linewidth(1));\ndraw(circle((17,5),1),black+linewidth(1));\ndraw(circle((19,5),1),black+linewidth(1));\ndraw(circle((1,7),1),black+linewidth(1));\ndraw(circle((3,7),1),black+linewidth(1));\ndraw(circle((5,7),1),black+linewidth(1));\ndraw(circle((7,7),1),black+linewidth(1));\ndraw(circle((9,7),1),black+linewidth(1));\ndraw(circle((11,7),1),black+linewidth(1));\ndraw(circle((13,7),1),black+linewidth(1));\ndraw(circle((15,7),1),black+linewidth(1));\ndraw(circle((17,7),1),black+linewidth(1));\ndraw(circle((19,7),1),black+linewidth(1));\ndraw((0,15)--(0,0)--(20,0)--(20,15),black+linewidth(1));\ndot((10,9));\ndot((10,11));\ndot((10,13));\nlabel(\"Crate A\",(10,0),S);\n[/asy]\n\n[asy]\ndraw(circle((1,1),1),black+linewidth(1));\ndraw(circle((3,1),1),black+linewidth(1));\ndraw(circle((5,1),1),black+linewidth(1));\ndraw(circle((7,1),1),black+linewidth(1));\ndraw(circle((9,1),1),black+linewidth(1));\ndraw(circle((11,1),1),black+linewidth(1));\ndraw(circle((13,1),1),black+linewidth(1));\ndraw(circle((15,1),1),black+linewidth(1));\ndraw(circle((17,1),1),black+linewidth(1));\ndraw(circle((19,1),1),black+linewidth(1));\ndraw(circle((2,2.75),1),black+linewidth(1));\ndraw(circle((4,2.75),1),black+linewidth(1));\ndraw(circle((6,2.75),1),black+linewidth(1));\ndraw(circle((8,2.75),1),black+linewidth(1));\ndraw(circle((10,2.75),1),black+linewidth(1));\ndraw(circle((12,2.75),1),black+linewidth(1));\ndraw(circle((14,2.75),1),black+linewidth(1));\ndraw(circle((16,2.75),1),black+linewidth(1));\ndraw(circle((18,2.75),1),black+linewidth(1));\ndraw(circle((1,4.5),1),black+linewidth(1));\ndraw(circle((3,4.5),1),black+linewidth(1));\ndraw(circle((5,4.5),1),black+linewidth(1));\ndraw(circle((7,4.5),1),black+linewidth(1));\ndraw(circle((9,4.5),1),black+linewidth(1));\ndraw(circle((11,4.5),1),black+linewidth(1));\ndraw(circle((13,4.5),1),black+linewidth(1));\ndraw(circle((15,4.5),1),black+linewidth(1));\ndraw(circle((17,4.5),1),black+linewidth(1));\ndraw(circle((19,4.5),1),black+linewidth(1));\ndraw(circle((2,6.25),1),black+linewidth(1));\ndraw(circle((4,6.25),1),black+linewidth(1));\ndraw(circle((6,6.25),1),black+linewidth(1));\ndraw(circle((8,6.25),1),black+linewidth(1));\ndraw(circle((10,6.25),1),black+linewidth(1));\ndraw(circle((12,6.25),1),black+linewidth(1));\ndraw(circle((14,6.25),1),black+linewidth(1));\ndraw(circle((16,6.25),1),black+linewidth(1));\ndraw(circle((18,6.25),1),black+linewidth(1));\ndraw((0,15)--(0,0)--(20,0)--(20,15),black+linewidth(1));\ndot((10,9));\ndot((10,11));\ndot((10,13));\nlabel(\"Crate B\",(10,0),S);\n[/asy]\n\nThree pipes from Crate $B$ are shown.  Determine the height, $h,$ of this pile of $3$ pipes.\n\n[asy]\ndraw(circle((10,10),10),black+linewidth(1));\ndraw(circle((30,10),10),black+linewidth(1));\ndraw(circle((20,27.5),10),black+linewidth(1));\ndraw((50,0)--(50,37.5),black+linewidth(1));\ndraw((49,0)--(51,0),black+linewidth(1));\ndraw((49,37.5)--(51,37.5),black+linewidth(1));\nlabel(\"$h$\",(50,0)--(50,37.5),E);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1100648942779228,
+          "novel": 3.105179592263231
+        },
+        "word_entropy": {
+          "common": 2.4894260434820024,
+          "novel": 2.4880794089405325
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": -108.89,
+            "flesch_kincaid_grade": 37.4
+          },
+          "sentence_length": {
+            "mean": 36.0,
+            "std": 0.0
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": -108.89,
+            "flesch_kincaid_grade": 37.4
+          },
+          "sentence_length": {
+            "mean": 36.0,
+            "std": 0.0
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.114,
+          "unique_words": 57
+        },
+        "novel": {
+          "type_token_ratio": 0.11354581673306773,
+          "unique_words": 57
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.026758409785932722,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.026737967914438502,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In right $\\triangle ABC$ with hypotenuse $\\overline{AB}$, $AC = 12$, $BC = 35$, and $\\overline{CD}$ is the altitude to $\\overline{AB}$. Let $\\omega$ be the circle having $\\overline{CD}$ as a diameter. Let $I$ be a point outside $\\triangle ABC$ such that $\\overline{AI}$ and $\\overline{BI}$ are both tangent to circle $\\omega$. The ratio of the perimeter of $\\triangle ABI$ to the length $AB$ can be expressed in the form $\\frac {m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1459680142507755,
+          "novel": 3.3394612761511526
+        },
+        "word_entropy": {
+          "common": 3.726099096932376,
+          "novel": 4.017229975340685
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 78.79,
+            "flesch_kincaid_grade": 6.7
+          },
+          "sentence_length": {
+            "mean": 25.916666666666668,
+            "std": 11.643727448239627
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 45.6,
+            "flesch_kincaid_grade": 19.4
+          },
+          "sentence_length": {
+            "mean": 60.0,
+            "std": 66.404066140561
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.22244897959183674,
+          "unique_words": 109
+        },
+        "novel": {
+          "type_token_ratio": 0.2631578947368421,
+          "unique_words": 115
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.01045751633986928,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.017780938833570414,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In a regular tetrahedron the centers of the four faces are the vertices of a smaller tetrahedron. The ratio of the volume of the smaller tetrahedron to that of the larger is $m/n$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1174453563608635,
+          "novel": 3.148783981149915
+        },
+        "word_entropy": {
+          "common": 3.8039295649094518,
+          "novel": 4.144812137004197
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 57.81,
+            "flesch_kincaid_grade": 10.6
+          },
+          "sentence_length": {
+            "mean": 18.285714285714285,
+            "std": 10.976784407027742
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 56.25,
+            "flesch_kincaid_grade": 9.1
+          },
+          "sentence_length": {
+            "mean": 16.833333333333332,
+            "std": 11.432167093095012
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.19957081545064378,
+          "unique_words": 93
+        },
+        "novel": {
+          "type_token_ratio": 0.2777777777777778,
+          "unique_words": 115
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.018561484918793503,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.0255863539445629,
+          "formula_count": 2
+        }
+      }
+    }
+  },
+  {
+    "problem": "Given that $m \\angle A= 60^\\circ$, $BC=12$ units, $\\overline{BD} \\perp \\overline{AC}$, $\\overline{CE} \\perp \\overline{AB}$ and $m \\angle DBC = 3m \\angle ECB$, the length of segment $EC$ can be expressed in the form $a(\\sqrt{b}+\\sqrt{c})$ units where $b$ and $c$ have no perfect-square factors.  What is the value of $a+b+c$?\n\n[asy]\ndraw((0,0)--(8,.7)--(2.5,5)--cycle);\ndraw((0,0)--(4.2,3.7));\ndraw((8,.7)--(1.64,3.2));\nlabel(\"$B$\",(0,0),W);\nlabel(\"$C$\",(8,.7),E);\nlabel(\"$D$\",(4.2,3.7),NE);\nlabel(\"$E$\",(1.64,3.2),NW);\nlabel(\"$A$\",(2.5,5),N);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.5789480213170672,
+          "novel": 3.427035594440839
+        },
+        "word_entropy": {
+          "common": 3.6271569750385293,
+          "novel": 4.036805086386314
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 60.35,
+            "flesch_kincaid_grade": 9.6
+          },
+          "sentence_length": {
+            "mean": 19.666666666666668,
+            "std": 16.579773487261182
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 67.55,
+            "flesch_kincaid_grade": 6.9
+          },
+          "sentence_length": {
+            "mean": 14.928571428571429,
+            "std": 10.646691543213157
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.33183856502242154,
+          "unique_words": 74
+        },
+        "novel": {
+          "type_token_ratio": 0.26048565121412803,
+          "unique_words": 118
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.03278688524590164,
+          "formula_count": 15
+        },
+        "novel": {
+          "symbol_density": 0.03455882352941177,
+          "formula_count": 14
+        }
+      }
+    }
+  },
+  {
+    "problem": "Six congruent circles form a ring with each circle externally tangent to the two circles adjacent to it.  All six circles are internally tangent to a circle $\\cal C$ with radius 30.  Let $K$ be the area of the region inside $\\cal C$ and outside all of the six circles in the ring.  Find $\\lfloor K\\rfloor$. (The notation $\\lfloor K\\rfloor$ denotes the greatest integer that is less than or equal to $K$.)",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1665789201845134,
+          "novel": 3.0706035801720075
+        },
+        "word_entropy": {
+          "common": 4.0199972121804155,
+          "novel": 3.4980715159733085
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 60.69,
+            "flesch_kincaid_grade": 11.6
+          },
+          "sentence_length": {
+            "mean": 32.0,
+            "std": 13.824294235551815
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 81.83,
+            "flesch_kincaid_grade": 5.5
+          },
+          "sentence_length": {
+            "mean": 14.875,
+            "std": 9.597362919052296
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.22272727272727272,
+          "unique_words": 98
+        },
+        "novel": {
+          "type_token_ratio": 0.3563218390804598,
+          "unique_words": 62
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.02836004932182491,
+          "formula_count": 6
+        },
+        "novel": {
+          "symbol_density": 0.01483679525222552,
+          "formula_count": 14
+        }
+      }
+    }
+  },
+  {
+    "problem": "The coordinates of the vertices of isosceles trapezoid $ABCD$ are all integers, with $A=(20,100)$ and $D=(21,107)$. The trapezoid has no horizontal or vertical sides, and $\\overline{AB}$ and $\\overline{CD}$ are the only parallel sides. The sum of the absolute values of all possible slopes for $\\overline{AB}$ is $m/n$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.3653144130674475,
+          "novel": 3.259460722235201
+        },
+        "word_entropy": {
+          "common": 3.768343740812519,
+          "novel": 4.0203806792462276
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 73.44,
+            "flesch_kincaid_grade": 10.8
+          },
+          "sentence_length": {
+            "mean": 43.2,
+            "std": 25.8797217913949
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 71.95,
+            "flesch_kincaid_grade": 7.2
+          },
+          "sentence_length": {
+            "mean": 14.444444444444445,
+            "std": 12.715791679037972
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.21794871794871795,
+          "unique_words": 85
+        },
+        "novel": {
+          "type_token_ratio": 0.22608695652173913,
+          "unique_words": 104
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.04597701149425287,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.03309066843150232,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Eight circles of diameter 1 are packed in the first quadrant of the coordinate plane as shown. Let region $\\mathcal{R}$ be the union of the eight circular regions. Line $l,$ with slope 3, divides $\\mathcal{R}$ into two regions of equal area. Line $l$'s equation can be expressed in the form $ax=by+c,$ where $a, b,$ and $c$ are positive integers whose greatest common divisor is 1. Find $a^2+b^2+c^2.$[asy] size(150);defaultpen(linewidth(0.7)); draw((6.5,0)--origin--(0,6.5), Arrows(5)); int[] array={3,3,2}; int i,j; for(i=0; i<3; i=i+1) { for(j=0; j<array[i]; j=j+1) { draw(Circle((1+2*i,1+2*j),1)); }} label(\"x\", (7,0)); label(\"y\", (0,7));[/asy]\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 1.7917570865887833,
+          "novel": 3.2360430226694596
+        },
+        "word_entropy": {
+          "common": 0.6931471805599453,
+          "novel": 4.37270533789714
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": -51.34,
+            "flesch_kincaid_grade": 62.9
+          },
+          "sentence_length": {
+            "mean": 342.0,
+            "std": 0.0
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 75.03,
+            "flesch_kincaid_grade": 8.1
+          },
+          "sentence_length": {
+            "mean": 27.0,
+            "std": 14.218532507494107
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.005847953216374269,
+          "unique_words": 2
+        },
+        "novel": {
+          "type_token_ratio": 0.31724137931034485,
+          "unique_words": 138
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.0,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.02977346278317152,
+          "formula_count": 17
+        }
+      }
+    }
+  },
+  {
+    "problem": "Square $ABCD$ is inscribed in a circle. Square $EFGH$ has vertices $E$ and $F$ on $\\overline{CD}$ and vertices $G$ and $H$ on the circle. If the area of square $ABCD$ is $1$, then the area of square $EFGH$ can be expressed as $\\frac {m}{n}$ where $m$ and $n$ are relatively prime positive integers and $m < n$. Find $10n + m$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1190799782483247,
+          "novel": 3.253198639739382
+        },
+        "word_entropy": {
+          "common": 3.814556402522071,
+          "novel": 3.773148276265007
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 79.3,
+            "flesch_kincaid_grade": 6.5
+          },
+          "sentence_length": {
+            "mean": 17.5625,
+            "std": 8.681652708442098
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 84.27,
+            "flesch_kincaid_grade": 4.6
+          },
+          "sentence_length": {
+            "mean": 13.666666666666666,
+            "std": 11.566234381931649
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.1958762886597938,
+          "unique_words": 95
+        },
+        "novel": {
+          "type_token_ratio": 0.19548872180451127,
+          "unique_words": 104
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.0071151358344113845,
+          "formula_count": 34
+        },
+        "novel": {
+          "symbol_density": 0.028708133971291867,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "In the figure, $AB \\perp BC, BC \\perp CD$, and $BC$ is tangent to the circle with center $O$ and diameter $AD$. In which one of the following cases is the area of $ABCD$ an integer?\n[asy] pair O=origin, A=(-1/sqrt(2),1/sqrt(2)), B=(-1/sqrt(2),-1), C=(1/sqrt(2),-1), D=(1/sqrt(2),-1/sqrt(2)); draw(unitcircle); dot(O); draw(A--B--C--D--A); label(\"$A$\",A,dir(A)); label(\"$B$\",B,dir(B)); label(\"$C$\",C,dir(C)); label(\"$D$\",D,dir(D)); label(\"$O$\",O,dir(45)); [/asy]\n$\\textbf{(A)}\\ AB=3, CD=1\\qquad \\textbf{(B)}\\ AB=5, CD=2\\qquad \\textbf{(C)}\\ AB=7, CD=3\\qquad\\\\ \\textbf{(D)}\\ AB=9, CD=4\\qquad \\textbf{(E)}\\ AB=11, CD=5$\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.1486529245818047,
+          "novel": 3.0932512413321525
+        },
+        "word_entropy": {
+          "common": 3.8593248591443228,
+          "novel": 3.8796301514345837
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 71.78,
+            "flesch_kincaid_grade": 9.4
+          },
+          "sentence_length": {
+            "mean": 29.3,
+            "std": 13.542894816101912
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 78.69,
+            "flesch_kincaid_grade": 6.7
+          },
+          "sentence_length": {
+            "mean": 15.157894736842104,
+            "std": 8.957579312895556
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.22105263157894736,
+          "unique_words": 105
+        },
+        "novel": {
+          "type_token_ratio": 0.22839506172839505,
+          "unique_words": 111
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.024054982817869417,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.027603513174404015,
+          "formula_count": 45
+        }
+      }
+    }
+  },
+  {
+    "problem": "The points $(0,0)\\,$, $(a,11)\\,$, and $(b,37)\\,$ are the vertices of an equilateral triangle. Find the value of $ab\\,$.\n",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.3992540323901697,
+          "novel": 3.368076980460366
+        },
+        "word_entropy": {
+          "common": 4.027626827699302,
+          "novel": 4.10122386007399
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 82.44,
+            "flesch_kincaid_grade": 5.3
+          },
+          "sentence_length": {
+            "mean": 19.76923076923077,
+            "std": 9.14123242115169
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": 75.1,
+            "flesch_kincaid_grade": 6.0
+          },
+          "sentence_length": {
+            "mean": 22.5,
+            "std": 14.023195071024292
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.22632794457274827,
+          "unique_words": 98
+        },
+        "novel": {
+          "type_token_ratio": 0.2711864406779661,
+          "unique_words": 112
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.03907496012759171,
+          "formula_count": 13
+        },
+        "novel": {
+          "symbol_density": 0.041963015647226175,
+          "formula_count": 0
+        }
+      }
+    }
+  },
+  {
+    "problem": "Stuart has drawn a pair of concentric circles, as shown.  He draws chords $\\overline{AB}$, $\\overline{BC}, \\ldots$ of the large circle, each tangent to the small one.  If $m\\angle ABC=75^\\circ$, then how many segments will he draw before returning to his starting point at $A$? [asy]\nsize(100); defaultpen(linewidth(0.8));\nreal rad1 = 1/Sin(37.5);\ndraw(Circle(origin,1)); draw(Circle(origin,rad1));\npair A = rad1*dir(190), B = rad1*dir(190 + 105), C = rad1*dir(190 + 2*105), D = rad1*dir(190 + 315);\ndraw(A--B--C--D,EndArrow(size=5));\nlabel(\"$A$\",A,W); label(\"$B$\",B,S); label(\"$C$\",C,E);\n[/asy]",
+    "analysis": {
+      "entropy": {
+        "char_entropy": {
+          "common": 3.304009925599937,
+          "novel": 2.0181781802111
+        },
+        "word_entropy": {
+          "common": 4.308425964162316,
+          "novel": 2.1065773332321154
+        }
+      },
+      "complexity": {
+        "common": {
+          "readability": {
+            "flesch_reading_ease": 62.31,
+            "flesch_kincaid_grade": 11.0
+          },
+          "sentence_length": {
+            "mean": 30.333333333333332,
+            "std": 20.939065032719213
+          }
+        },
+        "novel": {
+          "readability": {
+            "flesch_reading_ease": -6.7,
+            "flesch_kincaid_grade": 14.7
+          },
+          "sentence_length": {
+            "mean": 5.0,
+            "std": 0.0
+          }
+        }
+      },
+      "diversity": {
+        "common": {
+          "type_token_ratio": 0.32439024390243903,
+          "unique_words": 133
+        },
+        "novel": {
+          "type_token_ratio": 0.6428571428571429,
+          "unique_words": 9
+        }
+      },
+      "math_features": {
+        "common": {
+          "symbol_density": 0.008243500317057704,
+          "formula_count": 0
+        },
+        "novel": {
+          "symbol_density": 0.0,
+          "formula_count": 0
+        }
+      }
+    }
+  }
+]
