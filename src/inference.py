@@ -11,6 +11,8 @@ class Inference:
         self.model = None
         self.tokenizer = None
         self.device = f"cuda:{self.gpu_id}" if torch.cuda.is_available() else "cpu"
+
+        self.load_model()
         
     class PromptDataset(Dataset):
         def __init__(self, prompts, tokenizer, max_length=512):
@@ -119,7 +121,6 @@ class Inference:
         use_chat_template=True
     ):
         try:
-            self.load_model()
             responses = []
             
             # 1. pre-calculate dynamic batch size to avoid OOM

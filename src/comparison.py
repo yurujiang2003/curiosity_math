@@ -226,6 +226,6 @@ def batch_analyze_responses(input_file: str, output_file: str):
     visualize_metrics(metrics, output_dir)
 
 if __name__ == "__main__":
-    input_file = "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_medium_ICL.json"
-    output_file = "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_medium_ICL_analysis.json"
+    input_file = ""
+    output_file = ""
     batch_analyze_responses(input_file, output_file)

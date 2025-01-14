@@ -1,0 +1,510 @@
+{
+  "file_name": "qwen_2.5b_math_responses_easy_ICL_iter1",
+  "total_pairs": 100,
+  "common_correct": 25,
+  "novel_correct": 77,
+  "common_accuracy": 25.0,
+  "novel_accuracy": 77.0,
+  "detailed_results": [
+    {
+      "problem": "What is the area, in square units, of triangle $ABC$? [asy]\nunitsize(1.5mm);\ndefaultpen(linewidth(.7pt)+fontsize(8pt));\ndotfactor=4;\n\npair A=(-3,1), B=(7,1), C=(5,-3);\npair[] dots={A,B,C};\nreal[] xtic",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Compute $\\sin 510^\\circ$.",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "Compute $\\cos 90^\\circ$.",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Suppose $\\cos R = \\frac{4}{9}$ in the diagram below.  What is $QS$?\n\n\n\n[asy]\n\npair Q,R,S;\n\nS = (0,0);\n\nQ = (sqrt(65),0);\n\nR = (sqrt(65),-4);\n\ndraw(S--Q--R--S);\n\ndraw(rightanglemark(S,Q,R,13));\n\nlabel(",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "What is the degree measure of angle $LOQ$ when polygon $\\allowbreak LMNOPQ$ is a regular hexagon? [asy]\ndraw((-2,0)--(-1,1.73205081)--(1,1.73205081)--(2,0)--(1,-1.73205081)--(-1,-1.73205081)--cycle);\n",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "The measure of angle $ACB$ is 40 degrees. If ray $CA$ is rotated 480 degrees about point $C$ in a clockwise direction, what will be the positive measure of the new acute angle $ACB$, in degrees?\n\n[asy",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "The hypotenuse of a right triangle whose legs are consecutive whole numbers is 29 units. What is the sum of the lengths of the two legs?",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "Wei has designed a logo for his new company using circles and a large square, as shown.  Each circle is tangent to two sides of the square and its two adjacent circles.  If he wishes to create a versi",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "What is the number of degrees in the smaller angle formed by the hour and minute hands of a clock at 8:15? Express your answer as a decimal to the nearest tenth.\n[asy]\nsize(200);\ndraw(Circle((0,0),5),",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Two circles are centered at the origin, as shown.  The point $P(8,6)$ is on the larger circle and the point $S(0,k)$ is on the smaller circle.  If $QR=3$, what is the value of $k$?\n\n[asy]\nunitsize(0.2",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "A circle centered at $O$ is circumscribed about $\\triangle ABC$ as follows: [asy]\npair pA, pB, pC, pO;\npO = (0, 0);\npA = pO + dir(-20);\npB = pO + dir(90);\npC = pO + dir(190);\ndraw(pA--pB--pC--pA);\ndra",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "The endpoints of a diameter of circle $M$ are $(-1,-4)$ and $(-7,6)$. What are the coordinates of the center of circle $M$? Express your answer as an ordered pair.",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "The volume of a cylinder is $54\\pi$ $\\text{cm}^3$. How many cubic centimeters are in the volume of a cone with the same radius and height as the cylinder? Express your answer in terms of $\\pi$. [asy]\n",
+      "common_correct": true,
+      "novel_correct": false
+    },
+    {
+      "problem": "The point $O$ is the center of the circle circumscribed about $\\triangle ABC$, with $\\angle BOC = 120^{\\circ}$ and $\\angle AOB =\n140^{\\circ}$, as shown. What is the degree measure of $\\angle\nABC$?\n\n[a",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "What is the area, in square units, of a triangle with vertices at $A(1, 1), B(6, 1), C(3, 7)$?",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "A right triangle has a side length of 21 inches and a hypotenuse of 29 inches. A second triangle is similar to the first and has a hypotenuse of 87 inches. What is the length of the shortest side of t",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "The formula for the total surface area of a cylinder is $SA = 2\\pi r^2 + 2\\pi rh,$ where $r$ is the radius and $h$ is the height. A particular solid right cylinder of radius 2 feet has a total surface",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In triangle $\\triangle JKL$ shown, $\\tan K = \\frac{3}{2}$. What is $KL$?\n\n[asy]\npair J,K,L;\nL = (0,0);\nJ = (0,3);\nK = (2,3);\ndraw(L--J--K--L);\ndraw(rightanglemark(L,J,K,7));\nlabel(\"$L$\",L,SW);\nlabel(\"",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "A cylinder has a radius of 3 cm and a height of 8 cm. What is the longest segment, in centimeters, that would fit inside the cylinder?",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "Quadrilateral $CDEF$ is a parallelogram. Its area is $36$ square units. Points $G$ and $H$ are the midpoints of sides $CD$ and $EF,$ respectively. What is the area of triangle $CDJ?$ [asy]\ndraw((0,0)-",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Find $\\tan G$ in the right triangle shown below.\n\n[asy]\n\npair H,F,G;\n\nH = (0,0);\n\nG = (15,0);\n\nF = (0,8);\n\ndraw(F--G--H--F);\n\ndraw(rightanglemark(F,H,G,20));\n\nlabel(\"$H$\",H,SW);\n\nlabel(\"$G$\",G,SE);\n\nl",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Find the number of square units in the area of the shaded region. [asy]\nsize(200);\ndraw((0,0)--(30,0)--(30,30)--(0, 30)--cycle);\ndot((30,0));dot((0,0));dot((10,0));dot((30,20));dot((30,30)); dot((20,3",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "What is the height of Jack's house, in feet, if the house casts a shadow 56 feet long at the same time a 21-foot tree casts a shadow that is 24 feet long? Express your answer to the nearest whole numb",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "A regular polygon has exterior angles each measuring 15 degrees. How many sides does the polygon have?",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "A triangle has sides of length 5 and 6 units. The length of the third side is $x$ units, where $x$ is an integer. What is the largest possible perimeter of the triangle?",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In triangle $ABC$, we have $\\angle A = 90^\\circ$ and $\\sin B = \\frac{4}{7}$.  Find $\\cos C$.",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "Circle $T$ has its center at point $T(-2,6)$. Circle $T$ is reflected across the $y$-axis and then translated 8 units down. What are the coordinates of the image of the center of circle $T$?",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In right triangle $ABC$ with $\\angle A = 90^\\circ$, we have $AB = 6$ and $BC = 10$.  Find $\\cos C$.",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "How many integer side lengths are possible to complete a triangle in which the other sides measure 6 units and 3 units?",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "Two sectors of a circle of radius $12$ are placed side by side, as shown. Determine the $\\textit{area}$ of figure $ABCD.$ [asy]\ndraw((0,0)--(12,0)..(10.3923,6)..(6,10.3923)--(-6,10.3923)..(-4.3923,4.3",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "A cylinder has a height of $10$ and a radius of $3.$ Determine the total surface area, including the two ends, of the cylinder. [asy]\ndraw(ellipse((5,0),5,2),black+linewidth(1));\ndraw(ellipse((5,10),5",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "A rectangular prism has dimensions 8 inches by 2 inches by 32 inches. If a cube has the same volume as the prism, what is the surface area of the cube, in square inches?",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In $\\Delta ABC$, $AC = BC$, $m\\angle DCB = 40^{\\circ}$, and $CD \\parallel AB$. What is the number of degrees in $m\\angle ECD$?\n\n[asy] pair A,B,C,D,E; B = dir(-40); A = dir(-140); D = (.5,0); E = .4 * ",
+      "common_correct": true,
+      "novel_correct": false
+    },
+    {
+      "problem": "Two sides of a triangle measure 4 cm and 9 cm. What is the greatest integer number of centimeters that could be the third side of this triangle?",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "Triangle $ABC$ with vertices $A(1, -3)$, $B(-2, 0)$ and $C(4, 3)$ is reflected over the $y$-axis to form triangle $A'B'C'$. What is the length of a segment drawn from $A$ to $A'$?",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "An equilateral triangle shares a common side with a square as shown. What is the number of degrees in $m\\angle CDB$? [asy] pair A,E,C,D,B; D = dir(60); C = dir(0); E = (0,-1); B = C+E; draw(B--D--C--B",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "What is the volume in cubic inches of a right, rectangular prism with side, front and bottom faces having an area 15 square inches, 10 square inches and 6 square inches, respectively?",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In the figure shown, the ratio of $BD$ to $DC$ is $4$ to $3$. The area of $\\triangle ABD$ is $24$ square centimeters. What is the area of $\\triangle ADC$? [asy] size(85); defaultpen(linewidth(1)+fonts",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Find $\\tan Y$ in the right triangle shown below.\n\n[asy]\npair X,Y,Z;\nX = (0,0);\nY = (24,0);\nZ = (0,7);\ndraw(X--Y--Z--X);\ndraw(rightanglemark(Y,X,Z,23));\nlabel(\"$X$\",X,SW);\nlabel(\"$Y$\",Y,SE);\nlabel(\"$Z$",
+      "common_correct": true,
+      "novel_correct": false
+    },
+    {
+      "problem": "What is the volume, in cubic inches, of a rectangular box, whose faces have areas of $24$ square inches, $16$ square inches and $6$ square inches?",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "A bridge is built by suspending a plank of wood between two triangular wedges with equal heights, as in the following diagram: [asy]\nimport olympiad;\nimport math;\n\n// Draw triangles\npair A = (0, 1);\np",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "A sphere is inscribed in a cube. Given that one edge of the cube is 6 inches, how many cubic inches are in the volume of the inscribed sphere? Express your answer in terms of $\\pi$.",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "How many cubic centimeters are in the volume of a cone having a diameter of 10cm and a height of 6cm? Express your answer in terms of $\\pi$.",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In triangle $BCD$, $\\angle C = 90^\\circ$, $CD = 3$, and $BD = \\sqrt{13}$. What is $\\tan B$?",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "An ice cream cone has radius 1 inch and height 4 inches, What is the number of inches in the radius of a sphere of ice cream which has the same volume as the cone?",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "$\\triangle ABC\\sim\\triangle DBE$, $BC=20\\text{ cm}.$ How many centimeters long is $DE$? Express your answer as a decimal to the nearest tenth. [asy]\ndraw((0,0)--(20,0)--(20,12)--cycle);\ndraw((13,0)--(",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "In rectangle $ABCD$, $P$ is a point on $BC$ so that $\\angle APD=90^{\\circ}$. $TS$ is perpendicular to $BC$ with $BP=PT$, as shown.  $PD$ intersects $TS$ at $Q$.  Point $R$ is on $CD$ such that $RA$ pa",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "A right, rectangular prism has three faces with areas of $6,8$ and $12$ square inches. What is the volume of the prism, in cubic inches?",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "The areas of three of the faces of a right, rectangular prism are $24 \\hspace{.6mm} \\mathrm{cm}^2$, $32 \\hspace{.6mm} \\mathrm{cm}^2$, and $48 \\hspace{.6mm} \\mathrm{cm}^2$. What is the volume of the pr",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "The figure shown is a cube. The distance between vertices $B$ and $G$ is $5\\sqrt{2}$ units. What is the volume of the cube, in cubic units?\n\n[asy]\n\nsize(3cm,3cm);\n\npair A,B,C,D,a,b,c,d;\n\nA=(0,0);\nB=(1",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "An equilateral triangle $ABC$ shares a common side $BC$ with a square $BCDE,$ as pictured. What is the number of degrees in $\\angle DAE$ (not pictured)? [asy]\npair pA, pB, pC, pD, pE;\npA = (0, 0);\npB ",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "A triangle has three different integer side lengths and a perimeter of 20 units. What is the maximum length of any one side?",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Compute $\\sin 270^\\circ$.",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "The numbers $\\sqrt{2u-1}$, $\\sqrt{2u+1}$ and $2\\sqrt{u}$ are the side lengths of a triangle. How many degrees are in the measure of the largest angle?",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "A circular spinner for a game has a radius of 5 cm. The probability of winning on one spin of this spinner is $\\frac{2}{5}$. What is the area, in sq cm, of the WIN sector? Express your answer in terms",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "A 6 cm by 8 cm rectangle is inscribed in a circle. What is the number of centimeters in the circumference of the circle? Express your answer in terms of $\\pi$.\n\n[asy]import graph;\ndefaultpen(linewidth",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In triangle $VWX$ shown, $VX = \\sqrt{13}$ and $VW = 3$. What is $\\tan V$?\n\n[asy]\npair V,W,X;\nW = (0,0);\nV = (0,3);\nX = (2,0);\ndraw(V--W--X--V);\ndraw(rightanglemark(V,W,X,7));\nlabel(\"$W$\",W,SW);\nlabel(",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Compute $\\tan 3825^\\circ$.",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "The consecutive angles of a particular trapezoid form an arithmetic sequence.  If the largest angle measures $120^{\\circ}$, what is the measure of the smallest angle?",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In right triangle $JKL$, angle $J$ measures 60 degrees and angle $K$ measures 30 degrees. When drawn, the angle bisectors of angles $J$ and $K$ intersect at a point $M$. What is the measure of obtuse ",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "How many cubic feet are in the volume of a round swimming pool which is 16 feet in diameter and 4 feet deep throughout? Express your answer in terms of $\\pi$.",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Suppose $\\cos Q = 0.4$ in the diagram below.  What is $QR$?\n\n\n\n[asy]\npair P,Q,R;\nP = (0,0);\nQ = (6,0);\nR = (0,6*tan(acos(0.4)));\ndraw(P--Q--R--P);\ndraw(rightanglemark(Q,P,R,18));\nlabel(\"$P$\",P,SW);\nla",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "A right triangle with legs $10$ and $8$ is similar to another right triangle with corresponding legs $x$ and $5$, respectively. What is the value of $x$? Express your answer as a decimal to the neares",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "In the staircase-shaped region below, all angles that look like right angles are right angles, and each of the eight congruent sides marked with a tick mark have length 1 foot.  If the region has area",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "The vertices of a $3 - 4 - 5$ right triangle are the centers of three mutually externally tangent circles, as shown.   What is the sum of the areas of these circles?\n\n[asy]unitsize(1cm);\ndraw(Circle((",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Compute $\\sin 60^\\circ$.",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Compute $\\tan (-3645^\\circ)$.",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "For $x > 0$, the area of the triangle with vertices $(0, 0), (x, 2x)$, and $(x, 0)$ is 64 square units. What is the value of $x$?",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In the diagram, the area of triangle $ABC$ is 27 square units. What is the area of triangle $BCD$?\n\n[asy]\n\ndraw((0,0)--(32,0)--(9,15)--(0,0));\n\ndot((0,0));\nlabel(\"$A$\",(0,0),SW);\nlabel(\"6\",(3,0),S);\nd",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "In the diagram, $\\triangle ABE$, $\\triangle BCE$ and $\\triangle CDE$ are right-angled, with $\\angle AEB=\\angle BEC = \\angle CED = 60^\\circ$, and $AE=24$. [asy]\npair A, B, C, D, E;\nA=(0,20.785);\nB=(0,0",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "The sides of triangle $PQR$ are tangent to a circle with center $C$ as shown. Given that $\\angle PQR = 65^\\circ$ and $\\angle QRC = 30^\\circ$, find $\\angle QPR$, in degrees.\n\n[asy]\nunitsize(1.0 cm);\n\np",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Segment $s_1$ has endpoints at $(4,1)$ and $(-8,5)$.  Segment $s_2$ is obtained by translating $s_1$ by $2$ units to the right and $3$ units up. Find the midpoint of segment $s_2$.  Express your answe",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In the figure shown, segment $AB$ is parallel to segment $YZ$. If $AZ = 42$ units, $BQ = 12$ units, and $QY = 24$ units, what is the length of segment $QZ$? [asy]\nimport olympiad; import geometry; siz",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Regions I, II and III are bounded by squares. The perimeter of region I is 12 units and the perimeter of region II is 24 units. What is the ratio of the area of region I to the area of region III? Exp",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "A regular polygon has an exterior angle that measures $15$ degrees. How many sides does the polygon have?",
+      "common_correct": true,
+      "novel_correct": false
+    },
+    {
+      "problem": "Compute $\\cos 270^\\circ$.",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "In the diagram, triangles $ABC$ and $CBD$ are isosceles. The perimeter of $\\triangle CBD$ is $19,$ the perimeter of $\\triangle ABC$ is $20,$ and the length of $BD$ is $7.$ What is the length of $AB?$ ",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In the triangle shown, what is the positive difference between the greatest and least possible integral values of $x$?\n\n[asy]\n\ndefaultpen(linewidth(0.7));\npair a,b,c;\nb = (1,2); c = (3,0);\ndraw(a--b--",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "An $8$-cm-by-$8$-cm square is partitioned as shown. Points $A$ and $B$ are the midpoints of two opposite sides of the square. What is the area of the shaded region?\n\n[asy]\ndraw((0,0)--(10,0));\ndraw((1",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "What is the number of square units in the area of the hexagon below?\n\n[asy]\nunitsize(0.5cm);\ndefaultpen(linewidth(0.7)+fontsize(10));\ndotfactor = 4;\nint i,j;\nfor(i=0;i<=4;++i)\n\n{\n\nfor(j=-3;j<=3;++j)\n\n",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "A right cylinder with a height of 5 inches has a radius of 2 inches. What is the area of the curved surface of the cylinder, in square inches? Express your answer in terms of $\\pi$.",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "The sides of triangle $PQR$ are tangent to a circle with center $C$ as shown. Given that $\\angle PQR = 63^\\circ$ and $\\angle QPR = 59^\\circ$, find $\\angle QRC$, in degrees.\n\n[asy]\n\nunitsize(1.0 cm);\n\n",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "What is the ratio of the volume of a cube with edge length six inches to the volume of a cube with edge length one foot? Express your answer as a common fraction.",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In the diagram, the smaller circles touch the larger circle and touch each other at the center of the larger circle. The radius of the larger circle is $6.$ What is the area of the shaded region?\n\n[as",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "How many square units are in the area of the parallelogram with vertices at (0, 0), (6, 0), (2, 8) and (8, 8)?",
+      "common_correct": true,
+      "novel_correct": false
+    },
+    {
+      "problem": "Point $A$ has coordinates $(x,6)$. When Point $A$ is reflected over the $y$-axis it lands on Point $B$. What is the sum of the four coordinate values of points $A$ and $B$?",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Find $\\cos C$ in the right triangle shown below.\n\n\n[asy]\npair A,B,C;\nA = (0,0);\nB = (6,0);\nC = (0,8);\ndraw(A--B--C--A);\ndraw(rightanglemark(B,A,C,10));\nlabel(\"$A$\",A,SW);\nlabel(\"$B$\",B,SE);\nlabel(\"$C$",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "Triangle $ABC$ has sides of length 5, 12 and 13 units, and triangle $DEF$ has sides of length 8, 15 and 17 units. What is the ratio of the area of triangle $ABC$ to the area of triangle $DEF$? Express",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "Compute $\\sin 150^\\circ$.",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "In the two concentric circles shown, the radius of the outer circle is twice the radius of the inner circle. What is the area of the gray region, in square feet, if the width of the gray region is 2 f",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In triangle $XYZ$, we have $\\angle Z = 90^\\circ$, $XY = 10$, and $YZ = \\sqrt{51}$. What is $\\tan X$?",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Compute $\\sin 45^\\circ$.",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "A prism has 15 edges. How many faces does the prism have?",
+      "common_correct": true,
+      "novel_correct": true
+    },
+    {
+      "problem": "Triangle $ABC$ with vertices of $A(6,2)$, $B(2,5)$, and $C(2,2)$ is reflected over the x-axis to triangle $A'B'C'$. This triangle is reflected over the y-axis to triangle $A''B''C''$. What are the coo",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "In $\\Delta ABC$, $\\overline{DE} \\parallel \\overline{AB}, CD = 4$ cm, $DA = 10$ cm, and $CE = 6$ cm. What is the number of centimeters in the length of $\\overline{CB}$?\n\n[asy]pair A,B,C,D,E;\nA = (-2,-4",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "Circles of radius 2 and 3 are externally tangent and are circumscribed by a third circle, as shown in the figure. Find the area of the shaded region. Express your answer in terms of $\\pi$.\n\n[asy]\nfill",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "What is the perimeter of pentagon $ABCDE$ in this diagram? [asy]\npair cis(real r,real t) { return (r*cos(t),r*sin(t)); }\npair a=(0,0);\npair b=cis(1,-pi/2);\npair c=cis(sqrt(2),-pi/4);\npair d=cis(sqrt(3",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "In right triangle $ABC$, shown below, $\\cos{C}=\\frac{9\\sqrt{130}}{130}$.  Find $AC$.\n\n[asy]\ndraw((0,0)--(7,0)--(0,9)--cycle,black+linewidth(1));\ndraw(rightanglemark((7,0),(0,0),(0,9),20),black+linewid",
+      "common_correct": false,
+      "novel_correct": false
+    },
+    {
+      "problem": "A certain circle's area is $x$ square units, and its circumference is $y$ units. The value of $x + y$ is $80\\pi$. What is the radius of the circle, in units?",
+      "common_correct": false,
+      "novel_correct": true
+    },
+    {
+      "problem": "In right triangle $XYZ$ with $\\angle YXZ = 90^\\circ$, we have $XY = 24$ and $YZ = 25$.  Find $\\tan Y$.",
+      "common_correct": false,
+      "novel_correct": false
+    }
+  ]
+}

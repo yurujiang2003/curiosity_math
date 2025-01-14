@@ -175,7 +175,7 @@ def batch_process_problems(
         del inferencer
 
 def main():
-    data_dir = "/home/shangbin/curiosity_math/datasets/MATH"
+    data_dir = ""
     model_name = "Qwen/Qwen2.5-Math-7B"
     model_path = model_name
     gpu_id = 14
@@ -183,9 +183,9 @@ def main():
     num_problems = 100
 
     output_files = {
-        "easy": "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_easy_ICL.json",
-        "medium": "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_medium_ICL.json",
-        "hard": "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_hard_ICL.json"
+        "easy": "",
+        "medium": "",
+        "hard": ""
     }
 
     print("Collecting problems...")
