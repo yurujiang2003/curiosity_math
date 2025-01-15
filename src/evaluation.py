@@ -39,9 +39,10 @@ def extract_qa_pairs(responses: List[Dict]) -> List[Tuple[str, str, str]]:
     qa_pairs = []
     for response in responses:
         problem = response['problem']
+        solution = response['solution']
         common_response = response['common_response']
         novel_response = response['novel_response']
-        qa_pairs.append((problem, common_response, novel_response))
+        qa_pairs.append((problem, solution, common_response, novel_response))
     return qa_pairs
 
 def evaluate_responses_batch(inference: Inference, qa_pairs: List[Tuple[str, str, str]], batch_size: int = 10) -> List[Tuple[bool, bool]]:
@@ -58,13 +59,16 @@ def evaluate_responses_batch(inference: Inference, qa_pairs: List[Tuple[str, str
     """
     # 准备评估提示
     evaluation_prompts = []
-    for problem, common, novel in qa_pairs:
+    for problem, solution, common, novel in qa_pairs:
         # 为common response创建提示
         common_prompt = f"""Please evaluate if the following response correctly solves the math problem. 
 Answer with only 'Correct' or 'Incorrect'.
 
 Problem:
 {problem}
+
+And the ground truth is:
+{solution}
 
 Response:
 {common}
@@ -77,6 +81,9 @@ Answer with only 'Correct' or 'Incorrect'.
 
 Problem:
 {problem}
+
+And the ground truth is:
+{solution}
 
 Response:
 {novel}
@@ -118,7 +125,12 @@ def main():
 
     try:
         for file_path in file_paths:
-            inference = Inference(model_name="Qwen/Qwen2.5-Math-7B", gpu_id=15, model_path="Qwen/Qwen2.5-Math-7B")
+            inference = Inference(
+                model_name="deepseek-ai/deepseek-math-7b-instruct",
+                gpu_id=15,
+                model_path="models/deepseek-math-7b-instruct",
+                local_files_only=True
+            )
             # 从文件路径获取文件名（不含扩展名）
             file_stem = Path(file_path).stem
             
@@ -128,7 +140,6 @@ def main():
             print(f"\nProcessing {file_stem}")
             print(f"Loaded {len(qa_pairs)} question-answer pairs")
 
-            # 批量评估
             evaluation_results = evaluate_responses_batch(inference, qa_pairs, batch_size=10)
             
             # 统计结果
@@ -159,7 +170,11 @@ def main():
                 ]
             }
             
-            output_path = Path(file_path).parent / f"evaluation_results_{file_stem}.json"
+            # Create the evaluation_results directory if it doesn't exist
+            output_dir = Path(file_path).parent / "evaluation_results"
+            output_dir.mkdir(exist_ok=True)
+            
+            output_path = output_dir / f"deepseek_evaluation_results_{file_stem}.json"
             with open(output_path, 'w', encoding='utf-8') as f:
                 json.dump(results_data, f, indent=2, ensure_ascii=False)
             print(f"Results saved to {output_path}")

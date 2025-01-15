@@ -173,82 +173,51 @@ def batch_process_problems(
     finally:
 
         del inferencer
-
 def main():
     data_dir = "/home/shangbin/curiosity_math/datasets/MATH"
-    model_name = "deepseek-ai/deepseek-math-7b-instruct"
-    model_path = "/home/shangbin/models/deepseek-math-7b-instruct"
+    model_name = "Qwen/Qwen2.5-Math-7B"
+    model_path = model_name
     gpu_id = 15
-    batch_size = 14
+    batch_size = 4
     num_problems = 100
+    num_iterations = 100  # 增加到100次迭代
 
-    output_files = {
-        "easy": "/home/shangbin/curiosity_math/deepseek_math_responses_easy_ICL.json",
-        "medium": "/home/shangbin/curiosity_math/deepseek_math_responses_medium_ICL.json",
-        "hard": "/home/shangbin/curiosity_math/deepseek_math_responses_hard_ICL.json"
-    }
+    # 修改输出路径以反映多次迭代
+    output_dir = "/home/shangbin/curiosity_math/many_times_results"
+    os.makedirs(output_dir, exist_ok=True)
 
     print("Collecting problems...")
 
     problems = {
-        "easy": collect_problems_from_json(data_dir, level="Level 1", limit=num_problems),
+        "easy": collect_problems_from_json(data_dir, level="Level 2", limit=num_problems),
         "medium": collect_problems_from_json(data_dir, level="Level 3", limit=num_problems),
         "hard": collect_problems_from_json(data_dir, level="Level 5", limit=num_problems)
     }
     
-    try:
-        for difficulty, problem_set in problems.items():
-            print(f"Found {len(problem_set)} {difficulty} problems")
-            print(f"Processing {difficulty} problems...")
-            
-            # Create a new inferencer for each difficulty level
-            inferencer = Inference(model_name, gpu_id, model_path)
+    for difficulty, problem_set in problems.items():
+        print(f"Found {len(problem_set)} {difficulty} problems")
+        print(f"Processing {difficulty} problems...")
+        
+        # 创建难度级别的子目录
+        difficulty_dir = os.path.join(output_dir, difficulty)
+        os.makedirs(difficulty_dir, exist_ok=True)
+        
+        # 对每个难度级别运行100次
+        for iteration in range(num_iterations):
+            print(f"Running iteration {iteration + 1}/{num_iterations} for {difficulty} problems")
             
             try:
-                # 准备指令
-                common_instructions = [problem for problem in problem_set]
-                novel_instructions = [
-                    f""" {ICL_prompt()} 
-                    please solve the following problem out of the box, providing a novel solution.
-                    {problem}
-                    """ for problem in problem_set
-                ]
-                
-                # 生成响应
-                print(f"Generating common responses for {difficulty}...")
-                common_responses = inferencer.batch_generate_responses(
-                    instructions=common_instructions,
-                    batch_size=batch_size,
-                    max_new_tokens=512,
-                    temperature=0.7,
-                    use_chat_template=True
+                responses = batch_process_problems(
+                    problem_set,
+                    model_name,
+                    model_path,
+                    gpu_id,
+                    batch_size
                 )
-                
-                # Reinitialize the model if needed
-                if not hasattr(inferencer, 'model') or inferencer.model is None:
-                    inferencer = Inference(model_name, gpu_id, model_path)
-                
-                print(f"Generating novel responses for {difficulty}...")
-                novel_responses = inferencer.batch_generate_responses(
-                    instructions=novel_instructions,
-                    batch_size=batch_size,
-                    max_new_tokens=512,
-                    temperature=0.7,
-                    use_chat_template=True
-                )
-                
-                # 合并结果
-                responses = [
-                    {
-                        "problem": problem,
-                        "common_response": common_response,
-                        "novel_response": novel_response
-                    } for problem, common_response, novel_response in zip(problem_set, common_responses, novel_responses)
-                ]
 
-                # 保存结果
-                output_file = output_files[difficulty]
-                print(f"Saving {difficulty} results...")
+                # 使用新的文件命名格式
+                output_file = os.path.join(difficulty_dir, f"responses_iter{iteration+1:03d}.json")
+                print(f"Saving {difficulty} results for iteration {iteration + 1}...")
                 
                 with open(output_file, 'w', encoding='utf-8') as f:
                     for response in responses:
@@ -256,20 +225,29 @@ def main():
                             "problem": response["problem"],
                             "common_response": response["common_response"],
                             "novel_response": response["novel_response"],
-                            "difficulty": difficulty
+                            "difficulty": difficulty,
+                            "iteration": iteration + 1
                         }
                         f.write(json.dumps(result, ensure_ascii=False) + '\n')
                 
                 print(f"Results saved to {output_file}")
-                print(f"Completed processing {difficulty} problems")
+                
+            except Exception as e:
+                print(f"Error in iteration {iteration + 1} for {difficulty}: {e}")
+                continue
                 
             finally:
-                # Clean up the inferencer after processing each difficulty level
-                del inferencer
+                # 清理GPU内存
                 torch.cuda.empty_cache()
-    
-    finally:
-        torch.cuda.empty_cache()
+                torch.cuda.synchronize()
+                
+            # 每10次迭代后打印进度
+            if (iteration + 1) % 10 == 0:
+                print(f"Completed {iteration + 1}/{num_iterations} iterations for {difficulty}")
+        
+        print(f"Completed all iterations for {difficulty} problems")
+
+    print("All processing completed!")
 
 if __name__ == "__main__":
     main()

@@ -4,10 +4,11 @@ from tqdm import tqdm
 from torch.utils.data import DataLoader, Dataset
 
 class Inference:
-    def __init__(self, model_name, gpu_id, model_path):
+    def __init__(self, model_name, gpu_id, model_path, local_files_only=True):
         self.model_name = model_name
         self.gpu_id = gpu_id
         self.model_path = model_path
+        self.local_files_only = local_files_only
         self.model = None
         self.tokenizer = None
         self.device = f"cuda:{self.gpu_id}" if torch.cuda.is_available() else "cpu"
@@ -34,12 +35,16 @@ class Inference:
             self.model = AutoModelForCausalLM.from_pretrained(
                 model_path,
                 torch_dtype=torch.bfloat16,
-                local_files_only=True,
+                local_files_only=self.local_files_only,
                 trust_remote_code=True,
                 device_map={'': self.device}  
             )
             
-            self.tokenizer = AutoTokenizer.from_pretrained(model_path)
+            self.tokenizer = AutoTokenizer.from_pretrained(
+                model_path,
+                local_files_only=self.local_files_only,
+                trust_remote_code=True
+            )
     
             if self.tokenizer.pad_token is None:
                 self.tokenizer.pad_token = self.tokenizer.eos_token
