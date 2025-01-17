@@ -1,4 +1,11 @@
-# ToDo
+# CuriosityMath
+
+## Motivation
+Suppose we have a nice prompt, which can trigger LLMs' curiosity to solve math problems in a much more novel way. 
+
+How to define the novelty of the solution? We suppose that the novelty increases when the LLM's temperature increases. So our goal is to find a prompt that enables reasoning at a lower temperature to achieve the same novel solutions as those produced at a higher temperature.
+
+Which may also lead to a increase of the LLM's reasoning ability and accuracy.
 
 ## Pipeline
 
