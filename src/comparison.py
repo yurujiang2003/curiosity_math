@@ -92,8 +92,16 @@ class ResponseAnalyzer:
         def get_math_features(text: str) -> Dict:
             math_symbols = r'[+\-*/=<>≤≥≠∈∉∪∩∀∃∄∑∏∫√π]'
             formulas = r'\$.*?\$'
+            text_length = len(text)
+            
+            if text_length == 0:
+                return {
+                    "symbol_density": 0,
+                    "formula_count": 0
+                }
+            
             return {
-                "symbol_density": len(re.findall(math_symbols, text)) / len(text),
+                "symbol_density": len(re.findall(math_symbols, text)) / text_length,
                 "formula_count": len(re.findall(formulas, text))
             }
         
@@ -226,6 +234,6 @@ def batch_analyze_responses(input_file: str, output_file: str):
     visualize_metrics(metrics, output_dir)
 
 if __name__ == "__main__":
-    input_file = ""
-    output_file = ""
+    input_file = "/home/shangbin/curiosity_math/Qwen2.5-7B-Instruct_responses_medium_ICL.json"
+    output_file = "/home/shangbin/curiosity_math/Qwen2.5-7B-Instruct_responses_medium_ICL.json_analysis.json"
     batch_analyze_responses(input_file, output_file)

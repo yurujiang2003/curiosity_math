@@ -39,10 +39,9 @@ def extract_qa_pairs(responses: List[Dict]) -> List[Tuple[str, str, str]]:
     qa_pairs = []
     for response in responses:
         problem = response['problem']
-        solution = response['solution']
         common_response = response['common_response']
         novel_response = response['novel_response']
-        qa_pairs.append((problem, solution, common_response, novel_response))
+        qa_pairs.append((problem, common_response, novel_response))
     return qa_pairs
 
 def evaluate_responses_batch(inference: Inference, qa_pairs: List[Tuple[str, str, str]], batch_size: int = 10) -> List[Tuple[bool, bool]]:
@@ -59,16 +58,13 @@ def evaluate_responses_batch(inference: Inference, qa_pairs: List[Tuple[str, str
     """
     # 准备评估提示
     evaluation_prompts = []
-    for problem, solution, common, novel in qa_pairs:
+    for problem, common, novel in qa_pairs:
         # 为common response创建提示
         common_prompt = f"""Please evaluate if the following response correctly solves the math problem. 
 Answer with only 'Correct' or 'Incorrect'.
 
 Problem:
 {problem}
-
-And the ground truth is:
-{solution}
 
 Response:
 {common}
@@ -81,9 +77,6 @@ Answer with only 'Correct' or 'Incorrect'.
 
 Problem:
 {problem}
-
-And the ground truth is:
-{solution}
 
 Response:
 {novel}
@@ -120,17 +113,23 @@ Is this response correct?"""
 def main():
 
     file_paths = [
-        "curiosity_math/NuminaMath-7B-TIR_responses_easy_ICL_ground_truth.json",
-        "curiosity_math/NuminaMath-7B-TIR_responses_medium_ICL_ground_truth.json",
-        "curiosity_math/NuminaMath-7B-TIR_responses_hard_ICL_ground_truth.json"
-        ]
+        "/home/shangbin/curiosity_math/prompt_ICL/qwen_2.5b_math_responses_easy_ICL_iter1.json",
+        "/home/shangbin/curiosity_math/prompt_ICL/qwen_2.5b_math_responses_easy_ICL_iter2.json",
+        "/home/shangbin/curiosity_math/prompt_ICL/qwen_2.5b_math_responses_easy_iter1.json",
+        "/home/shangbin/curiosity_math/prompt_ICL/qwen_2.5b_math_responses_easy_iter2.json",
+        "/home/shangbin/curiosity_math/prompt_ICL/qwen_2.5b_math_responses_easy_iter3.json",
+        "/home/shangbin/curiosity_math/prompt_ICL/qwen_2.5b_math_responses_medium_ICL.json",
+        "/home/shangbin/curiosity_math/prompt_ICL/qwen_2.5b_math_responses_medium_iter1.json",
+        "/home/shangbin/curiosity_math/prompt_ICL/qwen_2.5b_math_responses_medium_iter2.json",
+        "/home/shangbin/curiosity_math/prompt_ICL/qwen_2.5b_math_responses_medium_iter3.json"
+    ]
 
     try:
         for file_path in file_paths:
             inference = Inference(
-                model_name="deepseek-ai/deepseek-math-7b-instruct",
-                gpu_id=15,
-                model_path="models/deepseek-math-7b-instruct",
+                model_name="NuminaMath-7B-TIR",
+                gpu_id=1,
+                model_path="/home/shangbin/models/NuminaMath-7B-TIR",
                 local_files_only=True
             )
             # 从文件路径获取文件名（不含扩展名）
@@ -142,6 +141,7 @@ def main():
             print(f"\nProcessing {file_stem}")
             print(f"Loaded {len(qa_pairs)} question-answer pairs")
 
+            # 批量评估
             evaluation_results = evaluate_responses_batch(inference, qa_pairs, batch_size=10)
             
             # 统计结果
@@ -176,7 +176,7 @@ def main():
             output_dir = Path(file_path).parent / "evaluation_results"
             output_dir.mkdir(exist_ok=True)
             
-            output_path = output_dir / f"deepseek_evaluation_results_{file_stem}.json"
+            output_path = output_dir / f"NuminaMath_evaluation_results_{file_stem}.json"
             with open(output_path, 'w', encoding='utf-8') as f:
                 json.dump(results_data, f, indent=2, ensure_ascii=False)
             print(f"Results saved to {output_path}")

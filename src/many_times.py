@@ -1,253 +1,139 @@
-import os
 import json
-import torch
-from pathlib import Path
-from typing import List, Dict
+import os
 from inference import Inference
+import torch
+from torch.utils.data import DataLoader
+from tqdm import tqdm
 
-def collect_problems_from_json(
-    directory: str, 
-    level: str = None, 
-    limit: int = 100
-) -> List[str]:
+def perform_inference_multiple_times(question: str, model_name: str, model_path: str, num_repeats: int, gpu_id: int):
     """
-    collect problems from json files, and filter by level
+    Perform inference on a question multiple times.
     
     Args:
-        directory (str): the directory of json files
-        level (str): the level of problems, like "Level 1" to "Level 5", None means all levels
-        limit (int): the number of problems to return
+        question: The question to infer.
+        model_name: Name of the model to use.
+        model_path: Path to the model.
+        num_repeats: Number of times to repeat the inference.
+        gpu_id: The GPU ID to use for inference.
+        
+    Returns:
+        dict: Question metadata and responses
+    """
+    # Initialize the inference object
+    inferencer = Inference(model_name, gpu_id, model_path)
+    questions = [question] * num_repeats  # Repeat the question
+
+    try:
+        responses = inferencer.batch_generate_responses(
+            instructions=questions,
+            batch_size=16,  # Adjust as needed
+            max_new_tokens=512,
+            do_sample=True,
+            temperature=0.7,
+            top_p=0.9,
+            use_chat_template=True
+        )
+
+        # Return the responses and metadata
+        return {
+            "question": question,
+            "responses": responses
+        }
+
+    except Exception as e:
+        print(f"Error during inference: {e}")
+        raise e
+
+def extract_questions_from_json(json_file: str) -> list:
+    """
+    Extract questions from json file
+    
+    Args:
+        json_file: the path of the json file
     
     Returns:
-        List[str]: the list of problems
+        questions: the list of questions
     """
-    problems = []
-    
-    for path in Path(directory).rglob('*.json'):
-        if limit is not None and len(problems) >= limit:
-            break
-            
-        try:
-            with open(path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                
-                if 'problem' in data and (level is None or data.get('level') == level):
-                    problem_data = {
-                        'problem': data['problem'],
-                        'level': data.get('level', 'Unknown'),
-                        'type': data.get('type', 'Unknown'),
-                        'path': str(path)
-                    }
-                    problems.append(problem_data)
-                    
-        except Exception as e:
-            print(f"Error processing {path}: {e}")
-    
-    # sort by level
-    level_order = {
-        'Level 1': 1,
-        'Level 2': 2,
-        'Level 3': 3,
-        'Level 4': 4,
-        'Level 5': 5,
-        'Unknown': 6
-    }
-    problems.sort(key=lambda x: level_order.get(x['level'], 999))
-
-    return [p['problem'] for p in problems]
-
-def ICL_prompt() -> str:
-    return """
-Here are some examples of problems with both novel (correct) and common (incorrect) solutions:
-
-Problem 1: Frog in a Well
-A frog is at the bottom of a 30-foot well. Each day, it climbs up 3 feet but slips back 2 feet at night. How many days will it take for the frog to get out?
-
-Common Wrong Solution:
-- Net progress per day = 3 - 2 = 1 foot
-- Total distance = 30 feet
-- Days needed = 30/1 = 30 days
-(Wrong because it ignores that on the last day, the frog doesn't slip back)
-
-Novel Correct Solution:
-- After day 1: 3-2 = 1 foot
-- After day 2: 1+(3-2) = 2 feet
-- This continues until day 28: 28 feet
-- On day 29: 28+3 = 31 feet (reaches top)
-Answer: 29 days (not 30)
-
-Problem 2: Birthday Paradox
-In a room of 23 people, what's the probability that at least two people share the same birthday?
-
-Common Wrong Solution:
-- Probability = 23/365 ≈ 6.3%
-(Wrong because it only considers one pair)
-
-Novel Correct Solution:
-- Calculate probability of NO matches first
-- P(no match) = (365/365) × (364/365) × (363/365) × ... × (343/365)
-- P(no match) ≈ 0.492703...
-- P(at least one match) = 1 - 0.492703... ≈ 50.7%
-Answer: About 50.7% (surprisingly high!)
-
-Problem 3: Infinite Hotel
-An infinite hotel is fully booked. Can you accommodate one more guest? What about infinitely many new guests?
-
-Common Wrong Solution:
-- No rooms available, so no more guests possible
-(Wrong because it applies finite thinking to infinite scenarios)
-
-Novel Correct Solution:
-For one guest:
-- Move guest in room n to room n+1
-- Room 1 becomes available
-For infinitely many guests:
-- Move guest in room n to room 2n
-- All odd numbers become available
-Answer: Yes to both! Infinite sets have counterintuitive properties.
-
-Problem 4: Blue-Eyed Islanders
-On an island, 100 people have blue eyes. Each person can see others' eye colors but not their own. If anyone figures out their eye color, they must leave the next day. Everyone knows there's at least one blue-eyed person. One day, an outsider announces that at least one person has blue eyes. What happens?
-
-Common Wrong Solution:
-- Nothing changes since everyone already knew there were blue-eyed people
-(Wrong because it misses the common knowledge aspect)
-
-Novel Correct Solution:
-- If 1 person had blue eyes: They'd leave on day 1
-- If 2 people: They'd leave on day 2
-- If 3 people: They'd leave on day 3
-- With 100 people: All leave on day 100
-The announcement creates common knowledge that triggers a logical chain reaction.
-
-Please solve the following problem with both:
-1. A novel, out-of-the-box solution that is mathematically correct
-2. A common but incorrect solution that many people might try first
-
-Remember to explain why the common solution is wrong and why the novel solution works.
-"""
-
-def batch_process_problems(
-    problems: List[str],
-    model_name: str,
-    model_path: str,
-    gpu_id: int = 0,
-    batch_size: int = 8
-) -> List[str]:
-
-    inferencer = Inference(model_name, gpu_id, model_path)
-    common_instructions = [
-        problem for problem in problems
-    ]
-    novel_instructions = [
-        f""" {ICL_prompt()} 
-        please solve the following problem out of the box, providing a novel solution.
-        {problem}
-        """ for problem in problems
-    ]
-    
-    try:
-        common_responses = inferencer.batch_generate_responses(
-            instructions=common_instructions,
-            batch_size=batch_size,
-            max_new_tokens=512,
-            temperature=0.7,
-            use_chat_template=True
-        )
-        novel_responses = inferencer.batch_generate_responses(
-            instructions=novel_instructions,
-            batch_size=batch_size,
-            max_new_tokens=512,
-            temperature=0.7,
-            use_chat_template=True
-        )
-        
-        combined_responses = [
-            {
-                "problem": problem,
-                "common_response": common_response,
-                "novel_response": novel_response
-            } for problem, common_response, novel_response in zip(problems, common_responses, novel_responses)
-        ]
-        return combined_responses
-    finally:
-
-        del inferencer
-def main():
-    data_dir = "/home/shangbin/curiosity_math/datasets/MATH"
-    model_name = "Qwen/Qwen2.5-Math-7B"
-    model_path = model_name
-    gpu_id = 15
-    batch_size = 4
-    num_problems = 100
-    num_iterations = 100  # 增加到100次迭代
-
-    # 修改输出路径以反映多次迭代
-    output_dir = "/home/shangbin/curiosity_math/many_times_results"
-    os.makedirs(output_dir, exist_ok=True)
-
-    print("Collecting problems...")
-
-    problems = {
-        "easy": collect_problems_from_json(data_dir, level="Level 2", limit=num_problems),
-        "medium": collect_problems_from_json(data_dir, level="Level 3", limit=num_problems),
-        "hard": collect_problems_from_json(data_dir, level="Level 5", limit=num_problems)
-    }
-    
-    for difficulty, problem_set in problems.items():
-        print(f"Found {len(problem_set)} {difficulty} problems")
-        print(f"Processing {difficulty} problems...")
-        
-        # 创建难度级别的子目录
-        difficulty_dir = os.path.join(output_dir, difficulty)
-        os.makedirs(difficulty_dir, exist_ok=True)
-        
-        # 对每个难度级别运行100次
-        for iteration in range(num_iterations):
-            print(f"Running iteration {iteration + 1}/{num_iterations} for {difficulty} problems")
-            
+    questions = []
+    with open(json_file, 'r', encoding='utf-8') as f:
+        for line in f:
             try:
-                responses = batch_process_problems(
-                    problem_set,
-                    model_name,
-                    model_path,
-                    gpu_id,
-                    batch_size
-                )
-
-                # 使用新的文件命名格式
-                output_file = os.path.join(difficulty_dir, f"responses_iter{iteration+1:03d}.json")
-                print(f"Saving {difficulty} results for iteration {iteration + 1}...")
-                
-                with open(output_file, 'w', encoding='utf-8') as f:
-                    for response in responses:
-                        result = {
-                            "problem": response["problem"],
-                            "common_response": response["common_response"],
-                            "novel_response": response["novel_response"],
-                            "difficulty": difficulty,
-                            "iteration": iteration + 1
-                        }
-                        f.write(json.dumps(result, ensure_ascii=False) + '\n')
-                
-                print(f"Results saved to {output_file}")
-                
-            except Exception as e:
-                print(f"Error in iteration {iteration + 1} for {difficulty}: {e}")
+                data = json.loads(line.strip())
+                questions.append(data['problem'])
+            except json.JSONDecodeError as e:
+                print(f"Error decoding JSON line: {e}")
                 continue
-                
-            finally:
-                # 清理GPU内存
-                torch.cuda.empty_cache()
-                torch.cuda.synchronize()
-                
-            # 每10次迭代后打印进度
-            if (iteration + 1) % 10 == 0:
-                print(f"Completed {iteration + 1}/{num_iterations} iterations for {difficulty}")
-        
-        print(f"Completed all iterations for {difficulty} problems")
-
-    print("All processing completed!")
+    return questions
 
 if __name__ == "__main__":
-    main()
+    # Configuration
+    json_file = "curiosity_math/Qwen2.5-7B-Instruct_responses_medium_ICL_ground_truth.json"
+    model_name = "Qwen/Qwen2.5-Math-7B"
+    model_path = model_name
+    num_repeats = 100  # Number of times to repeat the inference
+    gpu_id = 15  # GPU ID to use
+    output_dir = "./many_times_results"
+    
+    try:
+        # Create output directory
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Create output file path
+        output_file = os.path.join(output_dir, f"all_responses_{num_repeats}_times.json")
+        
+        # Extract all questions
+        questions = extract_questions_from_json(json_file)
+        if not questions:
+            raise ValueError("No questions found in the JSON file")
+        
+        # Initialize results dictionary
+        results = {
+            "metadata": {
+                "model_name": model_name,
+                "num_repeats": num_repeats,
+                "temperature": 0.7,
+                "top_p": 0.9,
+                "total_questions": len(questions)
+            },
+            "results": []
+        }
+        
+        # Process each question
+        for idx, question in enumerate(questions):
+            print(f"Processing question {idx + 1}/{len(questions)}: {question[:100]}...")  # Print first 100 chars
+            
+            try:
+                # Perform inference
+                question_results = perform_inference_multiple_times(
+                    question=question,
+                    model_name=model_name,
+                    model_path=model_path,
+                    num_repeats=num_repeats,
+                    gpu_id=gpu_id
+                )
+                
+                # Add results to the main dictionary
+                results["results"].append(question_results)
+                
+                # Save the updated results after each question (in case of interruption)
+                with open(output_file, 'w', encoding='utf-8') as f:
+                    json.dump(results, f, ensure_ascii=False, indent=2)
+                
+                print(f"Completed question {idx + 1}")
+                
+            except Exception as e:
+                print(f"Error processing question {idx + 1}: {e}")
+                continue
+            
+            # Clean up GPU memory after each question
+            torch.cuda.empty_cache()
+            torch.cuda.synchronize()
+            
+        print(f"All questions processed successfully! Results saved to {output_file}")
+
+    except Exception as e:
+        print(f"Error in main process: {e}")
+    finally:
+        # Final cleanup
+        torch.cuda.empty_cache()
+        torch.cuda.synchronize()
