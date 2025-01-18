@@ -94,14 +94,19 @@ def save_results(results: List[Dict], output_file: str):
 
 # 使用示例
 if __name__ == "__main__":
-    input_file = "curiosity_math/prompt_ICL/qwen_2.5b_math_response_ICL.json"
+
+    input_files = ["curiosity_math/Qwen2.5-7B-Instruct_responses_easy_ICL.json",
+                   "curiosity_math/Qwen2.5-7B-Instruct_responses_medium_ICL.json",
+                   "curiosity_math/Qwen2.5-7B-Instruct_responses_hard_ICL.json"]
     math_dir = "curiosity_math/datasets/MATH"
-    output_file = input_file.replace(".json", "_ground_truth.json")
-    
-    # 处理问题并匹配解决方案
-    results = process_questions_with_solutions(input_file, math_dir)
-    
-    # 保存结果
-    save_results(results, output_file)
-    
-    print(f"Processed {len(results)} questions and saved results to {output_file}")
+
+    for input_file in input_files:
+        output_file = input_file.replace(".json", "_ground_truth.json")
+        
+        # 处理问题并匹配解决方案
+        results = process_questions_with_solutions(input_file, math_dir)
+        
+        # 保存结果
+        save_results(results, output_file)
+        
+        print(f"Processed {len(results)} questions and saved results to {output_file}")

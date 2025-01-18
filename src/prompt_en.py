@@ -140,9 +140,10 @@ def batch_process_problems(
         problem for problem in problems
     ]
     novel_instructions = [
-        f""" {ICL_prompt()} 
+        f""" 
         please solve the following problem out of the box, providing a novel solution.
         {problem}
+
         """ for problem in problems
     ]
     

@@ -56,75 +56,44 @@ def collect_problems_from_json(
 
     return [p['problem'] for p in problems]
 
+def common_prompt()->str:
+    return """
+Here are some examples of problems with solutions(Your are not required to answer them):
+
+**Problem**: There are 35 animals (chickens and rabbits) in a cage with 94 legs in total. How many chickens and rabbits are there?
+
+**Solution**:  
+Let \( x \) be the number of chickens and \( y \) be the number of rabbits. Set up the system of equations:
+\[
+\begin{cases}
+x + y = 35 \\
+2x + 4y = 94
+\end{cases}
+\]
+Solve the system to find \( x = 23 \) (chickens) and \( y = 12 \) (rabbits).
+
+Note: Above is just some example teaching you to think out of box. You donot need to answer them. Your task is to answer the following problem.
+    """
+
 def ICL_prompt() -> str:
     return """
-Here are some examples of problems with both novel (correct) and common (incorrect) solutions:
+Here is an example of problems with both novel and common solutions(Your are not required to answer them):
+**Problem**: There are 35 animals (chickens and rabbits) in a cage with 94 legs in total. How many chickens and rabbits are there?
 
-Problem 1: Frog in a Well
-A frog is at the bottom of a 30-foot well. Each day, it climbs up 3 feet but slips back 2 feet at night. How many days will it take for the frog to get out?
+**Common Solution**:  
+Let \( x \) be the number of chickens and \( y \) be the number of rabbits. Set up the system of equations:
+\[
+\begin{cases}
+x + y = 35 \\
+2x + 4y = 94
+\end{cases}
+\]
+Solve the system to find \( x = 23 \) (chickens) and \( y = 12 \) (rabbits).
 
-Common Wrong Solution:
-- Net progress per day = 3 - 2 = 1 foot
-- Total distance = 30 feet
-- Days needed = 30/1 = 30 days
-(Wrong because it ignores that on the last day, the frog doesn't slip back)
+**Novel Solution**:  
+Assume all animals are chickens. Then the total number of legs would be \( 35 \times 2 = 70 \), which is 24 legs fewer than the actual count. Each time a chicken is replaced with a rabbit, the number of legs increases by 2. Therefore, \( 24 \div 2 = 12 \) replacements are needed, resulting in 12 rabbits and \( 35 - 12 = 23 \) chickens.
 
-Novel Correct Solution:
-- After day 1: 3-2 = 1 foot
-- After day 2: 1+(3-2) = 2 feet
-- This continues until day 28: 28 feet
-- On day 29: 28+3 = 31 feet (reaches top)
-Answer: 29 days (not 30)
-
-Problem 2: Birthday Paradox
-In a room of 23 people, what's the probability that at least two people share the same birthday?
-
-Common Wrong Solution:
-- Probability = 23/365 ≈ 6.3%
-(Wrong because it only considers one pair)
-
-Novel Correct Solution:
-- Calculate probability of NO matches first
-- P(no match) = (365/365) × (364/365) × (363/365) × ... × (343/365)
-- P(no match) ≈ 0.492703...
-- P(at least one match) = 1 - 0.492703... ≈ 50.7%
-Answer: About 50.7% (surprisingly high!)
-
-Problem 3: Infinite Hotel
-An infinite hotel is fully booked. Can you accommodate one more guest? What about infinitely many new guests?
-
-Common Wrong Solution:
-- No rooms available, so no more guests possible
-(Wrong because it applies finite thinking to infinite scenarios)
-
-Novel Correct Solution:
-For one guest:
-- Move guest in room n to room n+1
-- Room 1 becomes available
-For infinitely many guests:
-- Move guest in room n to room 2n
-- All odd numbers become available
-Answer: Yes to both! Infinite sets have counterintuitive properties.
-
-Problem 4: Blue-Eyed Islanders
-On an island, 100 people have blue eyes. Each person can see others' eye colors but not their own. If anyone figures out their eye color, they must leave the next day. Everyone knows there's at least one blue-eyed person. One day, an outsider announces that at least one person has blue eyes. What happens?
-
-Common Wrong Solution:
-- Nothing changes since everyone already knew there were blue-eyed people
-(Wrong because it misses the common knowledge aspect)
-
-Novel Correct Solution:
-- If 1 person had blue eyes: They'd leave on day 1
-- If 2 people: They'd leave on day 2
-- If 3 people: They'd leave on day 3
-- With 100 people: All leave on day 100
-The announcement creates common knowledge that triggers a logical chain reaction.
-
-Please solve the following problem with both:
-1. A novel, out-of-the-box solution that is mathematically correct
-2. A common but incorrect solution that many people might try first
-
-Remember to explain why the common solution is wrong and why the novel solution works.
+Note: Above is just an example teaching you to think out of box. You donot need to answer them. Your task is to answer the following problem.
 """
 
 def batch_process_problems(
@@ -137,11 +106,15 @@ def batch_process_problems(
 
     inferencer = Inference(model_name, gpu_id, model_path)
     common_instructions = [
-        problem for problem in problems
+
+        f""" {common_prompt()}
+        please solve the following problem.
+        {problem}
+        """ for problem in problems
     ]
     novel_instructions = [
         f""" {ICL_prompt()} 
-        please solve the following problem out of the box, providing a novel solution.
+        Your task is to solve the following problem out of the box, providing a novel solution.
         {problem}
         """ for problem in problems
     ]
@@ -176,16 +149,16 @@ def batch_process_problems(
 
 def main():
     data_dir = "/home/shangbin/curiosity_math/datasets/MATH"
-    model_name = "deepseek-ai/deepseek-math-7b-instruct"
-    model_path = "/home/shangbin/models/deepseek-math-7b-instruct"
+    model_name = "Qwen/Qwen2.5-Math-7B"
+    model_path = model_name
     gpu_id = 15
     batch_size = 14
     num_problems = 100
 
     output_files = {
-        "easy": "/home/shangbin/curiosity_math/deepseek_math_responses_easy_ICL.json",
-        "medium": "/home/shangbin/curiosity_math/deepseek_math_responses_medium_ICL.json",
-        "hard": "/home/shangbin/curiosity_math/deepseek_math_responses_hard_ICL.json"
+        "easy": "/home/shangbin/curiosity_math/Qwen2.5-7B-Instruct_responses_easy_ICL.json",
+        "medium": "/home/shangbin/curiosity_math/Qwen2.5-7B-Instruct_responses_medium_ICL.json",
+        "hard": "/home/shangbin/curiosity_math/Qwen2.5-7B-Instruct_responses_hard_ICL.json"
     }
 
     print("Collecting problems...")
