@@ -161,6 +161,8 @@ angle_ABQ = Rational(2, 3) * angle_ABC
 angle_MBQ = Rational(1, 6) * angle_ABC
 # Calculate the ratio
 ratio = angle_MBQ / angle_ABQ
+
+ratio
 """
 
 # 执行代码
