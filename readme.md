@@ -1,11 +1,20 @@
 # CuriosityMath
 
 ## Motivation
-Suppose we have a nice prompt, which can trigger LLMs' curiosity to solve math problems in a much more novel way. 
+How to trigger LLMs' curiosity to solve math problems in a much more novel way? We use incontext learning to create a prompt that can trigger LLMs' curiosity. 
 
-How to define the novelty of the solution? We suppose that the novelty increases when the LLM's temperature increases. So our goal is to find a prompt that enables reasoning at a lower temperature to achieve the same novel solutions as those produced at a higher temperature.
+### Prolog
+Convert the response of the LLM to a prolog format. to verify the correctness of the solution, and could be easily standardized those responses.
+Cleaned solution is used to sft model.
 
-Which may also lead to a increase of the LLM's reasoning ability and accuracy.
+### Sft model:
+1. label the solution correct or not (we wish the final model can be novel and correct)
+2. no label (we wish the final model can be novel)
+
+Compare the common solution and the novel solution in the prolog format, to show the difference in the complexity of the solutions.
+
+### Novel or not?
+If a novel solution is correct, and which is a outlier in the distribution of the common solutions, then we can say it is a novel solution.
 
 ## Pipeline
 
