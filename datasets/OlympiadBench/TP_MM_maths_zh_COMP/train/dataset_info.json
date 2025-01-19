@@ -1,0 +1,115 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "TP_MM_maths_zh_COMP",
+  "dataset_name": "olympiad_bench",
+  "dataset_size": 1860391,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/Hothan/OlympiadBench@3b426ee1d587c71b495146dde9f3e995ee7ac59f/OlympiadBench/TP_MM_maths_zh_COMP/TP_MM_maths_zh_COMP.parquet": {
+      "num_bytes": 1353557,
+      "checksum": null
+    }
+  },
+  "download_size": 1353557,
+  "features": {
+    "id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "solution": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "final_answer": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "context": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "image_1": {
+      "_type": "Image"
+    },
+    "image_2": {
+      "_type": "Image"
+    },
+    "image_3": {
+      "_type": "Image"
+    },
+    "image_4": {
+      "_type": "Image"
+    },
+    "image_5": {
+      "_type": "Image"
+    },
+    "modality": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "difficulty": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "is_multiple_answer": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "unit": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "answer_type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "error": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "question_type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "subfield": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "subject": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "language": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 3213948,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1860391,
+      "num_examples": 81,
+      "dataset_name": "olympiad_bench"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

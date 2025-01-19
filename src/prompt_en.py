@@ -184,17 +184,17 @@ def main():
     num_problems = 100
 
     output_files = {
-        "easy": "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_easy.json",
+        "easy":   "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_easy.json",
         "medium": "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_medium.json",
-        "hard": "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_hard.json"
+        "hard":   "/home/shangbin/curiosity_math/qwen_2.5b_math_responses_hard.json"
     }
 
     print("Collecting problems...")
 
     problems = {
-        "easy": collect_problems_from_json(data_dir, level="Level 2", limit=num_problems),
+        "easy":   collect_problems_from_json(data_dir, level="Level 2", limit=num_problems),
         "medium": collect_problems_from_json(data_dir, level="Level 3", limit=num_problems),
-        "hard": collect_problems_from_json(data_dir, level="Level 5", limit=num_problems)
+        "hard":   collect_problems_from_json(data_dir, level="Level 5", limit=num_problems)
     }
     
     for difficulty, problem_set in problems.items():
