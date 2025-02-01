@@ -29,7 +29,7 @@ def perform_inference_multiple_times(question: str, model_name: str, model_path:
             batch_size=16,  # Adjust as needed
             max_new_tokens=512,
             do_sample=True,
-            temperature=0.7,
+            temperature=1.0,
             top_p=0.9,
             use_chat_template=True
         )

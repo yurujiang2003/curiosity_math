@@ -209,11 +209,6 @@ class Inference:
                         ]
 
                     responses.extend(batch_responses)
-
-                # 9. clean up memory
-                del inputs, outputs
-                torch.cuda.empty_cache()
-
             return responses
             
         finally:
