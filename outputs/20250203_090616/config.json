@@ -1,0 +1,16 @@
+{
+  "model_path": "/home/shangbin/curiosity_math/models/Qwen2.5-7B-math-qlora",
+  "data_path": "curiosity_math/datasets/organized_math_test",
+  "output_dir": "./outputs/20250203_090616",
+  "max_new_tokens": 512,
+  "batch_size": 20,
+  "cot": true,
+  "device": "cuda:0",
+  "gpu_ids": "1",
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "num_beams": 1,
+  "seed": 42,
+  "save_incorrect_only": false,
+  "trust_remote_code": false
+}

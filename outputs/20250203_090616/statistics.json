@@ -1,0 +1,59 @@
+{
+  "by_level": {
+    "Level 3": {
+      "total": 1131,
+      "correct": 431
+    },
+    "Level 4": {
+      "total": 1214,
+      "correct": 304
+    },
+    "Level 5": {
+      "total": 1324,
+      "correct": 139
+    },
+    "Level 1": {
+      "total": 437,
+      "correct": 285
+    },
+    "Level 2": {
+      "total": 894,
+      "correct": 475
+    }
+  },
+  "by_type": {
+    "Algebra": {
+      "total": 1187,
+      "correct": 588
+    },
+    "Counting & Probability": {
+      "total": 474,
+      "correct": 143
+    },
+    "Geometry": {
+      "total": 479,
+      "correct": 102
+    },
+    "Intermediate Algebra": {
+      "total": 903,
+      "correct": 129
+    },
+    "Number Theory": {
+      "total": 540,
+      "correct": 166
+    },
+    "Prealgebra": {
+      "total": 871,
+      "correct": 449
+    },
+    "Precalculus": {
+      "total": 546,
+      "correct": 57
+    }
+  },
+  "overall": {
+    "total": 5000,
+    "correct": 1634,
+    "accuracy": 0.3268
+  }
+}
