@@ -23,5 +23,5 @@ If a novel solution is correct, and which is a outlier in the distribution of th
 | Qwen-Math-7B (base)            | 84.6  | 56.4         | 87.4  | 91.2  | 95.9  | 65.9   | 36.4   | 69.0      | 93.8     | 75.6 |
 | Qwen-Math-7B (common)          | 84.8  | 55.6         | 87.5  | 91.4  | 95.9  | 65.9   | 32.2   | 68.8      | 93.8     | 75.1 |
 | Qwen-Math-7B (novel)           | 84.5  | 55.8         | 87.6  | 91.3  | 95.9  | 65.7   | 29.2   | 68.9      | 93.8     | 74.7 |
-| Qwen-Math-7B (novel w/ gt)     | 84.4  | 56.2         | 87.7  | 91.4  | 95.9  | 65.9   | 26.6   | 68.8      | 93.8     | 74.5 |
+| Qwen-Math-7B (sft with gt)     | 84.4  | 56.2         | 87.7  | 91.4  | 95.9  | 65.9   | 26.6   | 68.8      | 93.8     | 74.5 |
 | Qwen-Math-7B (novel eval by likelihood)  | 84.6  | 56.0         | 87.5  | 91.4  | 95.8  | 65.9   | 28.7   | 68.8      | 93.8     | 74.7 |
