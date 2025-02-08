@@ -44,9 +44,11 @@ If a novel solution is correct, and which is a outlier in the distribution of th
 
 2. **相似度计算**：
    - 计算平均嵌入向量：
+     
      $$
      \mathbf{\mu} = \frac{1}{N}\sum_{j=1}^{N}\mathbf{\bar{e}}_j \in \mathbb{R}^d
      $$
+     
    - 余弦相似度计算：
      $$
      \text{sim}_j = \frac{\mathbf{\bar{e}}_j \cdot \mathbf{\mu}}{\|\mathbf{\bar{e}}_j\| \cdot \|\mathbf{\mu}\|}
